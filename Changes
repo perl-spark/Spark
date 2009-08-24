@@ -1,0 +1,16 @@
+Revision history for Spark-Form
+
+0.03      2009-08-24 09:07:23 UTC
+       Merged in SparkX::Form::BasicFields
+       Merged in SparkX::Form::BasicPrinters
+       Merged in SparkX::Form::BasicValidators
+       Replaced fields_[ah] with 'fields' accessor and get{,_at} methods
+       Migrated build system to Dist::Zilla, so version numbers work now.
+
+0.02    2009-07-21
+        Added testing deps.
+        Auto-requires printer modules for you (and fixes related bug)
+
+0.1    2009-05-31
+        First version, released on an unsuspecting world.
+        Module currently deals purely with validation from user input.
