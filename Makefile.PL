@@ -13,8 +13,8 @@ WriteMakefile(
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.31) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {
-    "Test::MockObject" => '0',
     "Module::Pluggable" => '0',
+    "Test::MockObject" => '0',
     "List::Util" => '0',
     "Data::Couplet" => '0',
     "Test::More" => '0',

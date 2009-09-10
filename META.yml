@@ -2,7 +2,7 @@
 abstract: 'A simple yet powerful forms validation system that promotes reuse.'
 author:
   - 'James Laver L<http://jameslaver.com>'
-generated_by: 'Dist::Zilla::Plugin::MetaYAML version 1.092310'
+generated_by: 'Dist::Zilla::Plugin::MetaYAML version 1.092450'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html

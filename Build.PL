@@ -13,8 +13,8 @@ my $build = Module::Build->new(
 "James\ Laver\ L\<http\:\/\/jameslaver\.com\>",
   ],
   requires      => {
-    "Test::MockObject" => '0',
     "Module::Pluggable" => '0',
+    "Test::MockObject" => '0',
     "List::Util" => '0',
     "Data::Couplet" => '0',
     "Test::More" => '0',

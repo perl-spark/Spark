@@ -41,6 +41,7 @@ lib/SparkX/Form/Field/Validator/MinLength.pm
 lib/SparkX/Form/Field/Validator/NotEmpty.pm
 lib/SparkX/Form/Field/Validator/Regex.pm
 lib/SparkX/Form/Printer/List.pm
+t/00-compile.t
 t/00-load.t
 t/02-pod.t
 t/03-form-register.t

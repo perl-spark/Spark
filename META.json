@@ -2,7 +2,7 @@
    "resources" : {
       "repository" : "http://github.com/jjl/Spark-Form"
    },
-   "generated_by" : "Dist::Zilla::Plugin::MetaJSON version 1.092310",
+   "generated_by" : "Dist::Zilla::Plugin::MetaJSON version 1.092450",
    "meta-spec" : {
       "version" : 1.4,
       "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
@@ -148,8 +148,8 @@
       }
    },
    "requires" : {
-      "Test::MockObject" : "0",
       "Module::Pluggable" : "0",
+      "Test::MockObject" : "0",
       "List::Util" : "0",
       "Data::Couplet" : "0",
       "Test::More" : "0",
