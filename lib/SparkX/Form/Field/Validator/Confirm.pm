@@ -11,7 +11,7 @@ has confirm => (
     is       => 'rw',
     required => 0,
     lazy     => 1,
-    default  => sub { undef },
+    default  => undef,
 );
 
 has errmsg_confirm => (
@@ -21,8 +21,8 @@ has errmsg_confirm => (
     lazy     => 1,
     default  => sub {
         my $self = shift;
-        $self->human_name .
-          " must match " .
+        return $self->human_name .
+          ' must match ' .
           $self->_confirm_human_name
     },
 );
@@ -30,13 +30,13 @@ has errmsg_confirm => (
 sub _confirm_field {
     my ($self) = @_;
 
-    $self->form->get($self->confirm);
+    return $self->form->get($self->confirm);
 }
 
 sub _confirm_human_name {
     my ($self) = @_;
 
-    $self->_confirm_field->human_name;
+    return $self->_confirm_field->human_name;
 }
 
 sub _confirm {
@@ -47,9 +47,11 @@ sub _confirm {
     if ($self->value ne $self->_confirm_field->value) {
         $self->error($self->errmsg_confirm);
     }
+    return $self;
 }
 
-after '_validate' => sub { shift->_confirm };
+after '_validate' => sub { return shift->_confirm };
+
 
 1;
 
@@ -67,7 +69,7 @@ version 0.0300
 
 =head1 DESCRIPTION
 
-A confirmation comparison mixin. Adds two fields plus action.
+A confirmation comparison mix-in. Adds two fields plus action.
 Makes sure that the selected C<confirm> field matches this one.
 
 =head1 ACCESSORS

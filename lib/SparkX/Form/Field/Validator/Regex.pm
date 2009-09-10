@@ -10,7 +10,7 @@ has regex => (
     isa      => 'Maybe[RegexpRef]',
     is       => 'rw',
     required => 0,
-    default  => sub { undef },
+    default  => undef,
 );
 
 has errmsg_regex => (
@@ -20,7 +20,7 @@ has errmsg_regex => (
     lazy     => 1,
     default  => sub {
         my $self = shift;
-        $self->human_name . " failed the regex."
+        $self->human_name . ' failed the regex.'
     },
 );
 
@@ -32,9 +32,10 @@ sub _regex {
     if ($self->value !~ $self->regex) {
         $self->error($self->errmsg_regex);
     }
+    return $self;
 }
 
-after '_validate' => sub { shift->_regex };
+after '_validate' => sub { return shift->_regex };
 
 1;
 
@@ -52,12 +53,12 @@ version 0.0300
 
 =head1 DESCRIPTION
 
-A regex validation mixin. Adds two fields plus action.
-Makes sure that C<value> matches the regex.
+A regular expression validation mix-in. Adds two fields plus action.
+Makes sure that C<value> matches the expression.
 
 =head1 ACCESSORS
 
-=head2 regex => Str
+=head2 C<regex> => Str
 
 RegexRef to match.
 Required, no default.

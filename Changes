@@ -1,6 +1,6 @@
 Revision history for Spark-Form
 
-0.0300    2009-09-10 18:24:06 UTC
+0.0300    2009-09-10 19:26:41 UTC
        Merged in SparkX::Form::BasicFields
        Merged in SparkX::Form::BasicPrinters
        Merged in SparkX::Form::BasicValidators

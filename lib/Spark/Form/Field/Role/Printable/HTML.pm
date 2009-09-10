@@ -2,10 +2,10 @@ package Spark::Form::Field::Role::Printable::HTML;
 our $VERSION = '0.0300';
 
 
-# ABSTRACT: a html4-printable form field role
+# ABSTRACT: a HTML4-printable form field role
 
 use Moose::Role;
-with "Spark::Form::Field::Role::Printable";
+with 'Spark::Form::Field::Role::Printable';
 
 requires 'to_html';
 
@@ -17,7 +17,7 @@ requires 'to_html';
 
 =head1 NAME
 
-Spark::Form::Field::Role::Printable::HTML - a html4-printable form field role
+Spark::Form::Field::Role::Printable::HTML - a HTML4-printable form field role
 
 =head1 VERSION
 
@@ -41,7 +41,7 @@ version 0.0300
 
 =head2 to_html :: Undef => Str
 
-This function should return a html string representing your control
+This function should return a HTML string representing your control
 
 =head1 SEE ALSO
 

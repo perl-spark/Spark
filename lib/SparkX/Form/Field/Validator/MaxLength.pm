@@ -20,10 +20,10 @@ has errmsg_too_long => (
     lazy     => 1,
     default  => sub {
         my $self = shift;
-        $self->human_name .
-          " must be no more than " .
+        return $self->human_name .
+          ' must be no more than ' .
           $self->max_length .
-          " characters long";
+          ' characters long';
     },
 );
 
@@ -35,9 +35,10 @@ sub _max_length {
     if (length $self->value > $self->max_length) {
         $self->error($self->errmsg_too_long);
     }
+    return $self;
 }
 
-after '_validate' => sub { shift->_max_length };
+after '_validate' => sub { return shift->_max_length };
 
 1;
 
@@ -55,7 +56,7 @@ version 0.0300
 
 =head1 DESCRIPTION
 
-A maximum length enforcement mixin. Adds two fields plus action.
+A maximum length enforcement mix-in. Adds two fields plus action.
 Makes sure that C<value> is at most C<max_length> characters long.
 
 =head1 ACCESSORS
