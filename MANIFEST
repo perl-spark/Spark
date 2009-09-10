@@ -41,9 +41,9 @@ lib/SparkX/Form/Field/Validator/MinLength.pm
 lib/SparkX/Form/Field/Validator/NotEmpty.pm
 lib/SparkX/Form/Field/Validator/Regex.pm
 lib/SparkX/Form/Printer/List.pm
+perlcriticrc
 t/00-compile.t
 t/00-load.t
-t/02-pod.t
 t/03-form-register.t
 t/04-form-custom-lazy.t
 t/05-confirm.t
@@ -67,7 +67,8 @@ t/18-multiselect.t
 t/19-password.t
 t/20-radio.t
 t/21-noload.t
-t/author-01-pod-coverage.t
+t/author-critic.t
+t/author-kwalitee.t
 t/lib/TestApp/Form/Field/Custom.pm
 t/lib/TestApp/Form/Field/Email.pm
 t/lib/TestApp/Form/Field/Password.pm

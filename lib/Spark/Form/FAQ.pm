@@ -1,5 +1,5 @@
 package Spark::Form::FAQ;
-our $VERSION = '0.03';
+our $VERSION = '0.0300';
 
 
 # ABSTRACT: Frequently Asked Questions about Spark::Form
@@ -16,7 +16,7 @@ Spark::Form::FAQ - Frequently Asked Questions about Spark::Form
 
 =head1 VERSION
 
-version 0.03
+version 0.0300
 
 =head1 Frequently Asked Questions
 
@@ -26,7 +26,7 @@ None of the others met my needs. This is CPAN, people reinvent wheels
 properly so you don't have to.
 
 Essentially the only real viable alternative I've come across is HTML::FormFu
-and I wanted a pure-perl solution, no YAML.
+and I wanted a Pure-Perl solution, no YAML.
 
 =head2 Why Spark::Form?
 

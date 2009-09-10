@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Radio;
-our $VERSION = '0.03';
+our $VERSION = '0.0300';
 
 
 # ABSTRACT: A set of radio buttons for SparkX::Form
@@ -20,32 +20,33 @@ has options => (
     is       => 'rw',
     required => 0,
     lazy     => 1,
-    default  => sub { shift->value },
+    default  => sub { return shift->value },
 );
 
 sub to_html {
-    shift->_render(HTML::Tiny->new(mode => 'html'));
+    return shift->_render(HTML::Tiny->new(mode => 'html'));
 }
 
 sub to_xhtml {
-    shift->_render(HTML::Tiny->new(mode => 'xml'));
+    return shift->_render(HTML::Tiny->new(mode => 'xml'));
+}
+
+sub _render_element {
+    my ($self, $html, $option) = @_;
+    return $html->input({
+            type  => 'radio',
+            value => $option,
+            ($self->value eq $option ? (checked => 'checked') : ()),
+            name => $self->name,
+    });
+
 }
 
 sub _render {
     my ($self, $html) = @_;
-    join(
-        " ",
-        map {
-            $html->input({
-                    type  => 'radio',
-                    value => $_,
-                    ($self->value eq $_ ? (checked => 'checked') : ()),
-                    name => $self->name,
-                })
-          } @{$self->options}
-    );
+    return join q{ }, map { $self->_render_element($html, $_) } @{$self->options};
 }
-
+__PACKAGE__->meta->make_immutable;
 1;
 
 
@@ -58,17 +59,17 @@ SparkX::Form::Field::Radio - A set of radio buttons for SparkX::Form
 
 =head1 VERSION
 
-version 0.03
+version 0.0300
 
 =head1 METHODS
 
 =head2 to_html() => Str
 
-Renders the field(s) to html
+Renders the field(s) to HTML
 
 =head2 to_xhtml() => Str
 
-Renders the field(s) to xhtml
+Renders the field(s) to XHTML
 
 =head2 validate() => Bool
 

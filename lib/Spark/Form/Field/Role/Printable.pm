@@ -1,5 +1,5 @@
 package Spark::Form::Field::Role::Printable;
-our $VERSION = '0.03';
+our $VERSION = '0.0300';
 
 
 # ABSTRACT: Printability for form fields
@@ -24,7 +24,7 @@ Spark::Form::Field::Role::Printable - Printability for form fields
 
 =head1 VERSION
 
-version 0.03
+version 0.0300
 
 =head1 DESCRIPTION
 

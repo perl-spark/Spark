@@ -1,5 +1,5 @@
 package SparkX::Form::BasicValidators;
-our $VERSION = '0.03';
+our $VERSION = '0.0300';
 
 
 # ABSTRACT: A selection of validators to make writing custom fields easier.
@@ -19,12 +19,12 @@ SparkX::Form::BasicValidators - A selection of validators to make writing custom
 
 =head1 VERSION
 
-version 0.03
+version 0.0300
 
 =head1 SEE ALSO
 
 L<Spark::Form> - The forms module that started it all
-L<Spark::Form::Manual> - Walkthrough
+L<Spark::Form::Manual> - Walk-through
 
 
 

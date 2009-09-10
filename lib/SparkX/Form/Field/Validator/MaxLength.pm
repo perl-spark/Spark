@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Validator::MaxLength;
-our $VERSION = '0.03';
+our $VERSION = '0.0300';
 
 
 # ABSTRACT: Validates a variable does not exceed a given size
@@ -51,7 +51,7 @@ SparkX::Form::Field::Validator::MaxLength - Validates a variable does not exceed
 
 =head1 VERSION
 
-version 0.03
+version 0.0300
 
 =head1 DESCRIPTION
 

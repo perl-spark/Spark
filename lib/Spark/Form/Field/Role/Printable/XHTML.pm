@@ -1,5 +1,5 @@
 package Spark::Form::Field::Role::Printable::XHTML;
-our $VERSION = '0.03';
+our $VERSION = '0.0300';
 
 
 # ABSTRACT: a xhtml1-printable form field role
@@ -21,7 +21,7 @@ Spark::Form::Field::Role::Printable::XHTML - a xhtml1-printable form field role
 
 =head1 VERSION
 
-version 0.03
+version 0.0300
 
 =head1 SYNOPSIS
 

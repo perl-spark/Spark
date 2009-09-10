@@ -1,5 +1,5 @@
 package TestApp::Form::Field::Custom;
-our $VERSION = '0.03';
+our $VERSION = '0.0300';
 
 
 use Moose;
