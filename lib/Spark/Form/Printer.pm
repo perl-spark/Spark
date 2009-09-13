@@ -1,5 +1,5 @@
 package Spark::Form::Printer;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: interface for form printers for C<Spark::Form>
@@ -17,12 +17,17 @@ Spark::Form::Printer - interface for form printers for C<Spark::Form>
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 SEE ALSO
 
-L<Spark::Form> - the forms module that started it all
-L<Spark::Form::BasicPrinters> - set of pre-canned printers for your forms
+=over 4
+
+=item L<Spark::Form> - the forms module that started it all
+
+=item L<Spark::Form::BasicPrinters> - set of pre-canned printers for your forms
+
+=back 
 
 
 

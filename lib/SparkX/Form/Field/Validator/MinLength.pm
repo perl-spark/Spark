@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Validator::MinLength;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: Validates a field is at least a given size
@@ -52,7 +52,7 @@ SparkX::Form::Field::Validator::MinLength - Validates a field is at least a give
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 DESCRIPTION
 

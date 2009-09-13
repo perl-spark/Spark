@@ -1,5 +1,5 @@
 package Spark::Form::Field::Role::Printable::HTML;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: a HTML4-printable form field role
@@ -21,7 +21,7 @@ Spark::Form::Field::Role::Printable::HTML - a HTML4-printable form field role
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 SYNOPSIS
 
@@ -45,7 +45,11 @@ This function should return a HTML string representing your control
 
 =head1 SEE ALSO
 
-L<Spark::Form::Field>
+=over 4
+
+=item L<Spark::Form::Field>
+
+=back 
 
 
 

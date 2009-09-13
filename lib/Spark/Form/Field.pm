@@ -1,5 +1,5 @@
 package Spark::Form::Field;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: Superclass for all Form Fields
@@ -95,7 +95,7 @@ Spark::Form::Field - Superclass for all Form Fields
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 DESCRIPTION
 
@@ -176,9 +176,17 @@ Adds an error to the current field's list.
 
 =head1 SEE ALSO
 
-L<Spark::Form::Field::Role::Printable> - Fields that can be printed
-L<SparkX::Form::BasicValidators> - Set of validators to use creating fields
-L<SparkX::Form::BasicFields> - Ready to use fields
+=over 4
+
+=item L<Spark::Form::Field::Role::Printable> - Fields that can be printed
+
+=item L<SparkX::Form::BasicValidators> - Set of validators to use creating fields
+
+=item L<SparkX::Form::BasicFields> - Ready to use fields
+
+=back 
+
+
 
 =head1 AUTHOR
 

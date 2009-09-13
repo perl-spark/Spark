@@ -1,5 +1,5 @@
 package SparkX::Form::BasicPrinters;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: A selection of basic form printers for printing a C<SparkX::Form>.
@@ -16,13 +16,19 @@ SparkX::Form::BasicPrinters - A selection of basic form printers for printing a 
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 SEE ALSO
 
-L<SparkX::Form> - The forms module that started it all
-L<SparkX::Form::Printer> - The interface that printers must fulfil
-L<SparkX::Form::Printer::List> - A printer that prints a HTML list
+=over 4
+
+=item L<SparkX::Form> - The forms module that started it all
+
+=item L<SparkX::Form::Printer> - The interface that printers must fulfil
+
+=item L<SparkX::Form::Printer::List> - A printer that prints a HTML list
+
+=back 
 
 
 

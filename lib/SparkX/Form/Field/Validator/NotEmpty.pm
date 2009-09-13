@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Validator::NotEmpty;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: Validates a field has some value
@@ -40,7 +40,7 @@ SparkX::Form::Field::Validator::NotEmpty - Validates a field has some value
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 DESCRIPTION
 

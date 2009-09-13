@@ -1,5 +1,5 @@
 package SparkX::Form::BasicFields;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: A collection of basic fields for Spark::Form
@@ -16,7 +16,7 @@ SparkX::Form::BasicFields - A collection of basic fields for Spark::Form
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 DESCRIPTION
 
@@ -26,13 +26,23 @@ This file is just explanatory. SEE ALSO for more interesting files.
 
 =head1 SEE ALSO
 
-L<Spark::Form> - The forms handling system itself
-L<SparkX::BasicValidators> - If you want to have validation of these fields
-L<SparkX::Form::Field::Text> - A text field
-L<SparkX::Form::Field::Checkbox> - A checkbox field
-L<SparkX::Form::Field::Radio> - A radio button set
-L<SparkX::Form::Field::Select> - A select button set
-L<SparkX::Form::Field::TextArea> - A textarea field
+=over 4
+
+=item L<Spark::Form> - The forms handling system itself
+
+=item L<SparkX::BasicValidators> - If you want to have validation of these fields
+
+=item L<SparkX::Form::Field::Text> - A text field
+
+=item L<SparkX::Form::Field::Checkbox> - A checkbox field
+
+=item L<SparkX::Form::Field::Radio> - A radio button set
+
+=item L<SparkX::Form::Field::Select> - A select button set
+
+=item L<SparkX::Form::Field::TextArea> - A textarea field
+
+=back 
 
 =head1 ACKNOWLEDGEMENTS
 

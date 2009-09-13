@@ -14,9 +14,10 @@ my $build = Module::Build->new(
   ],
   requires      => {
     "Module::Pluggable" => '0',
+    "MooseX::LazyRequire" => '0.04',
+    "Test::More" => '0',
     "List::Util" => '0',
     "Data::Couplet" => '0.02004312',
-    "Test::More" => '0',
     "MooseX::AttributeHelpers" => '0.21',
     "List::MoreUtils" => '0',
     "Moose" => '0.89',

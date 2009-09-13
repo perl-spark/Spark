@@ -1,5 +1,5 @@
 package Spark::Form::Field::Role::Printable;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: Printability for form fields
@@ -24,7 +24,7 @@ Spark::Form::Field::Role::Printable - Printability for form fields
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 DESCRIPTION
 
@@ -51,8 +51,13 @@ A label that will be printed next to said field in the printed out version
 
 =head1 SEE ALSO
 
-L<Spark::Form::Field::Printable::HTML> - Role for being printable under HTML4
-L<Spark::Form::Field::Printable::XHTML> - Role for being printable under XHTML1
+=over 4
+
+=item L<Spark::Form::Field::Printable::HTML> - Role for being printable under HTML4
+
+=item L<Spark::Form::Field::Printable::XHTML> - Role for being printable under XHTML1
+
+=back 
 
 
 

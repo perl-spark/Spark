@@ -1,5 +1,5 @@
 package TestApp::Form::Field::Password;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 use Moose;

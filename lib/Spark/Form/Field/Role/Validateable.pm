@@ -1,5 +1,5 @@
 package Spark::Form::Field::Role::Validateable;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: Fields that can be validated
@@ -21,7 +21,7 @@ Spark::Form::Field::Role::Validateable - Fields that can be validated
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 SYNOPSIS
 

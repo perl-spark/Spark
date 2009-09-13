@@ -1,5 +1,5 @@
 package Spark::Form::Source;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: Base class for population plugins
@@ -20,11 +20,15 @@ Spark::Form::Source - Base class for population plugins
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 SEE ALSO
 
-L<Spark::Form> - What you were probably after
+=over 4
+
+=item L<Spark::Form> - What you were probably after
+
+=back 
 
 
 

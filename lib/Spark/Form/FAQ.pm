@@ -1,5 +1,5 @@
 package Spark::Form::FAQ;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: Frequently Asked Questions about Spark::Form
@@ -16,7 +16,7 @@ Spark::Form::FAQ - Frequently Asked Questions about Spark::Form
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 Frequently Asked Questions
 

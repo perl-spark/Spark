@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Text;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: A Text field for SparkX::Form
@@ -43,7 +43,7 @@ SparkX::Form::Field::Text - A Text field for SparkX::Form
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 METHODS
 
@@ -61,8 +61,13 @@ Validates the field. Before composition with validators, always returns 1.
 
 =head1 SEE ALSO
 
-L<SparkX::Form> - The forms module this is to be used with
-L<SparkX::Form::BasicFields> - A collection of fields for use with C<Spark::Form>
+=over 4
+
+=item L<SparkX::Form> - The forms module this is to be used with
+
+=item L<SparkX::Form::BasicFields> - A collection of fields for use with C<Spark::Form>
+
+=back 
 
 
 

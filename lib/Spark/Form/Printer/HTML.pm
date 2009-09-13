@@ -1,5 +1,5 @@
 package Spark::Form::Printer::HTML;
-our $VERSION = '0.2101';
+our $VERSION = '0.2102';
 
 
 # ABSTRACT: the interface a HTML-printing form printer needs to implement
@@ -20,12 +20,17 @@ Spark::Form::Printer::HTML - the interface a HTML-printing form printer needs to
 
 =head1 VERSION
 
-version 0.2101
+version 0.2102
 
 =head1 SEE ALSO
 
-L<Spark::Form> - The forms module that started it all
-L<SparkX::Form::BasicPrinters> - Set of pre-canned form printers
+=over 4
+
+=item L<Spark::Form> - The forms module that started it all
+
+=item L<SparkX::Form::BasicPrinters> - Set of pre-canned form printers
+
+=back 
 
 
 
