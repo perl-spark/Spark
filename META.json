@@ -150,7 +150,7 @@
    "requires" : {
       "Module::Pluggable" : "0",
       "List::Util" : "0",
-      "Data::Couplet" : "0.02004422",
+      "Data::Couplet" : "0.02004312",
       "Test::More" : "0",
       "MooseX::AttributeHelpers" : "0.21",
       "List::MoreUtils" : "0",

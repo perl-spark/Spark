@@ -109,7 +109,7 @@ provides:
     file: lib/SparkX/Form/Printer/List.pm
     version: 0.0300
 requires:
-  Data::Couplet: 0.02004422
+  Data::Couplet: 0.02004312
   HTML::Tiny: 0
   List::MoreUtils: 0
   List::Util: 0
