@@ -1,5 +1,5 @@
 package SparkX::Form::BasicPrinters;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: A selection of basic form printers for printing a C<SparkX::Form>.
@@ -16,7 +16,7 @@ SparkX::Form::BasicPrinters - A selection of basic form printers for printing a 
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 SEE ALSO
 

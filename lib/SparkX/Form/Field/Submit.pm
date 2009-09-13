@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Submit;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: A Submit field for SparkX::Form
@@ -41,7 +41,7 @@ SparkX::Form::Field::Submit - A Submit field for SparkX::Form
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 METHODS
 

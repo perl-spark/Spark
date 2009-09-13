@@ -1,5 +1,5 @@
 package SparkX::Form::Printer::List;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: A list-printer for SparkX::Form. Spouts out form elements in a (X)HTML list.
@@ -45,7 +45,7 @@ SparkX::Form::Printer::List - A list-printer for SparkX::Form. Spouts out form e
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 EXPORT
 

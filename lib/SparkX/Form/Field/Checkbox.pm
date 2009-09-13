@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Checkbox;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: A Checkbox field for SparkX::Form
@@ -46,7 +46,7 @@ SparkX::Form::Field::Checkbox - A Checkbox field for SparkX::Form
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 METHODS
 

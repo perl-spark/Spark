@@ -9,7 +9,7 @@ WriteMakefile(
   NAME      => 'Spark::Form',
   AUTHOR    => 'James\ Laver\ L\<http\:\/\/jameslaver\.com\>',
   ABSTRACT  => 'A\ simple\ yet\ powerful\ forms\ validation\ system\ that\ promotes\ reuse\.',
-  VERSION   => '0.0300',
+  VERSION   => '0.2101',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.31) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {

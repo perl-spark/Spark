@@ -1,5 +1,5 @@
 package Spark::Form;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: A simple yet powerful forms validation system that promotes reuse.
@@ -387,7 +387,7 @@ Spark::Form - A simple yet powerful forms validation system that promotes reuse.
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 SYNOPSIS
 

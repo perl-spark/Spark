@@ -1,5 +1,5 @@
 package Spark::Form::Printer;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: interface for form printers for C<Spark::Form>
@@ -17,7 +17,7 @@ Spark::Form::Printer - interface for form printers for C<Spark::Form>
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 SEE ALSO
 

@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Validator::Regex;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: Validates a field matches a regular expression
@@ -49,7 +49,7 @@ SparkX::Form::Field::Validator::Regex - Validates a field matches a regular expr
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 DESCRIPTION
 

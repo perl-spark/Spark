@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Validator::Confirm;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: Validates whether or not the user confirmed some choice.
@@ -65,7 +65,7 @@ SparkX::Form::Field::Validator::Confirm - Validates whether or not the user conf
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 DESCRIPTION
 

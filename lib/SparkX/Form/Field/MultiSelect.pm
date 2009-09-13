@@ -1,5 +1,5 @@
 package SparkX::Form::Field::MultiSelect;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: A multiple select drop-down field for SparkX::Form
@@ -67,7 +67,7 @@ SparkX::Form::Field::MultiSelect - A multiple select drop-down field for SparkX:
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 METHODS
 

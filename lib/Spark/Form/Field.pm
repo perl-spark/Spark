@@ -1,5 +1,5 @@
 package Spark::Form::Field;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: Superclass for all Form Fields
@@ -95,7 +95,7 @@ Spark::Form::Field - Superclass for all Form Fields
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 DESCRIPTION
 

@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Radio;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: A set of radio buttons for SparkX::Form
@@ -59,7 +59,7 @@ SparkX::Form::Field::Radio - A set of radio buttons for SparkX::Form
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 METHODS
 

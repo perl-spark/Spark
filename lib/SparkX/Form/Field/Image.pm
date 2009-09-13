@@ -1,5 +1,5 @@
 package SparkX::Form::Field::Image;
-our $VERSION = '0.0300';
+our $VERSION = '0.2101';
 
 
 # ABSTRACT: An image field for SparkX::Form
@@ -54,7 +54,7 @@ SparkX::Form::Field::Image - An image field for SparkX::Form
 
 =head1 VERSION
 
-version 0.0300
+version 0.2101
 
 =head1 DESCRIPTION
 
