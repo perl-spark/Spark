@@ -108,6 +108,54 @@ METHODS
   get_at (Int)
     Returns the form field at that index (counting from 0)
 
+  keys () :: Array
+    Returns the field names
+
+  field_couplet () :: Data::Couplet
+    Returns the Data::Couplet used to store the fields. Try not to use this
+    too much.
+
+  remove (Array[Str]) :: Spark::Form
+    Removes the field(s) bearing the given name(s) from the form object.
+    Silently no-ops any that do not exist.
+
+  remove_at (Array[Int]) :: Spark::Form
+    Removes the field at the given ID(s) from the form object. Silently
+    no-ops any that do not exist.
+
+    WARNING: Things will get re-ordered when you do this. If you have a form
+    with IDs 0..3 and you remove (1, 3), then (0, 2) will remain but they
+    will now be (0, 1) as Data::Couplet will move them to keep a consistent
+    array.
+
+  clone_all () :: Spark::Form
+    Returns a new copy of the form with freshly instantiated fields.
+
+  clone_except_names (Array[Str]) :: Spark::Form
+    Clones, removing the fields with the specified names.
+
+  clone_only_names (Array[Str]) :: Spark::Form
+    Clones, removing the fields without the specified names.
+
+  clone_except_ids (Array[Int]) :: Spark::Form
+    Clones, removing the fields with the specified IDs.
+
+  clone_only_ids (Array[Int]) :: Spark::Form
+    Clones, removing the fields without the specified IDs.
+
+  clone_if (SubRef[(Int, Str, Any) -> Bool]) :: Spark::Form
+    Clones, removing items for which the sub returns false. Sub is passed
+    (Id, Key, Value).
+
+  clone_unless (SubRef[(Int, Str, Any) -> Bool]) :: Spark::Form
+    Clones, removing items for which the sub returns true. Sub is passed
+    (Id, Key, Value).
+
+  compose (Spark::Form) :: Spark::Form
+    Clones the current form object and copies fields from the supplied other
+    form to the end of that form. Where names clash, items on the current
+    form take priority.
+
 Docs?
     <http://sparkengine.org/docs/forms/>
 
@@ -118,7 +166,8 @@ THANKS
     Thanks to the Django Project, whose forms module gave some inspiration.
 
 SEE ALSO
-    The FAQ: Spark::Form::FAQ
+    The FAQ: Spark::Form::FAQ Data::Couplet used to hold the fields (see
+    "field_couplet")
 
 AUTHOR
       James Laver L<http://jameslaver.com>

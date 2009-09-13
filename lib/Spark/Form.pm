@@ -11,11 +11,14 @@ use Data::Couplet ();
 use Carp          ();
 use Scalar::Util qw( blessed );
 
+with qw(MooseX::Clone);
+
 has _fields => (
     isa      => 'Data::Couplet',
     is       => 'ro',
     required => 0,
     default  => sub { Data::Couplet->new },
+    traits   => [qw(Clone)],
 );
 
 has plugin_ns => (
@@ -99,6 +102,11 @@ sub _error {
     return $self;
 }
 
+sub field_couplet {
+    my ($self) = @_;
+    return $self->_fields;
+}
+
 sub add {
     my ($self, $item, @args) = @_;
 
@@ -137,8 +145,28 @@ sub get_at {
     return $self->_fields->value_at($index);
 }
 
+sub keys {
+    my ($self) = @_;
+    return $self->_fields->keys();
+}
+
 sub fields {
-    return shift->_fields->values;
+    my ($self) = @_;
+    return $self->_fields->values;
+}
+
+sub remove {
+    my ($self, @keys) = @_;
+    $self->_fields->unset_key(@keys);
+
+    return $self;
+}
+
+sub remove_at {
+    my ($self, @indices) = @_;
+    $self->_fields->unset_at(@indices);
+
+    return $self;
 }
 
 sub validate {
@@ -245,8 +273,103 @@ sub _create_type {
     my ($self, $type, $name, %opts) = @_;
     my $mod = $self->_find_matching_mod($type) or Carp::croak("Could not find field mod: $type");
     eval qq{ use $mod; 1 } or Carp::croak("Could not load $mod, $@");
-    return $mod->new(name => $name, form => $self, %opts);
 
+    return $mod->new(name => $name, form => $self, %opts);
+}
+
+sub clone_all {
+    my ($self) = @_;
+    my $new = $self->clone;
+    $_->form($self) foreach $new->fields;
+
+    return $new;
+}
+
+sub clone_except_names {
+    my ($self, @fields) = @_;
+    my $new = $self->clone_all;
+    $new->remove($_) foreach @fields;
+
+    return $new;
+}
+
+#
+# ->_except( \@superset , \@things_to_get_rid_of )
+#
+
+sub _except {
+    my ($self, $input_list, $exclusion_list) = @_;
+    my %d;
+    @d{@{$exclusion_list}} = ();
+
+    return grep {
+        !exists $d{$_}
+    } @{$input_list};
+}
+
+sub clone_only_names {
+    my ($self, @fields) = @_;
+    my @all = $self->keys;
+    my @excepted = $self->_except(\@all, \@fields);
+    return $self->clone_except_names(@excepted);
+}
+
+sub clone_except_ids {
+    my ($self, @ids) = @_;
+    my $new = $self->clone_all;
+    $new->remove_at(@ids);
+
+    return $new;
+}
+
+sub clone_only_ids {
+    my ($self, @ids) = @_;
+    my @all = 0 .. $self->_fields->last_id;
+
+    return $self->clone_except_ids($self->_except(\@all, \@ids));
+}
+
+sub clone_if {
+    my ($self, $sub) = @_;
+    my (@all) = ($self->_fields->key_values_paired);
+    my $i = 0 - 1;
+
+    # Filter out items that match
+    # coderef->( $current_index, $key, $value );
+    @all = grep {
+        $i++;
+        !$sub->($i, @{$_});
+    } @all;
+
+    return $self->clone_except_names(map { $_->[0] } @all);
+}
+
+sub clone_unless {
+    my ($self, $sub) = @_;
+    my (@all) = $self->_fields->key_values_paired;
+    my $i = 0 - 1;
+
+    # Filter out items that match
+    # coderef->( $current_index, $key, $value );
+
+    @all = grep {
+        $i++;
+        $sub->($i, @{$_});
+    } @all;
+
+    return $self->clone_except_names(map { $_->[0] } @all);
+}
+
+sub compose {
+    my ($self, $other) = @_;
+    my $new       = $self->clone_all;
+    my $other_new = $other->clone_all;
+    foreach my $key ($other_new->keys) {
+        unless ($new->get($key)) {
+            $new->add($other_new->get($key));
+        }
+    }
+    return $new;
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -379,6 +502,59 @@ Returns the form field of that name
 
 Returns the form field at that index (counting from 0)
 
+=head2 keys () :: Array
+
+Returns the field names
+
+=head2 field_couplet () :: Data::Couplet
+
+Returns the Data::Couplet used to store the fields. Try not to use this too much.
+
+=head2 remove (Array[Str]) :: Spark::Form
+
+Removes the field(s) bearing the given name(s) from the form object. Silently no-ops any that do not exist.
+
+=head2 remove_at (Array[Int]) :: Spark::Form
+
+Removes the field at the given ID(s) from the form object. Silently no-ops any that do not exist.
+
+WARNING: Things will get re-ordered when you do this. If you have a form with
+IDs 0..3 and you remove (1, 3), then (0, 2) will remain but they will now be
+(0, 1) as L<Data::Couplet> will move them to keep a consistent array.
+
+=head2 clone_all () :: Spark::Form
+
+Returns a new copy of the form with freshly instantiated fields.
+
+=head2 clone_except_names (Array[Str]) :: Spark::Form
+
+Clones, removing the fields with the specified names.
+
+=head2 clone_only_names (Array[Str]) :: Spark::Form
+
+Clones, removing the fields without the specified names.
+
+=head2 clone_except_ids (Array[Int]) :: Spark::Form
+
+Clones, removing the fields with the specified IDs.
+
+=head2 clone_only_ids (Array[Int]) :: Spark::Form
+
+Clones, removing the fields without the specified IDs.
+
+=head2 clone_if (SubRef[(Int, Str, Any) -> Bool]) :: Spark::Form
+
+Clones, removing items for which the sub returns false. Sub is passed (Id, Key, Value).
+
+=head2 clone_unless (SubRef[(Int, Str, Any) -> Bool]) :: Spark::Form
+
+Clones, removing items for which the sub returns true. Sub is passed (Id, Key, Value).
+
+=head2 compose (Spark::Form) :: Spark::Form
+
+Clones the current form object and copies fields from the supplied other form to the end of that form.
+Where names clash, items on the current form take priority.
+
 =head1 Docs?
 
 L<http://sparkengine.org/docs/forms/>
@@ -394,6 +570,7 @@ Thanks to the Django Project, whose forms module gave some inspiration.
 =head1 SEE ALSO
 
 The FAQ: L<Spark::Form::FAQ>
+L<Data::Couplet> used to hold the fields (see C<field_couplet>)
 
 
 
