@@ -1,6 +1,8 @@
+use strict;
 package SparkX::Form::Field::Image;
-our $VERSION = '0.2102';
-
+BEGIN {
+  $SparkX::Form::Field::Image::VERSION = '0.2103'; # TRIAL
+}
 
 # ABSTRACT: An image field for SparkX::Form
 
@@ -15,17 +17,15 @@ has '+value' => (
     isa => 'Str',
 );
 
-## no critic (ProhibitMagicNumbers)
 has 'names' => (
-    lazy => 1,
-    (Moose->VERSION >= 0.84) ? (is => 'bare') : (),
+    lazy    => 1,
+    is      => 'bare',
     default => sub {
         my $self = shift;
 
         return [$self->name . '.x', $self->name . '.y'];
     },
 );
-## use critic
 
 sub to_html {
     return shift->_render(HTML::Tiny->new(mode => 'html'));
@@ -45,7 +45,6 @@ __PACKAGE__->meta->make_immutable;
 1;
 
 
-
 =pod
 
 =head1 NAME
@@ -54,7 +53,7 @@ SparkX::Form::Field::Image - An image field for SparkX::Form
 
 =head1 VERSION
 
-version 0.2102
+version 0.2103
 
 =head1 DESCRIPTION
 
@@ -82,23 +81,20 @@ Validates the field. Before composition with validators, always returns 1.
 
 =item L<SparkX::Form::BasicFields> - A collection of fields for use with C<Spark::Form>
 
-=back 
-
-
+=back
 
 =head1 AUTHOR
 
-  James Laver L<http://jameslaver.com>
+James Laver L<http://jameslaver.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
+This software is copyright (c) 2011 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 
 
 __END__

@@ -1,11 +1,12 @@
+use strict;
 package SparkX::Form::BasicFields;
-our $VERSION = '0.2102';
-
+BEGIN {
+  $SparkX::Form::BasicFields::VERSION = '0.2103'; # TRIAL
+}
 
 # ABSTRACT: A collection of basic fields for Spark::Form
 
 1;
-
 
 
 =pod
@@ -16,7 +17,7 @@ SparkX::Form::BasicFields - A collection of basic fields for Spark::Form
 
 =head1 VERSION
 
-version 0.2102
+version 0.2103
 
 =head1 DESCRIPTION
 
@@ -42,25 +43,22 @@ This file is just explanatory. SEE ALSO for more interesting files.
 
 =item L<SparkX::Form::Field::TextArea> - A textarea field
 
-=back 
+=back
 
 =head1 ACKNOWLEDGEMENTS
 
-
-
 =head1 AUTHOR
 
-  James Laver L<http://jameslaver.com>
+James Laver L<http://jameslaver.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
+This software is copyright (c) 2011 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 
 
 __END__

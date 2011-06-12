@@ -1,6 +1,5 @@
+use strict;
 package TestApp::Form::Field::Custom;
-our $VERSION = '0.2102';
-
 
 use Moose;
 extends 'Spark::Form::Field';

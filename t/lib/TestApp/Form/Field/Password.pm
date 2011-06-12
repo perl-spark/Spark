@@ -1,6 +1,5 @@
+use strict;
 package TestApp::Form::Field::Password;
-our $VERSION = '0.2102';
-
 
 use Moose;
 extends 'Spark::Form::Field';

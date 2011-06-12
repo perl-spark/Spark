@@ -1,6 +1,8 @@
+use strict;
 package Spark::Form::Field::Role::Printable;
-our $VERSION = '0.2102';
-
+BEGIN {
+  $Spark::Form::Field::Role::Printable::VERSION = '0.2103'; # TRIAL
+}
 
 # ABSTRACT: Printability for form fields
 
@@ -15,7 +17,6 @@ has label => (
 1;
 
 
-
 =pod
 
 =head1 NAME
@@ -24,12 +25,7 @@ Spark::Form::Field::Role::Printable - Printability for form fields
 
 =head1 VERSION
 
-version 0.2102
-
-=head1 DESCRIPTION
-
-A fairly free-form module, this is mostly used for checking that it's printable at all.
-You probably want one of the roles under this hierarchy, but not just this one.
+version 0.2103
 
 =head1 SYNOPSIS
 
@@ -42,6 +38,11 @@ You probably want one of the roles under this hierarchy, but not just this one.
      my $self = shift;
      sprintf("%s: %s",$self->label, $self->value);
  }
+
+=head1 DESCRIPTION
+
+A fairly free-form module, this is mostly used for checking that it's printable at all.
+You probably want one of the roles under this hierarchy, but not just this one.
 
 =head1 VARS
 
@@ -57,23 +58,20 @@ A label that will be printed next to said field in the printed out version
 
 =item L<Spark::Form::Field::Printable::XHTML> - Role for being printable under XHTML1
 
-=back 
-
-
+=back
 
 =head1 AUTHOR
 
-  James Laver L<http://jameslaver.com>
+James Laver L<http://jameslaver.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
+This software is copyright (c) 2011 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 
 
 __END__

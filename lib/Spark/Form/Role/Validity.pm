@@ -1,35 +1,37 @@
 use strict;
-package Spark::Form::Source;
+use warnings;
+
+package Spark::Form::Role::Validity;
 BEGIN {
-  $Spark::Form::Source::VERSION = '0.2103'; # TRIAL
+  $Spark::Form::Role::Validity::VERSION = '0.2103'; # TRIAL
 }
 
-# ABSTRACT: Base class for population plugins
+# ABSTRACT: Common Code for determining the validity of a thing.
 
 use Moose::Role;
+use MooseX::Types::Moose qw( :all );
+use namespace::autoclean;
 
-requires 'populate';
+has valid => (
+  isa      => Bool,
+  is       => 'rw',
+  required => 0,
+  default  => 0,
+);
 
 1;
 
 
+__END__
 =pod
 
 =head1 NAME
 
-Spark::Form::Source - Base class for population plugins
+Spark::Form::Role::Validity - Common Code for determining the validity of a thing.
 
 =head1 VERSION
 
 version 0.2103
-
-=head1 SEE ALSO
-
-=over 4
-
-=item L<Spark::Form> - What you were probably after
-
-=back
 
 =head1 AUTHOR
 
@@ -43,7 +45,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__
 

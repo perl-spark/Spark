@@ -3,7 +3,7 @@ NAME
     promotes reuse.
 
 VERSION
-    version 0.2102
+    version 0.2103
 
 SYNOPSIS
      use Spark::Form;
@@ -170,10 +170,10 @@ SEE ALSO
     "field_couplet")
 
 AUTHOR
-      James Laver L<http://jameslaver.com>
+    James Laver <http://jameslaver.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2009 by James Laver "<sprintf qw(%s@%s.%s
+    This software is copyright (c) 2011 by James Laver "<sprintf qw(%s@%s.%s
     cpan jameslaver com)>".
 
     This is free software; you can redistribute it and/or modify it under

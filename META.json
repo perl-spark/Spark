@@ -1,162 +1,549 @@
 {
-   "resources" : {
-      "repository" : "http://github.com/jjl/Spark-Form"
-   },
-   "generated_by" : "Dist::Zilla::Plugin::MetaJSON version 1.092450",
-   "meta-spec" : {
-      "version" : 1.4,
-      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html"
-   },
-   "version" : "0.2102",
-   "name" : "Spark-Form",
+   "abstract" : "A simple yet powerful forms validation system that promotes reuse.",
    "author" : [
       "James Laver L<http://jameslaver.com>"
    ],
-   "license" : "perl",
-   "provides" : {
-      "SparkX::Form::BasicValidators" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/BasicValidators.pm"
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.200007, CPAN::Meta::Converter version 2.110930",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Spark-Form",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
       },
-      "SparkX::Form::Field::File" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/File.pm"
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
       },
-      "SparkX::Form::Field::Checkbox" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Checkbox.pm"
+      "develop" : {
+         "recommends" : {
+            "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "0.01009803"
+         },
+         "requires" : {
+            "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : 0
+         },
+         "suggests" : {
+            "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.0.0"
+         }
       },
-      "SparkX::Form::Field::Validator::Regex" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Validator/Regex.pm"
+      "runtime" : {
+         "requires" : {
+            "Carp" : 0,
+            "Data::Couplet" : "0.02004312",
+            "HTML::Tiny" : 0,
+            "List::MoreUtils" : 0,
+            "List::Util" : 0,
+            "Module::Pluggable::Object" : 0,
+            "Moose" : "0.90",
+            "Moose::Role" : "0.90",
+            "MooseX::Clone" : 0,
+            "MooseX::LazyRequire" : "0.04",
+            "MooseX::Types" : "0.20",
+            "MooseX::Types::Moose" : 0,
+            "Scalar::Util" : 0,
+            "namespace::autoclean" : 0
+         }
       },
-      "SparkX::Form::Field::Password" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Password.pm"
-      },
-      "Spark::Form" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form.pm"
-      },
-      "SparkX::Form::Printer::List" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Printer/List.pm"
-      },
-      "SparkX::Form::Field::Text" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Text.pm"
-      },
-      "SparkX::Form::Field::Button" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Button.pm"
-      },
-      "SparkX::Form::Field::Validator::MaxLength" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Validator/MaxLength.pm"
-      },
-      "Spark::Form::Printer" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Printer.pm"
-      },
-      "SparkX::Form::Field::Reset" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Reset.pm"
-      },
-      "Spark::Form::FAQ" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/FAQ.pm"
-      },
-      "SparkX::Form::Field::Select" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Select.pm"
-      },
-      "Spark::Form::Field::Role::Printable::XHTML" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Field/Role/Printable/XHTML.pm"
-      },
-      "SparkX::Form::Field::Textarea" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Textarea.pm"
-      },
-      "Spark::Form::Source" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Source.pm"
-      },
-      "Spark::Form::Printer::HTML" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Printer/HTML.pm"
-      },
-      "Spark::Form::Field::Role::Printable" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Field/Role/Printable.pm"
-      },
-      "SparkX::Form::Field::Validator::MinLength" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Validator/MinLength.pm"
-      },
-      "Spark::Form::Printer::XHTML" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Printer/XHTML.pm"
-      },
-      "SparkX::Form::BasicPrinters" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/BasicPrinters.pm"
-      },
-      "SparkX::Form::Field::Submit" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Submit.pm"
-      },
-      "Spark::Form::Field::Role::Printable::HTML" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Field/Role/Printable/HTML.pm"
-      },
-      "SparkX::Form::Field::Radio" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Radio.pm"
-      },
-      "SparkX::Form::Field::Validator::NotEmpty" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Validator/NotEmpty.pm"
-      },
-      "SparkX::Form::BasicFields" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/BasicFields.pm"
-      },
-      "SparkX::Form::Field::Image" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Image.pm"
-      },
-      "Spark::Form::Field::Role::Validateable" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Field/Role/Validateable.pm"
-      },
-      "SparkX::Form::Field::Hidden" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Hidden.pm"
-      },
-      "SparkX::Form::Field::Validator::Confirm" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/Validator/Confirm.pm"
-      },
-      "Spark::Form::Field" : {
-         "version" : "0.2102",
-         "file" : "lib/Spark/Form/Field.pm"
-      },
-      "SparkX::Form::Field::MultiSelect" : {
-         "version" : "0.2102",
-         "file" : "lib/SparkX/Form/Field/MultiSelect.pm"
+      "test" : {
+         "requires" : {
+            "Data::Dumper" : 0,
+            "English" : 0,
+            "File::Find" : 0,
+            "File::Temp" : 0,
+            "Test::More" : "0.88"
+         }
       }
    },
-   "requires" : {
-      "Module::Pluggable" : "0",
-      "MooseX::LazyRequire" : "0.04",
-      "Test::More" : "0",
-      "List::Util" : "0",
-      "Data::Couplet" : "0.02004312",
-      "MooseX::AttributeHelpers" : "0.21",
-      "List::MoreUtils" : "0",
-      "Moose" : "0.89",
-      "HTML::Tiny" : "0"
+   "provides" : {
+      "Spark::Form" : {
+         "file" : "lib/Spark/Form.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::FAQ" : {
+         "file" : "lib/Spark/Form/FAQ.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Field" : {
+         "file" : "lib/Spark/Form/Field.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Field::Role::Printable" : {
+         "file" : "lib/Spark/Form/Field/Role/Printable.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Field::Role::Printable::HTML" : {
+         "file" : "lib/Spark/Form/Field/Role/Printable/HTML.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Field::Role::Printable::XHTML" : {
+         "file" : "lib/Spark/Form/Field/Role/Printable/XHTML.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Printer" : {
+         "file" : "lib/Spark/Form/Printer.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Printer::HTML" : {
+         "file" : "lib/Spark/Form/Printer/HTML.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Printer::XHTML" : {
+         "file" : "lib/Spark/Form/Printer/XHTML.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Role::ErrorStore" : {
+         "file" : "lib/Spark/Form/Role/ErrorStore.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Role::Validity" : {
+         "file" : "lib/Spark/Form/Role/Validity.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Source" : {
+         "file" : "lib/Spark/Form/Source.pm",
+         "version" : "0.2103"
+      },
+      "Spark::Form::Types" : {
+         "file" : "lib/Spark/Form/Types.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::BasicFields" : {
+         "file" : "lib/SparkX/Form/BasicFields.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::BasicPrinters" : {
+         "file" : "lib/SparkX/Form/BasicPrinters.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::BasicValidators" : {
+         "file" : "lib/SparkX/Form/BasicValidators.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Button" : {
+         "file" : "lib/SparkX/Form/Field/Button.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Checkbox" : {
+         "file" : "lib/SparkX/Form/Field/Checkbox.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::File" : {
+         "file" : "lib/SparkX/Form/Field/File.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Hidden" : {
+         "file" : "lib/SparkX/Form/Field/Hidden.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Image" : {
+         "file" : "lib/SparkX/Form/Field/Image.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::MultiSelect" : {
+         "file" : "lib/SparkX/Form/Field/MultiSelect.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Password" : {
+         "file" : "lib/SparkX/Form/Field/Password.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Radio" : {
+         "file" : "lib/SparkX/Form/Field/Radio.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Reset" : {
+         "file" : "lib/SparkX/Form/Field/Reset.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Select" : {
+         "file" : "lib/SparkX/Form/Field/Select.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Submit" : {
+         "file" : "lib/SparkX/Form/Field/Submit.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Text" : {
+         "file" : "lib/SparkX/Form/Field/Text.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Textarea" : {
+         "file" : "lib/SparkX/Form/Field/Textarea.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Validator::Confirm" : {
+         "file" : "lib/SparkX/Form/Field/Validator/Confirm.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Validator::MaxLength" : {
+         "file" : "lib/SparkX/Form/Field/Validator/MaxLength.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Validator::MinLength" : {
+         "file" : "lib/SparkX/Form/Field/Validator/MinLength.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Validator::NotEmpty" : {
+         "file" : "lib/SparkX/Form/Field/Validator/NotEmpty.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Field::Validator::Regex" : {
+         "file" : "lib/SparkX/Form/Field/Validator/Regex.pm",
+         "version" : "0.2103"
+      },
+      "SparkX::Form::Printer::List" : {
+         "file" : "lib/SparkX/Form/Printer/List.pm",
+         "version" : "0.2103"
+      }
    },
-   "abstract" : "A simple yet powerful forms validation system that promotes reuse."
+   "release_status" : "testing",
+   "resources" : {
+      "bugtracker" : {
+         "mailto" : "bug-spark-form@rt.cpan.org",
+         "web" : "http://rt.cpan.org/NoAuth/Bugs.html?Dist=Spark-Form"
+      },
+      "homepage" : "http://jjl.github.com/Spark-Form",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/jjl/Spark-Form",
+         "web" : "http://github.com/jjl/Spark-Form"
+      }
+   },
+   "version" : "0.2103",
+   "x_BuiltWith" : {
+      "modules" : {
+         "Carp" : "1.20",
+         "Data::Couplet" : "0.02004312",
+         "Data::Dumper" : "2.130_03",
+         "Dist::Zilla::PluginBundle::Author::KENTNL" : "1.0.7",
+         "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "1.0.6",
+         "File::Temp" : "0.22",
+         "HTML::Tiny" : "1.05",
+         "List::MoreUtils" : "0.32",
+         "List::Util" : "1.23",
+         "Module::Build" : "0.38",
+         "Module::Pluggable::Object" : "3.9",
+         "Moose" : "2.0007",
+         "Moose::Role" : "2.0007",
+         "MooseX::Clone" : "0.05",
+         "MooseX::LazyRequire" : "0.07",
+         "MooseX::Types" : "0.27",
+         "MooseX::Types::Moose" : "0.27",
+         "Scalar::Util" : "1.23",
+         "Test::More" : "0.98",
+         "namespace::autoclean" : "0.12"
+      },
+      "perl" : {
+         "original" : "v5.14.0",
+         "qv" : 1,
+         "version" : [
+            5,
+            14,
+            0
+         ]
+      },
+      "platform" : "linux",
+      "uname" : "Linux 2.6.39-gentoo x86_64 GenuineIntel GNU/Linux"
+   },
+   "x_Dist_Zilla" : {
+      "plugins" : [
+         {
+            "class" : "Dist::Zilla::Plugin::Git::NextVersion",
+            "name" : "@Author::KENTNL/Git::NextVersion",
+            "version" : "1.111590"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::GatherDir",
+            "name" : "@Author::KENTNL/GatherDir",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MetaConfig",
+            "name" : "@Author::KENTNL/MetaConfig",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::PruneCruft",
+            "name" : "@Author::KENTNL/PruneCruft",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::GithubMeta",
+            "name" : "@Author::KENTNL/GithubMeta",
+            "version" : "0.12"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::License",
+            "name" : "@Author::KENTNL/License",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::PkgVersion",
+            "name" : "@Author::KENTNL/PkgVersion",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::PodWeaver",
+            "name" : "@Author::KENTNL/PodWeaver",
+            "version" : "3.101641"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
+            "name" : "@Author::KENTNL/MetaProvides::Package",
+            "version" : "1.12060501"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MetaJSON",
+            "name" : "@Author::KENTNL/MetaJSON",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MetaYAML",
+            "name" : "@Author::KENTNL/MetaYAML",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::ModuleBuild",
+            "name" : "@Author::KENTNL/ModuleBuild",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::ReadmeFromPod",
+            "name" : "@Author::KENTNL/ReadmeFromPod",
+            "version" : "0.14"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::ManifestSkip",
+            "name" : "@Author::KENTNL/ManifestSkip",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Manifest",
+            "name" : "@Author::KENTNL/Manifest",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::AutoPrereqs",
+            "name" : "@Author::KENTNL/AutoPrereqs",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "develop",
+                  "type" : "requires"
+               }
+            },
+            "name" : "@Author::KENTNL/Prereqs/BundleDevelNeeds",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "develop",
+                  "type" : "recommends"
+               }
+            },
+            "name" : "@Author::KENTNL/Prereqs/BundleDevelRecommends",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "develop",
+                  "type" : "suggests"
+               }
+            },
+            "name" : "@Author::KENTNL/Prereqs/BundleDevelSuggests",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",
+            "config" : {
+               "Dist::Zilla::Plugin::MetaData::BuiltWith" : {
+                  "_stash_key" : "x_BuiltWith",
+                  "show_uname" : 1,
+                  "uname" : {
+                     "uname_args" : [
+                        "-s",
+                        "-o",
+                        "-r",
+                        "-m",
+                        "-i"
+                     ],
+                     "uname_call" : "uname"
+                  }
+               }
+            },
+            "name" : "@Author::KENTNL/MetaData::BuiltWith",
+            "version" : "0.01018204"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Test::CPAN::Changes",
+            "name" : "@Author::KENTNL/Test::CPAN::Changes",
+            "version" : "0.004"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::CompileTests",
+            "name" : "@Author::KENTNL/CompileTests",
+            "version" : "1.110930"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::CriticTests",
+            "name" : "@Author::KENTNL/CriticTests",
+            "version" : "1.111450"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MetaTests",
+            "name" : "@Author::KENTNL/MetaTests",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::PodCoverageTests",
+            "name" : "@Author::KENTNL/PodCoverageTests",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
+            "name" : "@Author::KENTNL/PodSyntaxTests",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::ReportVersions::Tiny",
+            "name" : "@Author::KENTNL/ReportVersions::Tiny",
+            "version" : "1.03"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::KwaliteeTests",
+            "name" : "@Author::KENTNL/KwaliteeTests",
+            "version" : "1.101420"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::EOLTests",
+            "name" : "@Author::KENTNL/EOLTests",
+            "version" : "0.02"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::ExtraTests",
+            "name" : "@Author::KENTNL/ExtraTests",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::TestRelease",
+            "name" : "@Author::KENTNL/TestRelease",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::ConfirmRelease",
+            "name" : "@Author::KENTNL/ConfirmRelease",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Git::Check",
+            "name" : "@Author::KENTNL/Git::Check",
+            "version" : "1.111590"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::NextRelease",
+            "name" : "@Author::KENTNL/NextRelease",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Git::Tag",
+            "name" : "@Author::KENTNL/Git::Tag/tag_master",
+            "version" : "1.111590"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Git::Commit",
+            "name" : "@Author::KENTNL/Git::Commit",
+            "version" : "1.111590"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Git::CommitBuild",
+            "name" : "@Author::KENTNL/Git::CommitBuild",
+            "version" : "1.111590"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Git::Tag",
+            "name" : "@Author::KENTNL/Git::Tag/tag_release",
+            "version" : "1.111590"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::UploadToCPAN",
+            "name" : "@Author::KENTNL/UploadToCPAN",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Twitter",
+            "name" : "@Author::KENTNL/Twitter",
+            "version" : "0.010"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::MetaResources",
+            "name" : "MetaResources",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "requires"
+               }
+            },
+            "name" : "Prereqs",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::FinderCode",
+            "name" : ":InstallModules",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::FinderCode",
+            "name" : ":IncModules",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::FinderCode",
+            "name" : ":TestFiles",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::FinderCode",
+            "name" : ":ExecFiles",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::FinderCode",
+            "name" : ":ShareFiles",
+            "version" : "4.200007"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::FinderCode",
+            "name" : ":MainModule",
+            "version" : "4.200007"
+         }
+      ],
+      "zilla" : {
+         "class" : "Dist::Zilla::Dist::Builder",
+         "config" : {
+            "is_trial" : 1
+         },
+         "version" : "4.200007"
+      }
+   }
 }
+

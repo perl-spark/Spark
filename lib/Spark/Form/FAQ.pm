@@ -1,11 +1,12 @@
+use strict;
 package Spark::Form::FAQ;
-our $VERSION = '0.2102';
-
+BEGIN {
+  $Spark::Form::FAQ::VERSION = '0.2103'; # TRIAL
+}
 
 # ABSTRACT: Frequently Asked Questions about Spark::Form
 
 1;
-
 
 
 =pod
@@ -16,7 +17,7 @@ Spark::Form::FAQ - Frequently Asked Questions about Spark::Form
 
 =head1 VERSION
 
-version 0.2102
+version 0.2103
 
 =head1 Frequently Asked Questions
 
@@ -60,7 +61,7 @@ No YAML files, no other language to learn. Just simple Perl.
 
 Easy to read and built with L<Moose> and L<Module::Pluggable>.
 
-=back 
+=back
 
 =head2 Why do you depend on Moose?
 
@@ -71,21 +72,18 @@ will make maintenance a lot easier.
 
 No. Feel free to create and maintain a fork.
 
-
-
 =head1 AUTHOR
 
-  James Laver L<http://jameslaver.com>
+James Laver L<http://jameslaver.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
+This software is copyright (c) 2011 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 
 
 __END__
