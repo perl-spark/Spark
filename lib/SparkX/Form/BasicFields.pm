@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::BasicFields;
 
 # ABSTRACT: A collection of basic fields for Spark::Form

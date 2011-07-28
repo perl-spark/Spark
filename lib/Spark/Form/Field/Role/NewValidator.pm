@@ -7,12 +7,12 @@ use MooseX::Types::Moose ':all';
 requires '_validate';
 
 has _validators => (
-    isa => ArrayRef[SFieldValidator],
+    isa => ArrayRef [SFieldValidator],
     is => 'rw',
     init_arg => undef,
-    default => sub { [] },
-    traits => ['Array'],
-    handles => {
+    default  => sub { [] },
+    traits   => ['Array'],
+    handles  => {
         validators => 'elements',
     },
 );

@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Select;
 
 # ABSTRACT:  A select drop-down field for SparkX::Form
@@ -18,11 +19,11 @@ has '+value' => (
 has options => (
     isa      => SCouplet,
     is       => 'rw',
-    coerce => 1,
+    coerce   => 1,
     required => 0,
     lazy     => 1,
     default  => sub { return shift->value },
-    handles => {
+    handles  => {
         options_kv => 'key_values_paired',
     },
 );
@@ -47,9 +48,9 @@ sub _render {
     my ($self, $html) = @_;
     my @options = map {
         $self->_render_element(
-            $html, # HTML::Tiny,
-            @{$_}, # Text, Value
-        )
+            $html,    # HTML::Tiny,
+            @{$_},    # Text, Value
+          )
     } $self->options_kv;
     return $html->select(
         {name => $self->name}, join q{ }, @options

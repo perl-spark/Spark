@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Radio;
 
 # ABSTRACT: A set of radio buttons for SparkX::Form

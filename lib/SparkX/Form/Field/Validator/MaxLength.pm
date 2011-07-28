@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Validator::MaxLength;
 
 # ABSTRACT: Validates a variable does not exceed a given size

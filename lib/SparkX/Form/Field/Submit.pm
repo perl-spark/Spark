@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Submit;
 
 # ABSTRACT: A Submit field for SparkX::Form

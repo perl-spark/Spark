@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::BasicValidators;
 
 # ABSTRACT: A selection of validators to make writing custom fields easier.

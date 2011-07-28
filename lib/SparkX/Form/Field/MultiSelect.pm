@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::MultiSelect;
 
 # ABSTRACT: A multiple select drop-down field for SparkX::Form

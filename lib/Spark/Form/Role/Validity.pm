@@ -10,10 +10,10 @@ use MooseX::Types::Moose qw( :all );
 use namespace::autoclean;
 
 has valid => (
-  isa      => Bool,
-  is       => 'rw',
-  required => 0,
-  default  => 0,
+    isa      => Bool,
+    is       => 'rw',
+    required => 0,
+    default  => 0,
 );
 
 1;

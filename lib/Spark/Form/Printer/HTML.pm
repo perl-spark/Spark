@@ -1,4 +1,5 @@
 use strict;
+
 package Spark::Form::Printer::HTML;
 
 # ABSTRACT: the interface a HTML-printing form printer needs to implement
