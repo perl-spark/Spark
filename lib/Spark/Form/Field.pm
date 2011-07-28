@@ -41,7 +41,7 @@ has client_id => (
     isa         => 'Str|Undef',
     is          => 'rw',
     required    => 0,
-    default     => sub { my $self = shift; $self->name },    
+    default     => sub { my $self = shift; $self->name },_
 );
 
 sub human_name {
