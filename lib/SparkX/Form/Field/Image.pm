@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Image;
 
 # ABSTRACT: An image field for SparkX::Form

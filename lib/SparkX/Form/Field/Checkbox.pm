@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Checkbox;
 
 # ABSTRACT: A Checkbox field for SparkX::Form

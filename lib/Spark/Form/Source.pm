@@ -1,4 +1,5 @@
 use strict;
+
 package Spark::Form::Source;
 
 # ABSTRACT: Base class for population plugins

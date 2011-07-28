@@ -1,4 +1,5 @@
 use strict;
+
 package Spark::Form::Field;
 
 # ABSTRACT: Superclass for all Form Fields
@@ -28,20 +29,20 @@ has form => (
 );
 
 has _validators => (
-    isa => 'ArrayRef[Spark::Form::Field::Validator]',
-    is => 'rw',
+    isa     => 'ArrayRef[Spark::Form::Field::Validator]',
+    is      => 'rw',
     default => sub { [] },
-    traits => ['Array'],
+    traits  => ['Array'],
     handles => {
         'validators' => 'elements',
-    }
+      }
 );
 
 has client_id => (
-    isa         => 'Str|Undef',
-    is          => 'rw',
-    required    => 0,
-    default     => sub { my $self = shift; $self->name },_
+    isa      => 'Str|Undef',
+    is       => 'rw',
+    required => 0,
+    default  => sub { my $self = shift; $self->name }, _
 );
 
 sub human_name {
@@ -57,14 +58,14 @@ sub human_name {
 }
 
 sub validate {
-    my ($self,$gpc) = @_;
+    my ($self, $gpc) = @_;
     my $result = Spark::Form::Field::Result->new;
     if ($self->can('_validate')) {
         my @ret = $self->_validate($gpc);
-	$result->push(field_result(@ret));
+        $result->push(field_result(@ret));
     }
     foreach my $v (@{$self->validators}) {
-        my @ret = $v->validate($self,$gpc);
+        my @ret = $v->validate($self, $gpc);
         $result->push(field_result(@ret));
     }
 

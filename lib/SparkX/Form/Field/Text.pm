@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Text;
 
 # ABSTRACT: A Text field for SparkX::Form

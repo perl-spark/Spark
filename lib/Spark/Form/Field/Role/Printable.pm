@@ -1,4 +1,5 @@
 use strict;
+
 package Spark::Form::Field::Role::Printable;
 
 # ABSTRACT: Printability for form fields

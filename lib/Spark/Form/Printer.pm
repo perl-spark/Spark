@@ -1,4 +1,5 @@
 use strict;
+
 package Spark::Form::Printer;
 
 # ABSTRACT: interface for form printers for C<Spark::Form>

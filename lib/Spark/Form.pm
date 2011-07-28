@@ -1,4 +1,5 @@
 use strict;
+
 package Spark::Form;
 
 # ABSTRACT: A simple yet powerful forms validation system that promotes reuse.
@@ -9,7 +10,7 @@ use MooseX::LazyRequire;
 use Spark::Form::Types qw( :all );
 use List::MoreUtils 'all';
 use Spark::Couplet ();
-use Carp          ();
+use Carp           ();
 use Scalar::Util qw( blessed );
 use Spark::Util qw(form_result);
 
@@ -137,18 +138,18 @@ sub add {
 }
 
 sub validate {
-    my ($self,$gpc) = @_;
+    my ($self, $gpc) = @_;
     my $result = Spark::Form::Result->new;
     if ($self->can('_validate')) {
         my @ret = $self->_validate($gpc);
-	$result->push(form_result(@ret));
+        $result->push(form_result(@ret));
     }
     foreach my $f (@{$self->fields}) {
-        my $ret = $f->validate($self,$gpc);
+        my $ret = $f->validate($self, $gpc);
         $result->push($ret);
     }
     foreach my $v (@{$self->validators}) {
-        my @ret = $v->validate($self,$gpc);
+        my @ret = $v->validate($self, $gpc);
         $result->push(form_result(@ret));
     }
 
@@ -319,7 +320,7 @@ sub clone_unless {
 
 sub compose {
     my ($self, $other) = @_;
-    my $new = $self->clone_all;
+    my $new       = $self->clone_all;
     my $other_new = $other->clone_all;
     foreach my $key ($other_new->keys) {
         $new->add($other_new->get($key));

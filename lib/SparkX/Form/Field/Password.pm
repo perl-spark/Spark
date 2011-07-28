@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Password;
 
 # ABSTRACT: A Password field for SparkX::Form

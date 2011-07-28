@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Reset;
 
 # ABSTRACT: A reset button for SparkX::Form

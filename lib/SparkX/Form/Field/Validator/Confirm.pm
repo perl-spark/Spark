@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Validator::Confirm;
 
 # ABSTRACT: Validates whether or not the user confirmed some choice.
@@ -50,7 +51,6 @@ sub _confirm {
 }
 
 after '_validate' => sub { return shift->_confirm };
-
 
 1;
 __END__

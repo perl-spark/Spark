@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Button;
 
 # ABSTRACT: A Button for SparkX::Form

@@ -1,4 +1,5 @@
 use strict;
+
 package SparkX::Form::Field::Validator::MinLength;
 
 # ABSTRACT: Validates a field is at least a given size
