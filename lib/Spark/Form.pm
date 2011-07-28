@@ -521,7 +521,7 @@ L<http://sparkengine.org/docs/forms/>
 
 =head2 Source?
 
-L<http://github.com/jjl/Spark-Form/>
+L<http://github.com/perl-spark/Spark-Form/>
 
 =head1 THANKS
 
