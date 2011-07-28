@@ -29,7 +29,7 @@ Revision history for {{$dist->name}}
  - t/30-radiogroup.t
 
 0.2103 2011-06-12T22:29:43Z
- - A Trial release to show that this project is still alive. 
+ - A Trial release to show that this project is still alive.
 
  [Modules]
  - Removed Field::Role::Validateable. Its been warning for 2 years now,

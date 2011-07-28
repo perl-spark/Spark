@@ -341,14 +341,14 @@ __END__
  use Third::Party::Field; # You can add custom field types
  use SparkX::Form::Field::Select; # Fields with complex arguments need creating
                                   # explicitly
- 
+_
  my $form = Spark::Form->new(plugin_ns => 'MyApp::Field'
                              # Tell the form how to print itself
                              printer => "SparkX::Form::Printer::List"
                              );
- 
- 
- # Add some fields to the form. 
+_
+_
+ # Add some fields to the form._
  $form->add('email','email',confirm_field => 'email-confirm')
       ->add('email','email-confirm')
       ->add('password','password',regex => qr/^\S{6,}$/)
@@ -358,11 +358,11 @@ __END__
       # And this shows how you can use a third party field of any class name
       ->add(Third::Party::Field->new(name => 'blah'))
       ;
- 
+_
  #Give it data to validate against
  my $gpc = Spark::Form::GPC->new;
  $gpc->pairwise(CGI->new->params);
- 
+_
  # And do the actual validation
  my $result = $form->validate($gpc);
  if ($result->valid) {
