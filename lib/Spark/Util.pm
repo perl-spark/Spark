@@ -15,20 +15,20 @@ our @EXPORT_OK = qw(
 sub form_result {
     if (@_) {
         foreach my $msg (@_) {
-            Spark::Form::Validator::Result->new(bool => false, message => $msg);
+            Spark::Form::Validator::Result->new(bool => undef, message => $msg,);
         }
     } else {
-        Spark::Form::Validator::Result->new(bool => true);
+        Spark::Form::Validator::Result->new(bool => 1,);
     }
 }
 
 sub field_result {
     if (@_) {
         foreach my $msg (@_) {
-            Spark::Form::Field::Validator::Result->new(bool => false, message => $msg);
+            Spark::Form::Field::Validator::Result->new(bool => undef, message => $msg,);
         }
     } else {
-        Spark::Form::Field::Validator::Result->new(bool => true);
+        Spark::Form::Field::Validator::Result->new(bool => 1,);
     }
 }
 
