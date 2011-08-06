@@ -1,6 +1,8 @@
 package Spark::Form::Field::Validator;
 
-use Moose;
+use Moose::Role;
+
+requires 'validate';
 
 has field => (
     isa      => 'Spark::Form::Field',
@@ -9,25 +11,19 @@ has field => (
     weak_ref => 1,
 );
 
-sub validate {
-    require Carp;
-    Carp::carp('Spark::Form::Field::Validator must be subclassed, not used directly');
-    return;
-}
-
-__PACKAGE__->meta->make_immutable;
+# __PACKAGE__->meta->make_immutable;
 1;
 __END__
 
 =head1 NAME
 
-Spark::Form::Field::Validator - Base class for field validator objects
+Spark::Form::Field::Validator - Base role for field validator objects
 
 =head1 SYNOPSIS
 
  package MyApp::Validator::Numeric;
  use Moose;
- extends 'Spark::Form::Field::Validator';
+ with 'Spark::Form::Field::Validator';
 
  sub validate {
    my $self = shift;

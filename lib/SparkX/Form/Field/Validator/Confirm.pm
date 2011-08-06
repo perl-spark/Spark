@@ -4,7 +4,8 @@ package SparkX::Form::Field::Validator::Confirm;
 
 # ABSTRACT: Validates whether or not the user confirmed some choice.
 
-use Moose::Role;
+use Moose;
+with 'Spark::Form::Field::Validator';
 
 has confirm => (
     isa      => 'Maybe[Str]',
@@ -50,8 +51,9 @@ sub _confirm {
     return $self;
 }
 
-after '_validate' => sub { return shift->_confirm };
+sub validateb { return shift->_confirm };
 
+__PACKAGE__->meta->make_immutable;
 1;
 __END__
 

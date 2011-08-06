@@ -4,7 +4,8 @@ package SparkX::Form::Field::Validator::NotEmpty;
 
 # ABSTRACT: Validates a field has some value
 
-use Moose::Role;
+use Moose;
+with 'Spark::Form::Field::Validator';
 
 has errmsg_empty => (
     isa      => 'Str',
@@ -26,7 +27,9 @@ sub _not_empty {
     return $self;
 }
 
-after '_validate' => sub { return shift->_not_empty };
+sub validate { return shift->_not_empty };
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 __END__

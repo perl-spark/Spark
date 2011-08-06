@@ -4,7 +4,8 @@ package SparkX::Form::Field::Validator::Regex;
 
 # ABSTRACT: Validates a field matches a regular expression
 
-use Moose::Role;
+use Moose;
+with 'Spark::Form::Field::Validator';
 
 has regex => (
     isa      => 'Maybe[RegexpRef]',
@@ -35,7 +36,9 @@ sub _regex {
     return $self;
 }
 
-after '_validate' => sub { return shift->_regex };
+sub validate { return shift->_regex };
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 __END__
