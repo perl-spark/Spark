@@ -6,9 +6,10 @@ use Moose;
 
 extends 'Spark::Form::Field';
 
-has '+value' => (
-    isa => 'Str',
-);
+# TODO Fixme
+# has '+value' => (
+#    isa => 'Str',
+# );
 
 __PACKAGE__->meta->make_immutable;
 

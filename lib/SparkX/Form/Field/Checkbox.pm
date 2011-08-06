@@ -11,9 +11,10 @@ extends 'Spark::Form::Field';
 with 'Spark::Form::Field::Role::Printable::HTML',
   'Spark::Form::Field::Role::Printable::XHTML';
 
-has '+value' => (
-    isa => 'Str',
-);
+# TODO Fixme
+# has '+value' => (
+#    isa => 'Str',
+# );
 
 sub to_html {
     return shift->_render(HTML::Tiny->new(mode => 'html'));
