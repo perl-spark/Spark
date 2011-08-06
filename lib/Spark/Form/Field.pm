@@ -35,7 +35,8 @@ has _validators => (
     traits  => ['Array'],
     handles => {
         'validators' => 'elements',
-      }
+        'push_validator' => 'push',
+    },
 );
 
 has client_id => (
