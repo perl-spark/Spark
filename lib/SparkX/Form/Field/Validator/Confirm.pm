@@ -51,7 +51,7 @@ sub _confirm {
     return $self;
 }
 
-sub validateb { return shift->_confirm };
+sub validate { return shift->_confirm };
 
 __PACKAGE__->meta->make_immutable;
 1;
