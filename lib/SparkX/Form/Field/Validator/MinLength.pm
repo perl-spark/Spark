@@ -4,7 +4,8 @@ package SparkX::Form::Field::Validator::MinLength;
 
 # ABSTRACT: Validates a field is at least a given size
 
-use Moose::Role;
+use Moose;
+with 'Spark::Form::Field::Validator';
 
 has min_length => (
     isa      => 'Maybe[Int]',
@@ -38,7 +39,9 @@ sub _min_length {
     return $self;
 }
 
-after '_validate' => sub { return shift->_min_length };
+sub validate { return shift->_min_length }
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 __END__

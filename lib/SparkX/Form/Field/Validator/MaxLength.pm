@@ -4,7 +4,8 @@ package SparkX::Form::Field::Validator::MaxLength;
 
 # ABSTRACT: Validates a variable does not exceed a given size
 
-use Moose::Role;
+use Moose;
+with 'Spark::Form::Field::Validator';
 
 has max_length => (
     isa      => 'Maybe[Int]',
@@ -38,7 +39,9 @@ sub _max_length {
     return $self;
 }
 
-after '_validate' => sub { return shift->_max_length };
+sub validate { return shift->_max_length };
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 __END__
