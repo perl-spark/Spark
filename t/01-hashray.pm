@@ -1,8 +1,8 @@
-use Test::Simple qw/no_plan/;
+use Test::More;
 
-use Spark::GPC;
+use Spark::Hashray;
 
 # Cock. Can't we just steal the tests from Data::Couplet?
+my $ray = new_ok("Spark::Hashray");
 
-ok(1);
 done_testing;
