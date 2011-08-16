@@ -6,6 +6,7 @@ use MooseX::Types
     SparkField
     SparkNode
     SparkObject
+    SparkRenderer
     SparkValidates
     SparkValidator
     SparkContainer
@@ -24,6 +25,8 @@ role_type SparkField, { does => 'Spark::Field' };
 role_type SparkNode, { does => 'Spark::Node' };
 
 role_type SparkObject, { does => 'Spark::Object' };
+
+role_type SparkRenderer, { does => 'Spark::Renderer' };
 
 role_type SparkValidates, { does => 'Spark::Validates' };
 
