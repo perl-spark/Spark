@@ -7,5 +7,6 @@ META.yml
 Build
 Makefile.PL
 *.bak
+Spark-*
 Spark-Form-*
 .DS_Store
