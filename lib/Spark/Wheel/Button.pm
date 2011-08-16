@@ -1,7 +1,7 @@
 package Spark::Wheel::Button;
 
 use Moose;
-extends 'Spark::Simple::Field';
+with 'Spark::Simple::Field';
 
 has '+renderer' => (
     default => sub { Spark::Wheel::Button::Renderer->new; }
