@@ -2,6 +2,7 @@ package Spark::Hashray;
 use strict;
 use warnings;
 
+use Carp;
 use List::Util 'first';
 
 sub new {
@@ -10,14 +11,10 @@ sub new {
 }
 
 sub push {
-    my ($self,$k,$v) = @_;
-    push @$self, [$k, $v];
-}
-
-sub pairwise {
     my ($self,@values) = @_; 
+    croak "Push needs an even number of arguments." if (@values % 2);
     while (@values) {
-        $self->push(shift @values,@values);
+        push(@$self,[shift @values,shift @values]);
     }
 }
 
