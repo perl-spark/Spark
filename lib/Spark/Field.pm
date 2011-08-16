@@ -4,7 +4,7 @@ package Spark::Field;
 
 # ABSTRACT: Role for Fields to implement
 
-use Moose;
+use Moose::Role;
 use MooseX::Types::Moose qw( :all );
 use Spark::Form::Types qw( :all );
 use MooseX::LazyRequire;
@@ -14,63 +14,12 @@ with 'MooseX::Clone';
 with 'Spark::Form::Role::Validity';
 with 'Spark::Form::Role::ErrorStore';
 
-has name => (
-    isa      => Str,
-    is       => 'ro',
-    required => 1,
-);
-
-has form => (
-    isa           => SparkForm,
-    is            => 'rw',
-    lazy_required => 1,
-    weak_ref      => 1,              #De-circular-ref
-    traits        => ['NoClone'],    #Argh, what will it be set to?
-);
-
-has _validators => (
-    isa     => 'ArrayRef[Spark::Form::Field::Validator]',
-    is      => 'rw',
-    default => sub { [] },
-    traits  => ['Array'],
-    handles => {
-        'validators' => 'elements',
-      }
-);
-
 has client_id => (
     isa      => 'Str|Undef',
     is       => 'rw',
     required => 0,
     default  => sub { my $self = shift; $self->name },
 );
-
-sub human_name {
-    my ($self) = @_;
-
-    if (is_LabelledObject($self)) {
-        return $self->label;
-    }
-    if (is_NamedObject($self)) {
-        return $self->name;
-    }
-    return q();
-}
-
-sub validate {
-    my ($self, $gpc) = @_;
-    my $result = Spark::Form::Field::Result->new;
-    if ($self->can('_validate')) {
-        my @ret = $self->_validate($gpc);
-        $result->push(field_result(@ret));
-    }
-    foreach my $v (@{$self->validators}) {
-        my @ret = $v->validate($self, $gpc);
-        $result->push(field_result(@ret));
-    }
-
-    return $result;
-}
 
 __PACKAGE__->meta->make_immutable;
 1;
