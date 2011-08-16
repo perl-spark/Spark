@@ -9,7 +9,7 @@ use MooseX::Types
     SparkValidator
     SparkContainer
     Hashray
-    OrderedHash
+    BalancedList
   )];
 
 use MooseX::Types::Moose qw(ArrayRef);
@@ -28,20 +28,14 @@ role_type SparkValidator, { does => 'Spark::Validator' };
 
 class_type SparkContainer, {class => 'Spark::Container'};
 
-# A balanced list, suitable for turning immediately into a hash
-subtype Hashray,
+subtype BalancedList
     as ArrayRef,
     where {@$_ % 2 == 0};
 
-class_type OrderedHash, {class => 'Spark::OrderedHash'};
-coerce OrderedHash,
-    from Hashray,
-    via {
-      require Spark::OrderedHash;
-      my $x = Spark::OrderedHash->new();
-      $x->pairwise($_);
-      $x
-};
+class_type Hashray, {class => 'Spark::Hashray'};
+coerce Hashray,
+    from BalancedList,
+    via { Hashray->new(@$_); };
 
 1;
 __END__
