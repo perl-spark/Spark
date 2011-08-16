@@ -5,21 +5,8 @@ package Spark::Field;
 # ABSTRACT: Role for Fields to implement
 
 use Moose::Role;
-use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
-use MooseX::LazyRequire;
-use Spark::Util qw(field_result);
 
 with 'MooseX::Clone';
-with 'Spark::Form::Role::Validity';
-with 'Spark::Form::Role::ErrorStore';
-
-has client_id => (
-    isa      => 'Str|Undef',
-    is       => 'rw',
-    required => 0,
-    default  => sub { my $self = shift; $self->name },
-);
 
 __PACKAGE__->meta->make_immutable;
 1;
