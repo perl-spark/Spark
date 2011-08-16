@@ -1,0 +1,3 @@
+package Spark::Collection;
+
+has 
