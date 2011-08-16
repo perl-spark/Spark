@@ -7,6 +7,7 @@ use List::Util 'first';
 
 sub new {
     my ($package,@items) = @_;
+    croak "New needs an even number of arguments." if (@values % 2);
     bless [@items],$package;
 }
 
