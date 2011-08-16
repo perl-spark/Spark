@@ -18,19 +18,19 @@ use MooseX::Types::Moose qw(ArrayRef);
 
 use Spark::Couplet;
 
-role_type SparkForm, { does => 'Spark::Form' };
+role_type SparkForm, { role => 'Spark::Form' };
 
-role_type SparkField, { does => 'Spark::Field' };
+role_type SparkField, { role => 'Spark::Field' };
 
-role_type SparkNode, { does => 'Spark::Node' };
+role_type SparkNode, { role => 'Spark::Node' };
 
-role_type SparkObject, { does => 'Spark::Object' };
+role_type SparkObject, { role => 'Spark::Object' };
 
-role_type SparkRenderer, { does => 'Spark::Renderer' };
+role_type SparkRenderer, { role => 'Spark::Renderer' };
 
-role_type SparkValidates, { does => 'Spark::Validates' };
+role_type SparkValidates, { role => 'Spark::Validates' };
 
-role_type SparkValidator, { does => 'Spark::Validator' };
+role_type SparkValidator, { role => 'Spark::Validator' };
 
 class_type SparkContainer, {class => 'Spark::Container'};
 
