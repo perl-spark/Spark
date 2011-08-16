@@ -35,7 +35,12 @@ subtype Hashray,
 class_type OrderedHash, {class => 'Spark::OrderedHash'};
 coerce OrderedHash,
     from Hashray,
-    via { my $x = OrderedHash->new(); $x->pairwise($_); $x };
+    via {
+      require Spark::OrderedHash;
+      my $x = Spark::OrderedHash->new();
+      $x->pairwise($_);
+      $x
+};
 
 1;
 __END__
