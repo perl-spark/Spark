@@ -31,7 +31,7 @@ role_type SparkValidator, { does => 'Spark::Validator' };
 
 class_type SparkContainer, {class => 'Spark::Container'};
 
-subtype BalancedList
+subtype BalancedList,
     as ArrayRef,
     where {@$_ % 2 == 0};
 
