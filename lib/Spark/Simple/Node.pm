@@ -1,7 +1,8 @@
 package Spark::Simple::Node;
 
 use Moose::Role;
-does 'Spark::Node','Spark::Validates';
+
+with 'Spark::Node','Spark::Validates';
 
 use Spark::Types qw(:all);
 
