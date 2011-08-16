@@ -8,7 +8,6 @@ use Moose::Role;
 
 with 'MooseX::Clone';
 
-__PACKAGE__->meta->make_immutable;
 1;
 __END__
 

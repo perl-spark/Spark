@@ -1,6 +1,6 @@
 package Spark::Object;
 
-use Moose;
+use Moose::Role;
 
 1;
 __END__
