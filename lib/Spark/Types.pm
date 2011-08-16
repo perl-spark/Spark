@@ -15,25 +15,15 @@ use MooseX::Types::Moose qw(Ref);
 
 use Spark::Couplet;
 
-subtype SparkForm,
-    as Ref,
-    where {$_->meta->does('Spark::Form')};
+role_type SparkForm, { does => 'Spark::Form' };
 
-subtype SparkField,
-    as Ref,
-    where {$_->meta->does('Spark::Field')};
+role_type SparkField, { does => 'Spark::Field' };
 
-subtype SparkNode,
-    as Ref,
-    where {$_->meta->does('Spark::Node')};
+role_type SparkNode, { does => 'Spark::Node' };
 
-subtype SparkObject,
-    as Ref,
-    where {$_->meta->does('Spark::Object')};
+role_type SparkObject, { does => 'Spark::Object' };
 
-subtype SparkValidator,
-    as Ref,
-    where {$_->meta->does('Spark::Validator')};
+role_type SparkValidator, { does => 'Spark::Validator' };
 
 class_type SparkContainer, {class => 'Spark::Container'};
 
