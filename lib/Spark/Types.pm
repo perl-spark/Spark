@@ -7,11 +7,12 @@ use MooseX::Types
     SparkNode
     SparkObject
     SparkValidator
+    SparkContainer
     Hashray
     OrderedHash
   )];
 
-use MooseX::Types::Moose qw(Ref);
+use MooseX::Types::Moose qw(ArrayRef);
 
 use Spark::Couplet;
 
