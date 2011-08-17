@@ -7,15 +7,15 @@ use List::Util 'first';
 
 sub new {
     my ($package,@items) = @_;
-    croak "New needs an even number of arguments." if (@values % 2);
+    croak "New needs an even number of arguments." if (@items % 2);
     bless [@items],$package;
 }
 
 sub push {
-    my ($self,@values) = @_; 
-    croak "Push needs an even number of arguments." if (@values % 2);
-    while (@values) {
-        push(@$self,[shift @values,shift @values]);
+    my ($self,@items) = @_; 
+    croak "Push needs an even number of arguments." if (@items % 2);
+    while (@items) {
+        push(@$self,[shift @items,shift @items]);
     }
 }
 
