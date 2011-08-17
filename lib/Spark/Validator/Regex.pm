@@ -1,7 +1,7 @@
 package Spark::Validator::Regex;
 
 use Moose;
-does 'Spark::Validator';
+with 'Spark::Validator';
 
 has regex => (
     isa => 'Regexp',
@@ -9,7 +9,7 @@ has regex => (
     required => 1,
 );
 
-has negate (
+has negate => (
     isa => 'Bool',
     is => 'rw',
     default => 0,
