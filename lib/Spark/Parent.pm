@@ -1,7 +1,7 @@
 package Spark::Field::Container;
 
 use Moose::Role;
-does 'Spark::Field';
+with 'Spark::Field';
 
 has children => (
     isa => 'ArrayRef',
