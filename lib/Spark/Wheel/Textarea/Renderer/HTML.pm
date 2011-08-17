@@ -1,12 +1,12 @@
 package Spark::Wheel::Textarea::Renderer::HTML;
 
+use Moose;
+use HTML::Tiny;
+with 'Spark::Renderer';
+
 sub render {
-    my ($self,$context) = @_;
-    return sprintf(
-        q(<textarea name="%s">%s</textarea>),
-        $context->node->name,
-        $context->data($context->node->name),
-    );
+    my ($self,$node,$data) = @_;
+    '<textarea' . (defined $node->name ? ' name="' . $node->name . '"' : '') . '>' . ($data->get_one($node->name)//'') . '</textarea>';
 }
 
 1;
