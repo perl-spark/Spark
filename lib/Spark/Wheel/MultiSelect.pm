@@ -1,4 +1,4 @@
-package Spark::Wheel::MultiSelect.pm;
+package Spark::Wheel::MultiSelect;
 
 use Moose;
 extends 'Spark::Simple::Field';
