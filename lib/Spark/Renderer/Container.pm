@@ -1,8 +1,8 @@
 package Spark::Renderer::Container;
 
-use Moose;
+use Moose::Role;
 
-extends 'Spark::Container';
+with 'Spark::Container';
 
 1;
 __END__
