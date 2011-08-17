@@ -121,7 +121,8 @@ sub add {
 #     return $new;
 # }
 
-__PACKAGE__->meta->make_immutable;
+# Can't immutiblize roles
+#__PACKAGE__->meta->make_immutable;
 
 1;
 
