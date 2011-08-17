@@ -4,253 +4,123 @@ package Spark::Form;
 
 # ABSTRACT: A simple yet powerful forms validation system that promotes reuse.
 
-use Moose 0.90;
+use Moose::Role 0.90;
 use MooseX::Types::Moose qw( :all );
 use MooseX::LazyRequire;
 use Spark::Form::Types qw( :all );
 use List::MoreUtils 'all';
 use Spark::Couplet ();
-use Carp           ();
+use Carp;
 use Scalar::Util qw( blessed );
 use Spark::Util qw(form_result);
 
 with 'MooseX::Clone';
-with 'Spark::Form::Role::Validity';
-with 'Spark::Form::Role::ErrorStore';
-
-has _fields => (
-    isa      => 'Spark::Couplet',
-    is       => 'ro',
-    required => 0,
-    default  => sub { Spark::Couplet->new },
-    traits   => ['Clone',],
-    reader   => 'field_couplet',
-    handles  => {
-        get       => 'value',
-        get_at    => 'value_at',
-        keys      => 'keys',
-        fields    => 'values',
-        remove    => 'unset_key',
-        remove_at => 'unset_at',
-    },
-);
 
 with 'Spark::Form::Role::PluginLoader' => {
     namespaces => ['SparkX::Form::Field', 'Spark::Form::Field'],
     construct_method_name => '_construct_plugin',
 };
 
-has '_printer' => (
-    isa           => Str,
-    is            => 'ro',
-    lazy_required => 1,
-    init_arg      => 'printer',
-    predicate     => '_has_printer',
-);
-has '_printer_class' => (isa => RoleName, is => 'ro', lazy_build => 1, init_arg => undef,);
-has '_printer_meta' => (isa => 'Moose::Meta::Role', is => 'ro', lazy_build => 1, init_arg => undef,);
-
-sub BUILD {
-    my ($self) = @_;
-    if ($self->_has_printer) {
-        $self->_printer_meta->apply($self);
-    }
-    return;
-}
-
-sub _build__printer_class {
-    my ($self, @rest) = @_;
-    my $printer = $self->_printer;
-    eval "require $printer; 1" or Carp::croak("Require of $printer failed, $@");
-    return $printer;
-}
-
-sub _build__printer_meta {
-    my ($self, @rest) = @_;
-    return $self->_printer_class->meta;
-}
+with 'Spark::Parent';
 
 sub add {
-    my ($self, $item, @args) = @_;
+    my ($self, $item) = @_;
 
-    #Dispatch to the appropriate handler sub
-
-    #1. Regular String. Should have a name and any optional args
-    if (is_Str($item)) {
-        Carp::croak('->add expects [Scalar, List where { items > 0 }] or [Ref].') unless (scalar @args);
-        $self->_add_by_type($item, @args);
-        return $self;
-    }
-
-    #2. Array - loop. This will spectacularly fall over if you are using string-based creation as there's no way to pass multiple names yet
-    if (is_ArrayRef($item)) {
-        $self->add($_, @args) for @{$item};
-        return $self;
-    }
-
-    #3. Custom field. Just takes any optional args
-    if (is_SparkFormField($item)) {
-        $self->_add_custom_field($item, @args);
-        return $self;
-    }
-
-    #Unknown thing
-    Carp::croak(q(Spark::Form: Don\'t know what to do with a ) . ref $item . q(/) . (blessed $item|| q()));
+    croak("Add requires a Spark::Field") unless is_SparkField($item);
+    $self->_add_child($item);
 }
 
-sub validate {
-    my ($self, $gpc) = @_;
-    my $result = Spark::Form::Result->new;
-    if ($self->can('_validate')) {
-        my @ret = $self->_validate($gpc);
-        $result->push(form_result(@ret));
-    }
-    foreach my $f (@{$self->fields}) {
-        my $ret = $f->validate($self, $gpc);
-        $result->push($ret);
-    }
-    foreach my $v (@{$self->validators}) {
-        my @ret = $v->validate($self, $gpc);
-        $result->push(form_result(@ret));
-    }
+# sub clone_all {
+#     my ($self) = @_;
+#     my $new = $self->clone;
+#     $_->form($self) foreach $new->fields;
 
-    return $result;
-}
+#     return $new;
+# }
 
-sub data {
-    my ($self, $fields) = @_;
-    while (my ($k, $v) = each %{$fields}) {
-        if ($self->get($k)) {
-            $self->get($k)->value($v);
-        }
-    }
+# sub clone_except_names {
+#     my ($self, @fields) = @_;
+#     my $new = $self->clone_all;
+#     $new->remove($_) foreach @fields;
 
-    return $self;
-}
+#     return $new;
+# }
 
-sub _add_custom_field {
-    my ($self, $item, %opts) = @_;
+# #
+# # ->_except( \@superset , \@things_to_get_rid_of )
+# #
 
-    #And add it.
-    $self->_add($item, $item->name, %opts);
+# sub _except {
+#     my ($self, $input_list, $exclusion_list) = @_;
+#     my %d;
+#     @d{@{$exclusion_list}} = ();
 
-    return $self;
-}
+#     return grep {
+#         !exists $d{$_}
+#     } @{$input_list};
+# }
 
-sub _add_by_type {
-    my ($self, $type, $name, %opts) = @_;
+# sub clone_only_names {
+#     my ($self, @fields) = @_;
+#     my @all = $self->keys;
+#     my @excepted = $self->_except(\@all, \@fields);
+#     return $self->clone_except_names(@excepted);
+# }
 
-    #Default name is type itself
-    $name ||= $type;
+# sub clone_except_ids {
+#     my ($self, @ids) = @_;
+#     my $new = $self->clone_all;
+#     $new->remove_at(@ids);
 
-    #Create and add it
-    $self->_add($self->_construct_plugin($name, form => $self, %opts), $name);
+#     return $new;
+# }
 
-    return $self;
-}
+# sub clone_only_ids {
+#     my ($self, @ids) = @_;
+#     my @all = 0 .. $self->field_couplet->last_index;
 
-sub _add {
-    my ($self, $field, $name) = @_;
+#     return $self->clone_except_ids($self->_except(\@all, \@ids));
+# }
 
-    Carp::carp("Field name $name exists in form.") if $self->field_couplet->value($name);
+# sub clone_if {
+#     my ($self, $sub) = @_;
+#     my (@all) = ($self->field_couplet->key_values_paired);
+#     my $i = 0 - 1;
 
-    #Add it onto the ArrayRef
-    $self->field_couplet->set($name, $field);
+#     # Filter out items that match
+#     # coderef->( $current_index, $key, $value );
+#     @all = grep {
+#         $i++;
+#         !$sub->($i, @{$_});
+#     } @all;
 
-    return 1;
-}
+#     return $self->clone_except_names(map { $_->[0] } @all);
+# }
 
-sub clone_all {
-    my ($self) = @_;
-    my $new = $self->clone;
-    $_->form($self) foreach $new->fields;
+# sub clone_unless {
+#     my ($self, $sub) = @_;
+#     my (@all) = $self->field_couplet->key_values_paired;
+#     my $i = 0 - 1;
 
-    return $new;
-}
+#     # Filter out items that match
+#     # coderef->( $current_index, $key, $value );
 
-sub clone_except_names {
-    my ($self, @fields) = @_;
-    my $new = $self->clone_all;
-    $new->remove($_) foreach @fields;
+#     @all = grep {
+#         $i++;
+#         $sub->($i, @{$_});
+#     } @all;
+#     return $self->clone_except_names(map { $_->[0] } @all);
+# }
 
-    return $new;
-}
-
-#
-# ->_except( \@superset , \@things_to_get_rid_of )
-#
-
-sub _except {
-    my ($self, $input_list, $exclusion_list) = @_;
-    my %d;
-    @d{@{$exclusion_list}} = ();
-
-    return grep {
-        !exists $d{$_}
-    } @{$input_list};
-}
-
-sub clone_only_names {
-    my ($self, @fields) = @_;
-    my @all = $self->keys;
-    my @excepted = $self->_except(\@all, \@fields);
-    return $self->clone_except_names(@excepted);
-}
-
-sub clone_except_ids {
-    my ($self, @ids) = @_;
-    my $new = $self->clone_all;
-    $new->remove_at(@ids);
-
-    return $new;
-}
-
-sub clone_only_ids {
-    my ($self, @ids) = @_;
-    my @all = 0 .. $self->field_couplet->last_index;
-
-    return $self->clone_except_ids($self->_except(\@all, \@ids));
-}
-
-sub clone_if {
-    my ($self, $sub) = @_;
-    my (@all) = ($self->field_couplet->key_values_paired);
-    my $i = 0 - 1;
-
-    # Filter out items that match
-    # coderef->( $current_index, $key, $value );
-    @all = grep {
-        $i++;
-        !$sub->($i, @{$_});
-    } @all;
-
-    return $self->clone_except_names(map { $_->[0] } @all);
-}
-
-sub clone_unless {
-    my ($self, $sub) = @_;
-    my (@all) = $self->field_couplet->key_values_paired;
-    my $i = 0 - 1;
-
-    # Filter out items that match
-    # coderef->( $current_index, $key, $value );
-
-    @all = grep {
-        $i++;
-        $sub->($i, @{$_});
-    } @all;
-    return $self->clone_except_names(map { $_->[0] } @all);
-}
-
-sub compose {
-    my ($self, $other) = @_;
-    my $new       = $self->clone_all;
-    my $other_new = $other->clone_all;
-    foreach my $key ($other_new->keys) {
-        $new->add($other_new->get($key));
-    }
-    return $new;
-}
+# sub compose {
+#     my ($self, $other) = @_;
+#     my $new       = $self->clone_all;
+#     my $other_new = $other->clone_all;
+#     foreach my $key ($other_new->keys) {
+#         $new->add($other_new->get($key));
+#     }
+#     return $new;
+# }
 
 __PACKAGE__->meta->make_immutable;
 

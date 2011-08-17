@@ -2,6 +2,7 @@ package Spark::Types;
 
 use MooseX::Types
   -declare => [qw(
+    SparkData
     SparkForm
     SparkField
     SparkNode
