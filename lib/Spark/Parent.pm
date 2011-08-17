@@ -1,4 +1,4 @@
-package Spark::Field::Container;
+package Spark::Parent;
 
 use Moose::Role;
 with 'Spark::Field';
