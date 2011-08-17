@@ -8,7 +8,9 @@ use List::Util 'first';
 sub new {
     my ($package,@items) = @_;
     croak "New needs an even number of arguments." if (@items % 2);
-    bless [@items],$package;
+    my $ret = bless [],$package;
+    $ret->push(@items);
+    $ret;
 }
 
 sub push {

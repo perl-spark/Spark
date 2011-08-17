@@ -25,6 +25,18 @@ is_deeply [$ray->get("baz2")],[87],"push creates a new key with 1 value";
 eval {
     $ray->push("an","odd","number","of","arguments");
 };
-like $@,qr/needs an even number of arguments/;
+like $@,qr/needs an even number of arguments/,"push with an odd number of arguments throws an exception";
+
+eval {
+    Spark::Hashray->new("an","odd","number","of","arguments");
+};
+like $@,qr/needs an even number of arguments/,"new with an odd number of arguments throws an exception";
+
+{
+    my $new_hashray = 
+        Spark::Hashray->new("foo",55,"foo",["value1","value2"],"bar",66);
+    is_deeply [$new_hashray->get("foo")],[55,["value1","value2"]];
+    is_deeply [$new_hashray->get("bar")],[66];
+}
 
 done_testing;
