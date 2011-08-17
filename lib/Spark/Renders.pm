@@ -9,5 +9,10 @@ has renderer => (
     required => 1,
 );
 
+sub render {
+    my ($self,$node,$data,@args);
+    $self->renderer->render($node,$data,@args);
+}
+
 1;
 __END__
