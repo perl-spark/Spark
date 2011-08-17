@@ -10,7 +10,7 @@ has renderer => (
 );
 
 sub render {
-    my ($self,$node,$data,@args);
+    my ($self,$node,$data,@args) = @_;
     $self->renderer->render($node,$data,@args);
 }
 
