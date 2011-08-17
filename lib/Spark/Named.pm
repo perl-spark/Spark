@@ -4,7 +4,7 @@ use Moose::Role;
 
 has name => (
     is => 'rw',
-    default => null,
+    default => undef,
 );
 
 1;
