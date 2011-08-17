@@ -2,8 +2,19 @@
 
 use Test::More;
 use Spark::Wheel::Button;
+use Spark::Hashray;
 
-my $b = new_ok("Spark::Wheel::Button",[name => 'test']);
+my $data = Spark::Hashray->new();
+
+{
+    my $b = new_ok("Spark::Wheel::Button");
+    is($b->renderer->render($b,$data),'<button></button>','Test html representation without name');
+}
+{
+    my $b = Spark::Wheel::Button->new(name => 'test');
+    is($b->renderer->render($b,$data),'<button name="test"></button>','Test html representation with name');
+}
+
 #$b->render
 #my $b2 = SparkX::Form::Field::Button->new(
 #    name => 'test', form => $form,

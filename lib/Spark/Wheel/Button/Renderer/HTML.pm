@@ -6,9 +6,5 @@ with 'Spark::Renderer';
 
 sub render {
     my ($self,$node,$data) = @_;
-    my %flags;
-    if ($node->can('name')) {
-        $flags{name} = $data->get($node->name);
-    }
-    return HTML::Tiny->new->button({%flags});
+    return HTML::Tiny->new->button({name=>$node->name});
 }
