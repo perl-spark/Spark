@@ -18,6 +18,8 @@ use MooseX::Types::Moose qw(ArrayRef);
 
 use Spark::Couplet;
 
+role_type SparkData, { role => 'Spark::Data' };
+
 role_type SparkForm, { role => 'Spark::Form' };
 
 role_type SparkField, { role => 'Spark::Field' };
