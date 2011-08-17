@@ -2,10 +2,9 @@ package Spark::Container;
 
 use Moose::Role;
 use MooseX::Types::Moose qw(ArrayRef);
-use Spark::Types qw( OrderedHash );
 
 has children => (
-    isa     => OrderedHash,
+    isa     => Hashray,
     is      => 'ro',
     handles => {
     },
