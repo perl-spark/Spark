@@ -2,14 +2,16 @@ package Spark::Wheel::Dummy;
 
 use Moose;
 
-with 'Spark::Simple::Field';
+use Carp;
+extends 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub {
-        require Spark::Wheel::Dummy::Renderer::HTML;
-        Spark::Wheel::Dummy::Renderer::HTML->new;
-    },
+    required => 0,
 );
+
+sub render {
+    croak("Don't render me");
+}
 
 __PACKAGE__->meta->make_immutable;
 
