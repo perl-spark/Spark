@@ -1,10 +1,11 @@
 package Spark::Wheel::Button;
 
 use Moose;
+use Spark::Wheel::Button::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Button::Renderer->new; }
+    default => sub { Spark::Wheel::Button::Renderer::HTML->new; }
 );
 
 1;
