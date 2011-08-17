@@ -9,7 +9,6 @@ use MooseX::Types::Moose qw( :all );
 use MooseX::LazyRequire;
 use Spark::Form::Types qw( :all );
 use List::MoreUtils 'all';
-use Spark::Couplet ();
 use Carp;
 use Scalar::Util qw( blessed );
 use Spark::Util qw(form_result);
