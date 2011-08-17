@@ -10,3 +10,4 @@ Makefile.PL
 Spark-*
 Spark-Form-*
 .DS_Store
+.#*
