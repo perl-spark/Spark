@@ -17,7 +17,6 @@ use MooseX::Types
 
 use MooseX::Types::Moose qw(ArrayRef);
 
-use Spark::Couplet;
 
 role_type SparkData, { role => 'Spark::Data' };
 

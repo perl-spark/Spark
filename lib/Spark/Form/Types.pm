@@ -13,7 +13,6 @@ use MooseX::Types -declare => [
       SparkForm
       LabelledObject
       NamedObject
-      SCouplet
       SForm
       SField
       SFieldValidator
@@ -37,7 +36,6 @@ subtype LabelledObject, as Object, where {
 subtype NamedObject, as Object, where {
     $_->can('name') and $_->name;
 };
-class_type SCouplet,        {class => 'Spark::Couplet'};
 class_type SForm,           {class => 'Spark::Form'};
 class_type SField,          {class => 'Spark::Form::Field'};
 class_type SFieldValidator, {class => 'Spark::Form::Field::Validator'};
