@@ -28,5 +28,9 @@ sub validate {
     foreach (my @against) {
         my $result = $context->node_data =~ $self->regex;
         $result = !$result if $self->negate;
-    
+        if ( !$result ) {
+          return undef;
+        }
+    }
+    return 1;
 }
