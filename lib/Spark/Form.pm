@@ -25,8 +25,8 @@ with 'Spark::Parent';
 sub add {
     my ($self, $item) = @_;
 
-    croak("Add requires a Spark::Field") unless is_SparkField($item);
-    $self->_add_child($item);
+    croak(q{Add requires a Spark::Field}) unless is_SparkField($item);
+    return $self->_add_child($item);
 }
 
 # sub clone_all {
