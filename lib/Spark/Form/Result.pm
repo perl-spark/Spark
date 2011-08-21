@@ -16,14 +16,14 @@ has results => (
 
 sub bool {
     my ($self) = @_;
-    $self->first_r(sub {
+    return $self->first_r(sub {
             !$_->bool
     });
 }
 
 sub messages {
     my ($self) = @_;
-    $self->grep_r(sub {
+    return $self->grep_r(sub {
             !$_->bool && $_->message
     });
 }
