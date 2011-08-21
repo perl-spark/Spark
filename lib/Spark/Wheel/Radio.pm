@@ -1,7 +1,7 @@
 package Spark::Wheel::Radio;
 
 use Moose;
-use Spark::Wheel::Radio::Renderer;
+use Spark::Wheel::Radio::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (

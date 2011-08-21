@@ -1,7 +1,7 @@
 package Spark::Wheel::Hidden;
 
 use Moose;
-use Spark::Wheel::Hidden::Renderer;
+use Spark::Wheel::Hidden::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 

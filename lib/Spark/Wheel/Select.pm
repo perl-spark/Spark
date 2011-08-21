@@ -1,7 +1,7 @@
 package Spark::Wheel::Select;
 
 use Moose;
-use Spark::Wheel::Select::Renderer;
+use Spark::Wheel::Select::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (

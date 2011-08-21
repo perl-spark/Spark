@@ -1,7 +1,7 @@
 package Spark::Wheel::Image;
 
 use Moose;
-use Spark::Wheel::Image::Renderer;
+use Spark::Wheel::Image::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 

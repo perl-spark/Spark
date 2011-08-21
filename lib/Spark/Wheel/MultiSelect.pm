@@ -1,7 +1,7 @@
 package Spark::Wheel::MultiSelect;
 
 use Moose;
-use Spark::Wheel::MultiSelect::Renderer;
+use Spark::Wheel::MultiSelect::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 
