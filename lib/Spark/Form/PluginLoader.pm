@@ -101,7 +101,7 @@ sub _normalize_module_name {
     #
     $module_name =~ s/::/-/g;
     $module_name = lc $module_name;
-
+    return $module_name;
 }
 
 sub _construct_plugin {
@@ -151,6 +151,7 @@ sub _error {
             Carp::croak($params{message});
         }
     }
+    return;    # Yes, it can return if its just a warning.
 }
 
 no Moose;
