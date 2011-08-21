@@ -5,7 +5,7 @@ use Spark::Wheel::Submit::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Submit::Renderer->new; }
+    default => sub { Spark::Wheel::Submit::Renderer::HTML->new; }
 );
 
 __PACKAGE__->meta->make_immutable;

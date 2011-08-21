@@ -6,7 +6,7 @@ use Spark::Wheel::File::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::File::Renderer->new; }
+    default => sub { Spark::Wheel::File::Renderer::HTML->new; }
 );
 
 __PACKAGE__->meta->make_immutable;

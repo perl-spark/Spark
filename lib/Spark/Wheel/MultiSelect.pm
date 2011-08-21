@@ -6,7 +6,7 @@ use Spark::Wheel::MultiSelect::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::MultiSelect::Renderer->new; }
+    default => sub { Spark::Wheel::MultiSelect::Renderer::HTML->new; }
 );
 
 __PACKAGE__->meta->make_immutable;

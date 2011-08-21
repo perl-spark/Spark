@@ -6,7 +6,7 @@ use Spark::Wheel::Password::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Password::Renderer->new; }
+    default => sub { Spark::Wheel::Password::Renderer::HTML->new; }
 );
 
 __PACKAGE__->meta->make_immutable;

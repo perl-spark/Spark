@@ -6,7 +6,7 @@ use Spark::Wheel::Image::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Image::Renderer->new; }
+    default => sub { Spark::Wheel::Image::Renderer::HTML->new; }
 );
 
 __PACKAGE__->meta->make_immutable;
