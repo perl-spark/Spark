@@ -2,6 +2,10 @@ package Spark::Renderer::Container::Form;
 
 use Moose;
 
-extends 'Spark::Renderer::Container';
+with 'Spark::Renderer::Container';
+
+__PACKAGE__->meta->make_immutable;
+
+1;
 
 
