@@ -12,7 +12,7 @@ with 'Spark::Simple::Field';
 #
 # Its stuff like that that causes science fiction movies.
 has '+renderer' => (
-    default => sub { Spark::Wheel::Reset::Renderer->new; }
+    default => sub { Spark::Wheel::Reset::Renderer::HTML->new; }
 );
 
 __PACKAGE__->meta->make_immutable;

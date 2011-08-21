@@ -6,7 +6,7 @@ use Spark::Wheel::Checkbox::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Checkbox::Renderer->new; }
+    default => sub { Spark::Wheel::Checkbox::Renderer::HTML->new; }
 );
 
 __PACKAGE__->meta->make_immutable;
