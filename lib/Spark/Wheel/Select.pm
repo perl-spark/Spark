@@ -1,11 +1,14 @@
 package Spark::Wheel::Select;
 
 use Moose;
-extends 'Spark::Simple::Field';
+use Spark::Wheel::Select::Renderer;
+with 'Spark::Simple::Field';
 
 has '+renderer' => (
     default => sub { Spark::Wheel::Select::Renderer->new; }
 );
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 __END__

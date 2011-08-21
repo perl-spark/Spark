@@ -1,11 +1,15 @@
 package Spark::Wheel::Image;
 
 use Moose;
-extends 'Spark::Simple::Field';
+use Spark::Wheel::Image::Renderer;
+
+with 'Spark::Simple::Field';
 
 has '+renderer' => (
     default => sub { Spark::Wheel::Image::Renderer->new; }
 );
+
+__PACKAGE__->meta->make_immutable;
 
 1;
 __END__

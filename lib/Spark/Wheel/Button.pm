@@ -8,5 +8,7 @@ has '+renderer' => (
     default => sub { Spark::Wheel::Button::Renderer::HTML->new; }
 );
 
+__PACKAGE__->meta->make_immutable;
+
 1;
 __END__
