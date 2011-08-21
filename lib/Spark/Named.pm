@@ -3,7 +3,7 @@ package Spark::Named;
 use Moose::Role;
 
 has name => (
-    is => 'rw',
+    is      => 'rw',
     default => undef,
 );
 

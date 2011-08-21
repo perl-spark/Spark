@@ -3,7 +3,7 @@ package Spark::Labelled;
 use Moose::Role;
 
 has label => (
-    is => 'rw',
+    is      => 'rw',
     default => undef,
 );
 

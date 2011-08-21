@@ -1,4 +1,5 @@
 use strict;
+
 package TestApp::Form::Field::Password;
 
 use Moose;

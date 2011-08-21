@@ -34,7 +34,7 @@ has _validators => (
     default => sub { [] },
     traits  => ['Array'],
     handles => {
-        'validators' => 'elements',
+        'validators'     => 'elements',
         'push_validator' => 'push',
     },
 );
