@@ -6,7 +6,7 @@ use Spark::Wheel::Reset::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 # Seriously, has ever anyone had a use for a form reset button?
-# "Throw away everything I just typed" is really annoying, 
+# "Throw away everything I just typed" is really annoying,
 # especially if it happened to be beside the submit button,
 # and you slip and ARRRRGH, NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO0.
 #
