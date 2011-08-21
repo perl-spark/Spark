@@ -1,7 +1,7 @@
 package Spark::Wheel::Dummy;
 
 use Moose;
-extends 'Spark::Simple::Field';
+with 'Spark::Simple::Field';
 
 has '+renderer' => (
     default => sub { Spark::Wheel::Dummy::Renderer->new; }
