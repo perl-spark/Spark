@@ -1,7 +1,7 @@
 package Spark::Wheel::Checkbox;
 
 use Moose;
-use Spark::Wheel::Checkbox::Renderer;
+use Spark::Wheel::Checkbox::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 

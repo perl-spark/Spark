@@ -1,7 +1,7 @@
 package Spark::Wheel::Reset;
 
 use Moose;
-use Spark::Wheel::Reset::Renderer;
+use Spark::Wheel::Reset::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 

@@ -1,7 +1,7 @@
 package Spark::Wheel::Dummy;
 
 use Moose;
-use Spark::Wheel::Dummy::Renderer;
+use Spark::Wheel::Dummy::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 

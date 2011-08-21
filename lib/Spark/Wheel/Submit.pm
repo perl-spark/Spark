@@ -1,7 +1,7 @@
 package Spark::Wheel::Submit;
 
 use Moose;
-use Spark::Wheel::Submit::Renderer;
+use Spark::Wheel::Submit::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (

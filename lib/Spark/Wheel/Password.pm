@@ -1,7 +1,7 @@
 package Spark::Wheel::Password;
 
 use Moose;
-use Spark::Wheel::Password::Renderer;
+use Spark::Wheel::Password::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 

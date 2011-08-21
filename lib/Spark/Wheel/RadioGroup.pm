@@ -1,7 +1,7 @@
 package Spark::Wheel::RadioGroup;
 
 use Moose;
-use Spark::Wheel::RadioGroup::Renderer;
+use Spark::Wheel::RadioGroup::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 
