@@ -1,11 +1,12 @@
 package Spark::Wheel::Reset::Renderer::HTML;
 
 use Moose;
-use HTML::Tiny;
 with 'Spark::Renderer';
 
 sub render {
     my ($self, $node, $data) = @_;
+
+    require HTML::Tiny;
     return HTML::Tiny->new->button({name => $node->name});
 }
 
