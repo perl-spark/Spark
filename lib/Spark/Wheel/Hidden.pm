@@ -1,12 +1,14 @@
 package Spark::Wheel::Hidden;
 
 use Moose;
-use Spark::Wheel::Hidden::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Hidden::Renderer::HTML->new; }
+    default => sub {
+        require Spark::Wheel::Hidden::Renderer::HTML;
+        Spark::Wheel::Hidden::Renderer::HTML->new;
+    },
 );
 
 __PACKAGE__->meta->make_immutable;

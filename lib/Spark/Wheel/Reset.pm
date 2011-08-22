@@ -1,7 +1,6 @@
 package Spark::Wheel::Reset;
 
 use Moose;
-use Spark::Wheel::Reset::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 
@@ -12,7 +11,11 @@ with 'Spark::Simple::Field';
 #
 # Its stuff like that that causes science fiction movies.
 has '+renderer' => (
-    default => sub { Spark::Wheel::Reset::Renderer::HTML->new; }
+    default => sub {
+        require Spark::Wheel::Reset::Renderer::HTML;
+
+        Spark::Wheel::Reset::Renderer::HTML->new;
+      }
 );
 
 __PACKAGE__->meta->make_immutable;

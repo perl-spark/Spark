@@ -1,12 +1,14 @@
 package Spark::Wheel::Password;
 
 use Moose;
-use Spark::Wheel::Password::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Password::Renderer::HTML->new; }
+    default => sub {
+        require Spark::Wheel::Password::Renderer::HTML;
+        Spark::Wheel::Password::Renderer::HTML->new;
+    },
 );
 
 __PACKAGE__->meta->make_immutable;
