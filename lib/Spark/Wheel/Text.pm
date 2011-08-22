@@ -1,11 +1,13 @@
 package Spark::Wheel::Text;
 
 use Moose;
-use Spark::Wheel::Text::Renderer::HTML;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Text::Renderer::HTML->new; }
+    default => sub {
+        require Spark::Wheel::Text::Renderer::HTML;
+        Spark::Wheel::Text::Renderer::HTML->new;
+    },
 );
 
 __PACKAGE__->meta->make_immutable;

@@ -1,12 +1,14 @@
 package Spark::Wheel::File;
 
 use Moose;
-use Spark::Wheel::File::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::File::Renderer::HTML->new; }
+    default => sub {
+        require Spark::Wheel::File::Renderer::HTML;
+        Spark::Wheel::File::Renderer::HTML->new;
+    },
 );
 
 __PACKAGE__->meta->make_immutable;

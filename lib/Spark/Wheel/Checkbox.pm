@@ -1,12 +1,14 @@
 package Spark::Wheel::Checkbox;
 
 use Moose;
-use Spark::Wheel::Checkbox::Renderer::HTML;
 
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::Checkbox::Renderer::HTML->new; }
+    default => sub {
+        require Spark::Wheel::Checkbox::Renderer::HTML;
+        Spark::Wheel::Checkbox::Renderer::HTML->new;
+    },
 );
 
 __PACKAGE__->meta->make_immutable;

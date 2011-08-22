@@ -1,12 +1,13 @@
 package Spark::Wheel::MultiSelect;
 
 use Moose;
-use Spark::Wheel::MultiSelect::Renderer::HTML;
-
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
-    default => sub { Spark::Wheel::MultiSelect::Renderer::HTML->new; }
+    default => sub {
+        require Spark::Wheel::MultiSelect::Renderer::HTML;
+        Spark::Wheel::MultiSelect::Renderer::HTML->new;
+    },
 );
 
 __PACKAGE__->meta->make_immutable;
