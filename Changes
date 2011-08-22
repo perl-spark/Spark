@@ -8,9 +8,14 @@ Revision history for {{$dist->name}}
  - MooseX::Types::Perl
  - parent
  - perl 5.10.1
+ - strict # added by new dzil's
+ - warnings # added by new dzil's
 
  [Dependencies::Build::Removed]
  - Data::Dumper
+
+ [Internals]
+ - Versions no longer declared in BEGIN # Dzil
 
  [Metadata]
  - More authors recognised in the author metadata.
