@@ -11,6 +11,9 @@ Revision history for {{$dist->name}}
  - strict # added by new dzil's
  - warnings # added by new dzil's
 
+ [Dependencies::Runtime::Removed]
+ - Data::Couplet
+
  [Dependencies::Build::Removed]
  - Data::Dumper
 
