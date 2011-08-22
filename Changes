@@ -2,31 +2,150 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
  [Dependencies::Runtime::New]
- - Data::Couplet::Extension
- - Data::Couplet::Role::Plugin
+ - Class::Load
+ - Exporter
+ - MooseX::Role::Parameterized
+ - MooseX::Types::Perl
+ - parent
+ - perl 5.10.1
+
+ [Dependencies::Build::Removed]
+ - Data::Dumper
+
+ [Metadata]
+ - More authors recognised in the author metadata.
 
  [Modules::New]
- - Spark::Couplet, A Spark-Specific subclass of Data::Couplet
- - Spark::Couplet::Plugin::ArrayRef, A plugin giving an easy way to
-   aggregate items based on a key name.
- - Spark::Form::Field::Result,
- - Spark::Form::Field::Role::NewValidator,
- - Spark::Form::Field::Validator,
- - Spark::Form::Field::Validator::Result,
- - Spark::Form::Loader,
- - Spark::From::Result,
- - Spark::GPC,
- - Spark::Types,
- - SparkX::Form::Field::RadioGroup,
- - SparkX::Form::Field::Dummy
+ - Spark
+ - Spark::Collection
+ - Spark::Container
+ - Spark::Field
+ - Spark::Form::Field::Result
+ - Spark::Form::Field::Role::NewValidator
+ - Spark::Form::Field::Validator
+ - Spark::Form::Field::Validator::Result
+ - Spark::Form::Loader
+ - Spark::Form::PluginLoader
+ - Spark::Form::Result
+ - Spark::Form::Role::PluginLoader
+ - Spark::Form::Validator
+ - Spark::Form::Validator::Result
+ - Spark::Hashray
+ - Spark::Labelled
+ - Spark::Named
+ - Spark::Node
+ - Spark::Object
+ - Spark::Parent
+ - Spark::Renderer
+ - Spark::Renderer::Container
+ - Spark::Renderer::Container::Form
+ - Spark::Renderers
+ - Spark::Simple::Field
+ - Spark::Simple::Form
+ - Spark::Simple::Node
+ - Spark::Types
+ - Spark::Util
+ - Spark::Validates
+ - Spark::Validator
+ - Spark::Validator::Regex
+ - Spark::Wheel::Button
+ - Spark::Wheel::Button::Renderer::HTML
+ - Spark::Wheel::Checkbox
+ - Spark::Wheel::Checkbox::Renderer::HTML
+ - Spark::Wheel::Dummy
+ - Spark::Wheel::Dummy::Renderer::HTML
+ - Spark::Wheel::File
+ - Spark::Wheel::File::Renderer::HTML
+ - Spark::Wheel::Hidden
+ - Spark::Wheel::Hidden::Renderer::HTML
+ - Spark::Wheel::Image
+ - Spark::Wheel::Image::Renderer::HTML
+ - Spark::Wheel::MultiSelect
+ - Spark::Wheel::MultiSelect::Renderer::HTML
+ - Spark::Wheel::Password
+ - Spark::Wheel::Password::Renderer::HTML
+ - Spark::Wheel::Radio
+ - Spark::Wheel::Radio::Renderer::HTML
+ - Spark::Wheel::RadioGroup
+ - Spark::Wheel::RadioGroup::Renderer::HTML
+ - Spark::Wheel::Reset
+ - Spark::Wheel::Reset::Renderer::HTML
+ - Spark::Wheel::Select
+ - Spark::Wheel::Select::Renderer::HTML
+ - Spark::Wheel::Submit
+ - Spark::Wheel::Submit::Renderer::HTML
+ - Spark::Wheel::Text
+ - Spark::Wheel::Text::Renderer::HTML
+ - Spark::Wheel::Textarea
+ - Spark::Wheel::Textarea::Renderer::HTML
+
+ [Modules::Removed]
+ - SparkX::Form::BasicFields
+ - SparkX::Form::BasicPrinters
+ - SparkX::Form::BasicValidators
+ - SparkX::Form::Field::Button
+ - SparkX::Form::Field::Checkbox
+ - SparkX::Form::Field::File
+ - SparkX::Form::Field::Hidden
+ - SparkX::Form::Field::Image
+ - SparkX::Form::Field::MultiSelect
+ - SparkX::Form::Field::Password
+ - SparkX::Form::Field::Radio
+ - SparkX::Form::Field::Reset
+ - SparkX::Form::Field::Select
+ - SparkX::Form::Field::Submit
+ - SparkX::Form::Field::Text
+ - SparkX::Form::Field::Textarea
+ - SparkX::Form::Field::Validator::Confirm
+ - SparkX::Form::Field::Validator::MaxLength
+ - SparkX::Form::Field::Validator::MinLength
+ - SparkX::Form::Field::Validator::NotEmpty
+ - SparkX::Form::Field::Validator::Regex
+ - SparkX::Form::Printer::List
 
  [Packaging]
+ - Now shipping as "Spark", formerly shipped as "Spark::Form"
  - Bugs/Issues now go to Github Issues
+ - Repository now hosted under the "perl-spark" organisation.
  - Some urls SSL-ified.
+ - Now ignores anything in attic/ ( Check git if you want this dir )
 
  [Tests::New]
- - t/01-gpc.pm
- - t/30-radiogroup.t
+ - t/01-classes/hashray.t
+ - t/04-wheels/button.t
+ - t/04-wheels/text.t
+ - t/04-wheels/textarea.t
+
+ [Tests::Removed]
+ - t/00-load.t
+ - t/02-simple.t
+ - t/03-form-register.t
+ - t/04-form-custom-lazy.t
+ - t/05-confirm.t
+ - t/06-maxlength.t
+ - t/07-minlength.t
+ - t/08-notempty.t
+ - t/09-regex.t
+ - t/10-combinatorics.t
+ - t/11-reset.t
+ - t/12-checkbox.t
+ - t/13-select.t
+ - t/14-list.t
+ - t/15-submit.t
+ - t/16-file.t
+ - t/17-text.t
+ - t/18-textarea.t
+ - t/19-button.t
+ - t/20-hidden.t
+ - t/21-image.t
+ - t/22-multiselect.t
+ - t/23-password.t
+ - t/24-radio.t
+ - t/25-noload.t
+ - t/26-clone.t
+ - t/27-partial_clone.t
+ - t/28-compose.t
+ - t/29-partial-fill.t
 
 0.2103 2011-06-12T22:29:43Z
  - A Trial release to show that this project is still alive.
