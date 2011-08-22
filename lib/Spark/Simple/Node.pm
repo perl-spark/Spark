@@ -8,6 +8,7 @@ use Spark::Types qw(:all);
 
 sub validate {
     my ($self, $data) = @_;
+    require Spark::Result;
     my $result = Spark::Result->new;
     if ($self->can('_validate')) {
         my @ret = $self->_validate($data);

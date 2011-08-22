@@ -1,8 +1,5 @@
 package Spark::Util;
 
-use Spark::Form::Validator::Result;
-use Spark::Form::Field::Validator::Result;
-
 use Exporter();
 use parent qw(Exporter);
 
@@ -14,6 +11,9 @@ our @EXPORT_OK = qw(
 sub form_result {
     my (@args) = @_;
     my (@objects);
+
+    require Spark::Form::Validator::Result;
+
     if (@args) {
         foreach my $msg (@args) {
             push @objects, Spark::Form::Validator::Result->new(bool => undef, message => $msg,);
@@ -28,6 +28,7 @@ sub form_result {
 sub field_result {
     my (@args) = @_;
     my (@objects);
+    require Spark::Form::Field::Validator::Result;
     if (@args) {
         foreach my $msg (@args) {
             push @objects, Spark::Form::Field::Validator::Result->new(bool => undef, message => $msg,);

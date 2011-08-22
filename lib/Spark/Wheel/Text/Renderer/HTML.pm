@@ -1,7 +1,6 @@
 package Spark::Wheel::Text::Renderer::HTML;
 
 use Moose;
-use HTML::Tiny;
 with 'Spark::Renderer';
 
 sub render {
@@ -10,6 +9,7 @@ sub render {
     if (defined $node->name) {
         $options{value} = $data->get_one($node->name);
     }
+    require HTML::Tiny;
     return HTML::Tiny->new->input(\%options);
 }
 

@@ -29,8 +29,8 @@ has form => (
 );
 
 has _validators => (
-    isa     => 'ArrayRef[Spark::Form::Field::Validator]',
-    is      => 'rw',
+    isa => ArrayRef [SFieldValidator],
+    is => 'rw',
     default => sub { [] },
     traits  => ['Array'],
     handles => {
@@ -40,7 +40,7 @@ has _validators => (
 );
 
 has client_id => (
-    isa      => 'Str|Undef',
+    isa      => Str | Undef,
     is       => 'rw',
     required => 0,
     default  => sub { my $self = shift; $self->name },
@@ -60,6 +60,7 @@ sub human_name {
 
 sub validate {
     my ($self, $gpc) = @_;
+    require Spark::Form::Field::Result;
     my $result = Spark::Form::Field::Result->new;
     if ($self->can('_validate')) {
         my @ret = $self->_validate($gpc);

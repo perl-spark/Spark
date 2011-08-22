@@ -34,7 +34,10 @@ subtype BalancedList,
 
 coerce Hashray,
   from BalancedList,
-  via { Hashray->new(@{$_}) };
+  via {
+    require Spark::Hashray;
+    Spark::Hashray->new(@{$_})
+  };
 
 1;
 __END__

@@ -3,7 +3,6 @@ package Spark::Wheel::Textarea::Renderer::HTML;
 use 5.010001;    # // syntax.
 
 use Moose;
-use HTML::Tiny;
 
 with 'Spark::Renderer';
 
