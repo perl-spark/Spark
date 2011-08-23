@@ -17,27 +17,39 @@ my @modules = ( #produced with echo -n $word | shasum
     'ae2ad9454f3af7fcb18c83969f99b20a788eddd1', # quux
 );
 
-my $foo_expected = "Spark::Wheel::@{[$modules[0]]}";
-my $foo_pack = $load->package($modules[0]);
-my $foo_obj = $load->make($modules[0], name => 'foo');
-is($foo_pack, $foo_expected, "Loaded the correct foo");
-isa_ok($foo_obj, $foo_expected, "Created the correct foo");
-is($foo_obj->name, 'foo');
+sub gen_data {
+  my ( $prefix, $offset, $name ) = @_ ;
+  return (
+    $prefix . q{::} . $modules[$offset],
+    $load->package( $modules[$offset] ),
+    $load->make( $modules[$offset], name => $name ),
+  );
+}
+sub test_data {
+  my ( $expected, $pack, $object, $name ) = @_ ;
+  subtest "$name" => sub {
+    is ( $pack, $expected, "Loaded the correct $name");
+    isa_ok( $object, $expected, "Created the correct $name");
+    is( $object->name, $name, "Object for $name has the right name");
+  };
+}
 
-$load->add_namespace('Test::Spark::Load::Field');
-my $bar_expected = "Test::Spark::Load::Field::@{[$modules[1]]}";
-my $bar_pack = $load->package($modules[1]);
-my $bar_obj = $load->make($modules[1], name => 'bar');
-is($bar_pack, $bar_expected, "Loaded the correct bar");
-isa_ok($bar_obj, $bar_expected, "Created the correct bar");
-is($bar_obj->name, 'bar');
+{
+  my ( $expected , $pack, $obj ) = gen_data( "Spark::Wheel",  0, 'foo' );
+  test_data( $expected, $pack, $obj, 'foo');
+}
 
-$load->add_namespace('Test::Spark::Field');
-my $baz_expected = "Test::Spark::Field::@{[$modules[2]]}";
-my $baz_pack = $load->package($modules[2]);
-my $baz_obj = $load->make($modules[2]);
-is($baz_pack, $baz_expected, "Loaded the correct baz");
-isa_ok($baz_obj, $baz_expected, "Created the correct baz");
+{
+  $load->add_namespace('Test::Spark::Load::Field');
+  my ( $expected , $pack, $obj ) = gen_data( "Test::Spark::Load::Field",  1, 'bar' );
+  test_data( $expected, $pack, $obj, 'bar');
+}
+
+{
+  $load->add_namespace('Test::Spark::Field');
+  my ( $expected , $pack, $obj ) = gen_data( "Test::Spark::Field",  2, 'baz' );
+  test_data( $expected, $pack, $obj, 'baz');
+}
 
 # Quux doesn't actually exist
 is( exception { $load->make($modules[3]) }, undef, 'Failed to load nonexistent module');
