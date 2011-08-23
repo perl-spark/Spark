@@ -3,7 +3,7 @@ package Spark::Wheel::Dummy;
 use Moose;
 
 use Carp;
-extends 'Spark::Simple::Field';
+with 'Spark::Simple::Field';
 
 has '+renderer' => (
     required => 0,
