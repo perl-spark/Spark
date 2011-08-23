@@ -1,6 +1,8 @@
-use Test::More;
-use Test::Exception;
 use strict;
+use warnings;
+
+use Test::More;
+use Test::Fatal;
 
 use lib 't/lib';
 
@@ -38,6 +40,6 @@ is($baz_pack, $baz_expected, "Loaded the correct baz");
 isa_ok($baz_obj, $baz_expected, "Created the correct baz");
 
 # Quux doesn't actually exist
-dies_ok { $load->make($modules[3]) } 'Failed to load nonexistent module';
+is( exception { $load->make($modules[3]) }, undef, 'Failed to load nonexistent module');
 
 done_testing;
