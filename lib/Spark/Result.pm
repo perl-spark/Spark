@@ -23,7 +23,7 @@ sub error {
     $self->_push_item(
         $self->_make_item(
             error => $error,
-            field => $kw{field}
+            field => $kw{field},
             validator => $kw{validator}
         )
     );
