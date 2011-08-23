@@ -8,48 +8,48 @@ use Class::Load qw( load_class );
 use Carp;
 
 has _default_namespaces => (
-    isa => ArrayRef[PackageName],
+    isa => ArrayRef [PackageName],
     is => 'ro',
-    default => sub {['Spark::Wheel']},
-    traits => ['Array'],
+    default => sub { ['Spark::Wheel'] },
+    traits  => ['Array'],
     handles => {
         default_namespaces => 'elements',
     },
 );
 
 has _user_namespaces => (
-    isa => ArrayRef[PackageName],
+    isa => ArrayRef [PackageName],
     is => 'ro',
     required => 1,
     default  => sub { [] },
     traits   => ['Array'],
     handles  => {
-        add_namespace => 'push',
+        add_namespace   => 'push',
         user_namespaces => 'elements',
     },
 );
 
 sub namespaces {
     my ($self) = @_;
-    
-    reverse ($self->default_namespaces, $self->user_namespaces);
+
+    reverse($self->default_namespaces, $self->user_namespaces);
 }
 
 sub _make_mpo {
     my ($self) = @_;
     Module::Pluggable::Object->new(
         search_path => [$self->namespaces],
-        required => 1,
+        required    => 1,
     );
 }
 
 sub package {
-    my ($self,$partial) = @_;
+    my ($self, $partial) = @_;
     $self->_load_package($partial);
 }
 
 sub make {
-    my ($self,$class,@options) = @_;
+    my ($self, $class, @options) = @_;
     my $p = $self->package($class);
     $p ? $p->new(@options) : undef;
 }
@@ -84,11 +84,10 @@ sub _normalize_module_name {
     $module_name = lc $module_name;
 }
 
-
 sub _load_package {
     my ($self, $type) = @_;
     my $mod = $self->_find_matching_mod($type) or croak("No such module/plugin exists in the plugin-stash/environment matching \"$type\"");
-    load_class("".$mod);
+    load_class("" . $mod);
     return $mod;
 }
 
@@ -98,7 +97,8 @@ sub _find_matching_mod {
     # iterate through all available plugins,
     # and return the first one that when normalized, matches the 'wanted' value.
     foreach my $mod ($self->_make_mpo->plugins) {
-#        print "Done: " . $self->_normalize_module_name($mod). "\n";
+
+        #        print "Done: " . $self->_normalize_module_name($mod). "\n";
         return $mod if $self->_normalize_module_name($mod) eq $wanted;
     }
 
