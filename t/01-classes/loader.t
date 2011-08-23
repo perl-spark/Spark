@@ -52,6 +52,6 @@ sub test_data {
 }
 
 # Quux doesn't actually exist
-is( exception { $load->make($modules[3]) }, undef, 'Failed to load nonexistent module');
+isnt( exception { $load->make($modules[3]) }, undef, 'Failed to load nonexistent module');
 
 done_testing;
