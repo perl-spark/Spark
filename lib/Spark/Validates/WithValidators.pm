@@ -1,5 +1,5 @@
 package Spark::Validates::WithValidators;
-
+use Moose;
 with 'Spark::Validates','Spark::Node';
 
 has _validators => (
@@ -11,4 +11,7 @@ has _validators => (
         'validators' => 'elements',
       }
 );
+
+__PACKAGE__->meta->make_immutable;
+1;
 
