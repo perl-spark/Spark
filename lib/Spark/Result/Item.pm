@@ -5,20 +5,20 @@ use Moose;
 # I don't think these will ever go circular-ref-y, but weak_ref => 1 is the fix -- jjl
 
 has field => (
-    isa => 'Maybe[Spark::Field]',
-    is => 'ro',
+    isa     => 'Maybe[Spark::Field]',
+    is      => 'ro',
     default => undef,
 );
 
 has validator => (
-    isa => 'Maybe[Spark::Validator]',
-    is => 'ro',
+    isa     => 'Maybe[Spark::Validator]',
+    is      => 'ro',
     default => undef,
 );
 
 has message => (
-    isa => 'Str',
-    is => 'ro',
+    isa     => 'Str',
+    is      => 'ro',
     default => '',
 );
 

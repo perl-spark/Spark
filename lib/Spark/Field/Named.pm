@@ -3,8 +3,8 @@ package Spark::Field::Named;
 use Moose::Role;
 
 has name => (
-    isa => 'Str',
-    is => 'ro',
+    isa      => 'Str',
+    is       => 'ro',
     required => 1,
 );
 

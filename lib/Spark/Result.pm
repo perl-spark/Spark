@@ -4,9 +4,9 @@ use Spark::Result::Item;
 use Moose;
 
 has items => (
-    isa => 'ArrayRef[Spark::Result::Item]',
-    is => 'ro',
-    traits => ['Array'],
+    isa     => 'ArrayRef[Spark::Result::Item]',
+    is      => 'ro',
+    traits  => ['Array'],
     default => sub { [] },
     handles => {
         _push_item => 'push',
@@ -22,13 +22,13 @@ sub error {
     my ($self, $error, %kw) = @_;
     $self->_push_item(
         $self->_make_item(
-            error => $error,
-            field => $kw{field},
+            error     => $error,
+            field     => $kw{field},
             validator => $kw{validator}
-        )
+          )
     );
 }
-    
+
 __PACKAGE__->meta->make_immutable;
 1;
 __END__

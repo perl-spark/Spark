@@ -1,6 +1,6 @@
 package Spark::Validates::WithValidators;
 use Moose;
-with 'Spark::Validates','Spark::Node';
+with 'Spark::Validates', 'Spark::Node';
 
 has _validators => (
     isa     => 'ArrayRef[Spark::Form::Field::Validator]',
