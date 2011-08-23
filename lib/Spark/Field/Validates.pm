@@ -2,5 +2,7 @@ package Spark::Form::Validates;
 
 use Moose::Role;
 
-does 'Spark::Validates';
+with 'Spark::Validates';
+
+1;
 
