@@ -33,6 +33,7 @@ sub import {
 
     $_->import({-into => $caller}, @{$from{$_}})
       for keys %from;
+    return 1;
 }
 
 __PACKAGE__->provide_types_from(qw(
