@@ -1,22 +1,24 @@
 use strict;
 use warnings;
+
 package Spark::Types::Misc;
+
 # FILENAME: Misc.pm
 # CREATED: 24/08/11 19:08:53 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Miscelaneous types that wouldn't go anywhere else.
 
 use Spark::Types::Classes qw( :all );
-use Spark::Types::Roles   qw( :all );
+use Spark::Types::Roles qw( :all );
 use MooseX::Types::Moose qw( :all );
 
 use MooseX::Types -declare => [qw(
-  Hashray BalancedList
-  NamedObject LabelledObject
-  ModPlugObject
-)];
+      Hashray BalancedList
+      NamedObject LabelledObject
+      ModPlugObject
+      )];
 
-class_type Hashray, {class => 'Spark::Hashray'};
-class_type ModPlugObject, { class => 'Module::Pluggable::Object'};
+class_type Hashray,       {class => 'Spark::Hashray'};
+class_type ModPlugObject, {class => 'Module::Pluggable::Object'};
 
 subtype BalancedList,
   as ArrayRef,
@@ -47,5 +49,4 @@ subtype NamedObject, as Object, where {
 no Moose;
 __PACKAGE__->meta->make_immutable;
 1;
-
 
