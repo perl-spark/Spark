@@ -3,9 +3,6 @@ package Spark::Load;
 use Moose;
 use MooseX::Types::Perl qw(:all);
 use MooseX::Types::Moose qw(:all);
-use Module::Pluggable::Object ();
-use Class::Load qw( load_class );
-use Carp;
 
 has _default_namespaces => (
     isa => ArrayRef [PackageName],
@@ -31,13 +28,17 @@ has _user_namespaces => (
 
 sub namespaces {
     my ($self) = @_;
-
-    reverse($self->default_namespaces, $self->user_namespaces);
+    my ( @namespaces ) = (
+      $self->default_namespaces,
+      $self->user_namespaces,
+    );
+    return reverse @namespaces;
 }
 
 sub _make_mpo {
     my ($self) = @_;
-    Module::Pluggable::Object->new(
+    require Module::Pluggable::Object;
+    return Module::Pluggable::Object->new(
         search_path => [$self->namespaces],
         required    => 1,
     );
@@ -45,13 +46,14 @@ sub _make_mpo {
 
 sub package {
     my ($self, $partial) = @_;
-    $self->_load_package($partial);
+    return $self->_load_package($partial);
 }
 
 sub make {
     my ($self, $class, @options) = @_;
     my $p = $self->package($class);
-    $p ? $p->new(@options) : undef;
+    return $p->new( @options ) if $p;
+    return;
 }
 
 sub _normalize_module_name {
@@ -82,12 +84,18 @@ sub _normalize_module_name {
     #
     $module_name =~ s/::/-/g;
     $module_name = lc $module_name;
+    return $module_name;
 }
 
 sub _load_package {
     my ($self, $type) = @_;
-    my $mod = $self->_find_matching_mod($type) or croak("No such module/plugin exists in the plugin-stash/environment matching \"$type\"");
-    load_class("" . $mod);
+    my $mod = $self->_find_matching_mod($type)
+      or do {
+      require Carp;
+      Carp::croak("No such module/plugin exists in the plugin-stash/environment matching \"$type\"");
+    };
+    require Class::Load;
+    Class::Load::load_class(q{} . $mod);
     return $mod;
 }
 

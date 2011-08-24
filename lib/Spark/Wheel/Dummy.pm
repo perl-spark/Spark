@@ -2,7 +2,6 @@ package Spark::Wheel::Dummy;
 
 use Moose;
 
-use Carp;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (
@@ -10,7 +9,8 @@ has '+renderer' => (
 );
 
 sub render {
-    croak("Don't render me");
+    require Carp;
+    Carp::croak(q{Don't render me});
 }
 
 __PACKAGE__->meta->make_immutable;

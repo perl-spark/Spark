@@ -1,1 +1,7 @@
-package Spark::Validator::NodeMethod;
+package Spark::Validator::Node;
+
+use Moose;
+
+__PACKAGE__->meta->make_immutable;
+
+1;
