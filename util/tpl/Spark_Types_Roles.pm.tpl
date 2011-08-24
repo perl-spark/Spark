@@ -25,9 +25,9 @@ use MooseX::Types -declare => [qw([% FOREACH role IN roles %]
 =cut
 
 role_type [% role.short %], {
-    role    => "[% role.long %]",
+    role    => '[% role.long %]',
     message => sub {
-        "$_ is not of role \"[% role.long %]\""
+        return qq{$_ is not of role "[% role.long %]"};
     },
 };
 [% END %]
