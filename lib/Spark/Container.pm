@@ -1,7 +1,8 @@
 package Spark::Container;
 
 use Moose::Role;
-use Spark::Types qw(Hashray);
+use Spark::Types qw(SparkHashray);
+use namespace::autoclean;
 
 =attr children
 
@@ -10,7 +11,7 @@ use Spark::Types qw(Hashray);
 =cut
 
 has children => (
-    isa     => Hashray,
+    isa     => SparkHashray,
     is      => 'ro',
     handles => {
     },

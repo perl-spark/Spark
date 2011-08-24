@@ -12,7 +12,7 @@ use Spark::Types::Roles qw( :all );
 use MooseX::Types::Moose qw( :all );
 
 use MooseX::Types -declare => [qw(
-      Hashray BalancedList
+      BalancedList
       NamedObject LabelledObject
       ModPlugObject
       )];
@@ -21,19 +21,11 @@ use MooseX::Types -declare => [qw(
 
 =cut
 
-class_type Hashray,       {class => 'Spark::Hashray'};
 class_type ModPlugObject, {class => 'Module::Pluggable::Object'};
 
 subtype BalancedList,
   as ArrayRef,
   where { @{$_} % 2 == 0 };
-
-coerce Hashray,
-  from BalancedList,
-  via {
-    require Spark::Hashray;
-    return Spark::Hashray->new(@{$_});
-  };
 
 coerce SparkHashray,
   from BalancedList,
@@ -50,7 +42,5 @@ subtype NamedObject, as Object, where {
     $_->can('name') and $_->name;
 };
 
-no Moose;
-__PACKAGE__->meta->make_immutable;
 1;
 
