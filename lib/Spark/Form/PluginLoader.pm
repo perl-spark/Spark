@@ -10,7 +10,9 @@ package Spark::Form::PluginLoader;
 use Moose;
 use MooseX::Types::Perl qw( :all );
 use MooseX::Types::Moose qw( :all );
+use Spark::Form::Types qw( :all );
 use Class::Load qw( load_class );
+use namespace::autoclean;
 
 has _namespaces => (
     isa => ArrayRef [PackageName],
@@ -33,7 +35,7 @@ has _user_namespaces => (
 );
 
 has '_plugin_stash' => (
-    isa        => 'Module::Pluggable::Object',
+    isa        => ModPlugObject,
     is         => 'ro',
     lazy_build => 1,
     handles    => {

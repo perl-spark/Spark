@@ -1,9 +1,12 @@
 package Spark::Field::Named;
 
 use Moose::Role;
+use MooseX::Types::Moose qw( :all );
+use Spark::Form::Types qw( :all );
+use namespace::autoclean;
 
 has name => (
-    isa      => 'Str',
+    isa      => Str,
     is       => 'ro',
     required => 1,
 );

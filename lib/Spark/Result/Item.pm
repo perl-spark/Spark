@@ -1,30 +1,33 @@
 package Spark::Result::Item;
 
 use Moose;
+use MooseX::Types::Moose qw( :all );
+use Spark::Form::Types qw( :all );
+use namespace::autoclean;
 
 # I don't think these will ever go circular-ref-y, but weak_ref => 1 is the fix -- jjl
 
 has field => (
-    isa     => 'Maybe[Spark::Field]',
-    is      => 'ro',
+    isa => Maybe [SparkField],
+    is => 'ro',
     default => undef,
 );
 
 has validator => (
-    isa     => 'Maybe[Spark::Validator]',
-    is      => 'ro',
+    isa => Maybe [SparkValidator],
+    is => 'ro',
     default => undef,
 );
 
 has message => (
-    isa     => 'Str',
+    isa     => Str,
     is      => 'ro',
     default => '',
 );
 
 # Do not want to add this, holding off for now
 #has code => (
-#    isa => 'Str',
+#    isa => Str,
 #    is => 'ro',
 #);
 

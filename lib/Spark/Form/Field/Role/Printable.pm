@@ -5,9 +5,11 @@ package Spark::Form::Field::Role::Printable;
 # ABSTRACT: Printability for form fields
 
 use Moose::Role;
+use MooseX::Types::Moose qw( :all );
+use namespace::autoclean;
 
 has label => (
-    isa      => 'Str',
+    isa      => Str,
     is       => 'rw',
     required => 0,
 );

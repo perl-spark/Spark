@@ -1,11 +1,13 @@
 package Spark::Form::Field::Validator;
 
 use Moose::Role;
+use Spark::Form::Types qw( :all );
+use namespace::autoclean;
 
 requires 'validate';
 
 has field => (
-    isa      => 'Spark::Form::Field',
+    isa      => SField,
     is       => 'rw',
     required => 1,
     weak_ref => 1,
