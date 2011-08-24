@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 package Spark::Types::Roles;
 
 # ABSTRACT: MooseX::Types for all Spark Roles
@@ -9,14 +10,14 @@ package Spark::Types::Roles;
 # Last generated at [% timestamp %]
 
 use MooseX::Types -declare => [qw([% FOREACH role IN roles %]
-    [% role.short -%]
+      [% role.short -%]
 [% END %]
-)];
+      )];
 
 =head1 TYPES
 
-[% FOREACH role IN roles %]
 
+[% FOREACH role IN roles %]
 =head2 [% role.short %]
 
   does => '[% role.long %]'
@@ -24,13 +25,11 @@ use MooseX::Types -declare => [qw([% FOREACH role IN roles %]
 =cut
 
 role_type [% role.short %], {
-  role    => "[% role.long %]",
-  message => sub {
-    "$_ is not of role \"[% role.long %]\""
-  },
+    role    => "[% role.long %]",
+    message => sub {
+        "$_ is not of role \"[% role.long %]\""
+    },
 };
-
 [% END %]
-
 1;
 __END__
