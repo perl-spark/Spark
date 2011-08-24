@@ -6,7 +6,7 @@ package Spark::Form::Field;
 
 use Moose 0.90;
 use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 use MooseX::LazyRequire;
 use Spark::Util qw(field_result);
 
@@ -29,7 +29,7 @@ has form => (
 );
 
 has _validators => (
-    isa => ArrayRef [SFieldValidator],
+    isa => ArrayRef [SparkFormFieldValidator],
     is => 'rw',
     default => sub { [] },
     traits  => ['Array'],

@@ -7,7 +7,7 @@ package Spark::Form;
 use Moose::Role 0.90;
 use MooseX::Types::Moose qw( :all );
 use MooseX::LazyRequire;
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 use List::MoreUtils 'all';
 use Carp;
 use Scalar::Util qw( blessed );

@@ -10,7 +10,7 @@ package Spark::Form::PluginLoader;
 use Moose;
 use MooseX::Types::Perl qw( :all );
 use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 use Class::Load qw( load_class );
 use namespace::autoclean;
 

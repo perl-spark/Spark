@@ -2,7 +2,7 @@ package Spark::Result;
 
 use Moose;
 use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 use namespace::autoclean;
 
 has items => (

@@ -7,11 +7,16 @@ package Spark::Types::Misc;
 
 use Spark::Types::Classes qw( :all );
 use Spark::Types::Roles   qw( :all );
-use MooseX::Types::Moose qw(ArrayRef);
+use MooseX::Types::Moose qw( :all );
 
-use MooseX::Types -declare => [qw( Hashray BalancedList )];
+use MooseX::Types -declare => [qw(
+  Hashray BalancedList
+  NamedObject LabelledObject
+  ModPlugObject
+)];
 
 class_type Hashray, {class => 'Spark::Hashray'};
+class_type ModPlugObject, { class => 'Module::Pluggable::Object'};
 
 subtype BalancedList,
   as ArrayRef,
@@ -30,6 +35,14 @@ coerce SparkHashray,
     require Spark::Hashray;
     return Spark::Hashray->new(@{$_});
   };
+
+subtype LabelledObject, as Object, where {
+    $_->can('label') and $_->label;
+};
+
+subtype NamedObject, as Object, where {
+    $_->can('name') and $_->name;
+};
 
 no Moose;
 __PACKAGE__->meta->make_immutable;

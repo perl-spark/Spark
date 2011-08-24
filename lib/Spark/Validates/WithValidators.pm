@@ -1,11 +1,11 @@
 package Spark::Validates::WithValidators;
 use Moose;
 use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 with 'Spark::Validates', 'Spark::Node';
 
 has _validators => (
-    isa => ArrayRef [SFieldValidator],
+    isa => ArrayRef [SparkFormFieldValidator],
     is => 'rw',
     default => sub { [] },
     traits  => ['Array'],

@@ -1,13 +1,14 @@
 package Spark::Form::Field::Role::NewValidator;
 
 use Moose::Role;
-use Spark::Form::Types ':all';
+use Spark::Types ':all';
 use MooseX::Types::Moose ':all';
+use namespace::autoclean;
 
 requires '_validate';
 
 has _validators => (
-    isa => ArrayRef [SFieldValidator],
+    isa => ArrayRef [SparkFormFieldValidator],
     is => 'rw',
     init_arg => undef,
     default  => sub { [] },

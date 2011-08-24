@@ -1,7 +1,7 @@
 package Spark::Form::Validator;
 
 use Moose;
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 use namespace::autoclean;
 
 has form => (
