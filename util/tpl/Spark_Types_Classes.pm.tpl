@@ -25,9 +25,9 @@ use MooseX::Types -declare => [qw([% FOREACH class IN classes %]
 =cut
 
 class_type [% class.short %], {
-    class   => "[% class.long %]",
+    class   => '[% class.long %]',
     message => sub {
-        "$_ is not of class \"[% class.long %]\""
+        return qq{$_ is not of class "[% class.long %]"};
     },
 };
 [% END %]
