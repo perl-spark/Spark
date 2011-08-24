@@ -2,11 +2,11 @@ package Spark::Form::Result;
 
 use Moose;
 use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 use namespace::autoclean;
 
 has results => (
-    isa => ArrayRef [SFieldResult],
+    isa => ArrayRef [SparkFormFieldResult],
     is => 'ro',
     default => sub { [] },
     traits  => ['Array'],

@@ -2,7 +2,7 @@ package Spark::Field::Named;
 
 use Moose::Role;
 use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 use namespace::autoclean;
 
 has name => (

@@ -2,7 +2,7 @@ package Spark::Result::Item;
 
 use Moose;
 use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 use namespace::autoclean;
 
 # I don't think these will ever go circular-ref-y, but weak_ref => 1 is the fix -- jjl

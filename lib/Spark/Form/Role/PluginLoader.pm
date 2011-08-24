@@ -60,7 +60,7 @@ This role is more or less a sugar-syntax applicator for L<Spark::Form::PluginLoa
 use MooseX::Role::Parameterized;
 use MooseX::Types::Perl qw( :all );
 use MooseX::Types::Moose qw( :all );
-use Spark::Form::Types qw( :all );
+use Spark::Types qw( :all );
 
 # Default namespace list to use on this class
 parameter namespaces => (
@@ -100,7 +100,7 @@ role {
     $plugin_loader_handles{$p->construct_method_name} = '_construct_plugin';
 
     has _plugin_loader => (
-        isa        => SPluginLoader,
+        isa        => SparkFormPluginLoader,
         is         => 'ro',
         init_arg   => undef,
         lazy_build => 1,
