@@ -5,7 +5,7 @@ package Spark::Types::Misc;
 
 # FILENAME: Misc.pm
 # CREATED: 24/08/11 19:08:53 by Kent Fredric (kentnl) <kentfredric@gmail.com>
-# ABSTRACT: Miscelaneous types that wouldn't go anywhere else.
+# ABSTRACT: Miscellaneous types that wouldn't go anywhere else.
 
 use Spark::Types::Classes qw( :all );
 use Spark::Types::Roles qw( :all );
@@ -16,6 +16,10 @@ use MooseX::Types -declare => [qw(
       NamedObject LabelledObject
       ModPlugObject
       )];
+
+=head1 TYPES
+
+=cut
 
 class_type Hashray,       {class => 'Spark::Hashray'};
 class_type ModPlugObject, {class => 'Module::Pluggable::Object'};
