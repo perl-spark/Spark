@@ -11,7 +11,7 @@ has _validators => (
     traits  => ['Array'],
     handles => {
         'validators' => 'elements',
-      },
+    },
 );
 
 __PACKAGE__->meta->make_immutable;

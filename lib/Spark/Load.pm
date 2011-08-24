@@ -27,10 +27,10 @@ has _user_namespaces => (
 );
 
 sub namespaces {
-    my ($self) = @_;
-    my ( @namespaces ) = (
-      $self->default_namespaces,
-      $self->user_namespaces,
+    my ($self)       = @_;
+    my (@namespaces) = (
+        $self->default_namespaces,
+        $self->user_namespaces,
     );
     return reverse @namespaces;
 }
@@ -52,7 +52,7 @@ sub package {
 sub make {
     my ($self, $class, @options) = @_;
     my $p = $self->package($class);
-    return $p->new( @options ) if $p;
+    return $p->new(@options) if $p;
     return;
 }
 
@@ -91,9 +91,9 @@ sub _load_package {
     my ($self, $type) = @_;
     my $mod = $self->_find_matching_mod($type)
       or do {
-      require Carp;
-      Carp::croak("No such module/plugin exists in the plugin-stash/environment matching \"$type\"");
-    };
+        require Carp;
+        Carp::croak("No such module/plugin exists in the plugin-stash/environment matching \"$type\"");
+      };
     require Class::Load;
     Class::Load::load_class(q{} . $mod);
     return $mod;
