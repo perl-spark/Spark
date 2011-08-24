@@ -4,6 +4,9 @@ use parent 'MooseX::Types::Combine';
 
 use List::Util qw( first );
 
+# This exists because :all is not supported yet at MX-Types 0.29.
+# Patch sent to upstream as topic/support_all
+
 sub import {
     my ($class, @types) = @_;
     my $caller = caller;
