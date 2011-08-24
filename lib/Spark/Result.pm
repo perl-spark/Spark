@@ -3,6 +3,7 @@ package Spark::Result;
 use Moose;
 use MooseX::Types::Moose qw( :all );
 use Spark::Form::Types qw( :all );
+use namespace::autoclean;
 
 has items => (
     isa => ArrayRef [SparkResultItem],
@@ -17,12 +18,12 @@ has items => (
 sub _make_item {
     my ($self, %kw) = @_;
     require Spark::Result::Item;
-    Spark::Result::Item->new(%kw);
+    return Spark::Result::Item->new(%kw);
 }
 
 sub error {
     my ($self, $error, %kw) = @_;
-    $self->_push_item(
+    return $self->_push_item(
         $self->_make_item(
             error     => $error,
             field     => $kw{field},

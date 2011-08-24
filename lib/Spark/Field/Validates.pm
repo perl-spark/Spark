@@ -1,4 +1,4 @@
-package Spark::Form::Validates;
+package Spark::Field::Validates;
 
 use Moose::Role;
 

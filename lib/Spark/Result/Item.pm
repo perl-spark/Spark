@@ -22,7 +22,7 @@ has validator => (
 has message => (
     isa     => Str,
     is      => 'ro',
-    default => '',
+    default => q{},
 );
 
 # Do not want to add this, holding off for now
