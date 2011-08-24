@@ -2,6 +2,8 @@ package Spark::Hashray;
 use strict;
 use warnings;
 
+## class # hack for autogenerator
+
 use Carp;
 use List::Util 'first';
 

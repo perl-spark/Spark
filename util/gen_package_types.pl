@@ -35,14 +35,29 @@ $libs->recurse( callback => sub {
         $short =~ s/:://g;
         next;
       }
-      if ( $line =~ /^use\s+Moose;/ ){
+      if ( $line =~ /^##\s*class(\s|$)/ ){
+        print "CLASS: $package\n";
         push @classes, { short => $short, long => $package };
         return;
       }
-      if ( $line =~ /^use\s+Moose::Role;/ ){
+      if ( $line =~ /^##\s*role(\s|$)/ ){
+        print "ROLE: $package\n";
         push @roles, { short => $short, long => $package };
         return;
       }
+      if ( $line =~ /^use\s+Moose[;\s(]/ ){
+        print "CLASS: $package\n";
+        push @classes, { short => $short, long => $package };
+        return;
+      }
+      if ( $line =~ /^use\s+Moose::Role[;\s(]/ ){
+        print "ROLE: $package\n";
+        push @roles, { short => $short, long => $package };
+        return;
+      }
+    }
+    if( $package ){
+      print "\e[31mUNKNOWN:\e[0m $package\n";
     }
     return;
 });
