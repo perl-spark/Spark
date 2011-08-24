@@ -1,11 +1,12 @@
 package Spark::Result;
 
-use Spark::Result::Item;
 use Moose;
+use MooseX::Types::Moose qw( :all );
+use Spark::Form::Types qw( :all );
 
 has items => (
-    isa     => 'ArrayRef[Spark::Result::Item]',
-    is      => 'ro',
+    isa => ArrayRef [SparkResultItem],
+    is => 'ro',
     traits  => ['Array'],
     default => sub { [] },
     handles => {
@@ -15,6 +16,7 @@ has items => (
 
 sub _make_item {
     my ($self, %kw) = @_;
+    require Spark::Result::Item;
     Spark::Result::Item->new(%kw);
 }
 

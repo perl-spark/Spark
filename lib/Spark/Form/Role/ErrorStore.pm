@@ -5,6 +5,7 @@ package Spark::Form::Role::ErrorStore;
 # ABSTRACT: A mix-in for adding an internal error storage mechanism.
 
 use Moose::Role 0.90;
+use MooseX::Types::Moose qw( :all );
 use namespace::autoclean;
 
 requires 'valid';
@@ -16,8 +17,8 @@ Returns a list of all errors encountered so far
 =cut
 
 has _errors => (
-    isa      => 'ArrayRef[Str]',
-    is       => 'ro',
+    isa => ArrayRef [Str],
+    is => 'ro',
     required => 0,
     default  => sub { [] },
     traits   => [qw( Array )],

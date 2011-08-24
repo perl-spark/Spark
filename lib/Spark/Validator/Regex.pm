@@ -1,22 +1,24 @@
 package Spark::Validator::Regex;
 
 use Moose;
+use MooseX::Types::Moose qw(:all);
+use namespace::autoclean;
 with 'Spark::Validator';
 
 has regex => (
-    isa      => 'Regexp',
+    isa      => RegexpRef,
     is       => 'rw',
     required => 1,
 );
 
 has negate => (
-    isa     => 'Bool',
+    isa     => Bool,
     is      => 'rw',
     default => 0,
 );
 
 has against => (
-    isa     => 'ArrayRef',
+    isa     => ArrayRef,
     is      => 'rw',
     default => sub { [] },
 );

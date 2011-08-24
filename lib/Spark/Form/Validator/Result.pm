@@ -1,15 +1,17 @@
 package Spark::Form::Validator::Result;
 
 use Moose;
+use MooseX::Types::Moose qw( :all );
+use namespace::autoclean;
 
 has bool => (
-    isa      => 'Bool',
+    isa      => Bool,
     is       => 'ro',
     required => 1,
 );
 
 has message => (
-    isa     => 'Str',
+    isa     => Str,
     is      => 'ro',
     default => q{},
 );

@@ -1,9 +1,11 @@
 package Spark::Form::Loader;
 
 use Moose;
+use MooseX::Types::Moose qw( :all );
+use namespace::autoclean;
 
 has namespaces => (
-    isa      => 'ArrayRef[Str]',
+    isa => ArrayRef [Str],
     required => 1,
     default  => sub { [] },
     traits   => ['Array'],
