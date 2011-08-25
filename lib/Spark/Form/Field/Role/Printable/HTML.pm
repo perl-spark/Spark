@@ -6,6 +6,7 @@ package Spark::Form::Field::Role::Printable::HTML;
 
 use Moose::Role;
 with 'Spark::Form::Field::Role::Printable';
+use namespace::autoclean;
 
 requires 'to_html';
 

@@ -6,6 +6,7 @@ use warnings;
 
 use Carp;
 use List::Util 'first';
+use namespace::autoclean;
 
 sub new {
     my ($package, @items) = @_;

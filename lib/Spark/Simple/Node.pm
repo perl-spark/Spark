@@ -4,7 +4,7 @@ use warnings;
 package Spark::Simple::Node;
 
 use Moose::Role;
-
+use namespace::autoclean;
 with 'Spark::Node', 'Spark::Validates';
 
 use Spark::Types qw(:all);

@@ -5,6 +5,7 @@ package Spark::Validates::WithValidators;
 use Moose;
 use MooseX::Types::Moose qw( :all );
 use Spark::Types qw( :all );
+use namespace::autoclean;
 with 'Spark::Validates', 'Spark::Node';
 
 has _validators => (

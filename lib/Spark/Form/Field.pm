@@ -9,7 +9,7 @@ use MooseX::Types::Moose qw( :all );
 use Spark::Types qw( :all );
 use MooseX::LazyRequire;
 use Spark::Util qw(field_result);
-
+use namespace::autoclean;
 with 'MooseX::Clone';
 with 'Spark::Form::Role::Validity';
 with 'Spark::Form::Role::ErrorStore';

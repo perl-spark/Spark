@@ -10,7 +10,7 @@ package Spark::Types::Misc;
 use Spark::Types::Classes qw( :all );
 use Spark::Types::Roles qw( :all );
 use MooseX::Types::Moose qw( :all );
-
+use namespace::autoclean;
 use MooseX::Types -declare => [qw(
       BalancedList
       NamedObject LabelledObject

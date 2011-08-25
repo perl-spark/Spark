@@ -5,7 +5,7 @@ package Spark::Form::Source;
 # ABSTRACT: Base class for population plugins
 
 use Moose::Role;
-
+use namespace::autoclean;
 requires 'populate';
 
 1;

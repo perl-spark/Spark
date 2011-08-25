@@ -4,6 +4,7 @@ use warnings;
 package Spark::Validator;
 
 use Moose::Role;
+use namespace::autoclean;
 
 requires 'validate';
 

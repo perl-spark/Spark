@@ -4,7 +4,7 @@ use warnings;
 package Spark::Types;
 
 use parent 'MooseX::Types::Combine';
-
+use namespace::autoclean;
 use List::Util qw( first );
 
 # This exists because :all is not supported yet at MX-Types 0.29.

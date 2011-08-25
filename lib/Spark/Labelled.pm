@@ -4,6 +4,7 @@ use warnings;
 package Spark::Labelled;
 
 use Moose::Role;
+use namespace::autoclean;
 
 has label => (
     is      => 'rw',

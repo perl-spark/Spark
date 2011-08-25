@@ -8,6 +8,7 @@ package Spark;
 # ABSTRACT: A simple yet powerful forms validation system that promotes reuse.
 
 use Moose;
+use namespace::autoclean;
 
 =head1 DESCRIPTION
 

@@ -5,6 +5,7 @@ package Spark::Form::Printer::HTML;
 # ABSTRACT: the interface a HTML-printing form printer needs to implement
 use Moose::Role;
 with 'Spark::Form::Printer';
+use namespace::autoclean;
 
 requires 'to_html';
 
