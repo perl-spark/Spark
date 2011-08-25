@@ -13,6 +13,7 @@ use MooseX::Types -declare => [qw([% FOREACH role IN roles %]
       [% role.short -%]
 [% END %]
       )];
+use namespace::autoclean;
 
 =head1 TYPES
 
