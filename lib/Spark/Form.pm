@@ -12,7 +12,7 @@ use List::MoreUtils 'all';
 use Carp;
 use Scalar::Util qw( blessed );
 use Spark::Util qw(form_result);
-
+use namespace::autoclean;
 with 'MooseX::Clone';
 
 with 'Spark::Form::Role::PluginLoader' => {

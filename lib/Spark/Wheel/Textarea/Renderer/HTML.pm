@@ -6,7 +6,7 @@ package Spark::Wheel::Textarea::Renderer::HTML;
 use 5.010001;    # // syntax.
 
 use Moose;
-
+use namespace::autoclean;
 with 'Spark::Renderer';
 
 sub render {

@@ -6,6 +6,7 @@ package Spark::Wheel::Dummy;
 use Moose;
 
 with 'Spark::Simple::Field';
+use namespace::autoclean;
 
 has '+renderer' => (
     required => 0,

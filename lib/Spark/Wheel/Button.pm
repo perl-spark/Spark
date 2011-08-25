@@ -5,6 +5,7 @@ package Spark::Wheel::Button;
 
 use Moose;
 with 'Spark::Simple::Field';
+use namespace::autoclean;
 
 has '+renderer' => (
     default => sub {

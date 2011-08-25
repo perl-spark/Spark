@@ -5,6 +5,7 @@ package Spark::Renders;
 
 use Moose::Role;
 use Spark::Types qw(:all);
+use namespace::autoclean;
 
 has renderer => (
     isa      => SparkRenderer,

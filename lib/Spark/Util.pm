@@ -5,6 +5,7 @@ package Spark::Util;
 
 use Exporter();
 use parent qw(Exporter);
+use namespace::autoclean;
 
 our @EXPORT_OK = qw(
   form_result     form_validator_result

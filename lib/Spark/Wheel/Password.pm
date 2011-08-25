@@ -4,7 +4,7 @@ use warnings;
 package Spark::Wheel::Password;
 
 use Moose;
-
+use namespace::autoclean;
 with 'Spark::Simple::Field';
 
 has '+renderer' => (

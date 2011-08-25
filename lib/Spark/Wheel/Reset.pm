@@ -6,6 +6,7 @@ package Spark::Wheel::Reset;
 use Moose;
 
 with 'Spark::Simple::Field';
+use namespace::autoclean;
 
 # Seriously, has ever anyone had a use for a form reset button?
 # "Throw away everything I just typed" is really annoying,

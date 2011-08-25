@@ -5,6 +5,7 @@ package Spark::Wheel::MultiSelect;
 
 use Moose;
 with 'Spark::Simple::Field';
+use namespace::autoclean;
 
 has '+renderer' => (
     default => sub {

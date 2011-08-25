@@ -4,6 +4,7 @@ use warnings;
 package Spark::Collection;
 
 use Moose;
+use namespace::autoclean;
 
 __PACKAGE__->meta->make_immutable;
 

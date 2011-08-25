@@ -6,7 +6,7 @@ package Spark::Form::Printer::XHTML;
 
 use Moose::Role;
 with 'Spark::Form::Printer';
-
+use namespace::autoclean;
 requires 'to_xhtml';
 
 1;

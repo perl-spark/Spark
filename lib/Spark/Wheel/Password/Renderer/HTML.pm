@@ -5,6 +5,7 @@ package Spark::Wheel::Password::Renderer::HTML;
 
 use Moose;
 with 'Spark::Renderer';
+use namespace::autoclean;
 
 sub render {
     my ($self, $node, $data) = @_;

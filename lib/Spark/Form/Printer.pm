@@ -4,6 +4,7 @@ package Spark::Form::Printer;
 
 # ABSTRACT: interface for form printers for C<Spark::Form>
 use Moose::Role;
+use namespace::autoclean;
 
 1;
 __END__

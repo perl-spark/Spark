@@ -6,6 +6,7 @@ package Spark::Load;
 use Moose;
 use MooseX::Types::Perl qw(:all);
 use MooseX::Types::Moose qw(:all);
+use namespace::autoclean;
 
 has _default_namespaces => (
     isa => ArrayRef [PackageName],

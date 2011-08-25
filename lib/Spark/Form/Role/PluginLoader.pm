@@ -61,6 +61,7 @@ use MooseX::Role::Parameterized;
 use MooseX::Types::Perl qw( :all );
 use MooseX::Types::Moose qw( :all );
 use Spark::Types qw( :all );
+use namespace::autoclean;
 
 # Default namespace list to use on this class
 parameter namespaces => (
