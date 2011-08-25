@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Form::Field::Role::NewValidator;
 
 use Moose::Role;

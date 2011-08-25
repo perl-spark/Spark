@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Wheel::RadioGroup::Renderer::HTML;
 
 use Moose;

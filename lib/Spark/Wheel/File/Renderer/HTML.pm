@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Wheel::File::Renderer::HTML;
 
 use Moose;
