@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Named;
 
 use Moose::Role;

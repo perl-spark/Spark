@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Validator::Node;
 
 use Moose;

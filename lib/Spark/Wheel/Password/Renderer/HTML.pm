@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Wheel::Password::Renderer::HTML;
 
 use Moose;

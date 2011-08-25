@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Labelled;
 
 use Moose::Role;

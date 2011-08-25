@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Wheel::Textarea::Renderer::HTML;
 
 use 5.010001;    # // syntax.

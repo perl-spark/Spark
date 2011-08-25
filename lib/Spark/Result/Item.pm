@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Result::Item;
 
 use Moose;

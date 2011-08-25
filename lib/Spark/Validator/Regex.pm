@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Spark::Validator::Regex;
 
 use Moose;
