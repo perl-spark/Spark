@@ -13,6 +13,7 @@ use MooseX::Types -declare => [qw([% FOREACH class IN classes %]
       [% class.short -%]
 [% END %]
       )];
+use namespace::autoclean;
 
 =head1 TYPES
 
