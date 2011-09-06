@@ -6,6 +6,8 @@ package Spark::Field;
 
 use Moose::Role;
 
+with 'Spark::Node';
+
 with 'MooseX::Clone';
 use namespace::autoclean;
 
