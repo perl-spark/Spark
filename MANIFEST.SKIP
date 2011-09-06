@@ -6,3 +6,6 @@
 ^MANIFEST\.SKIP$
 ^.git
 .gz$
+^attic/*
+^util/*
+^planning.pm$
