@@ -2,10 +2,11 @@ use strict;
 use warnings;
 
 package Spark::Validates::WithValidators;
-use Moose;
+use Moose::Role;
 use MooseX::Types::Moose qw( :all );
 use Spark::Types qw( :all );
 use namespace::autoclean;
+
 with 'Spark::Validates', 'Spark::Node';
 
 has _validators => (
@@ -18,6 +19,5 @@ has _validators => (
     },
 );
 
-__PACKAGE__->meta->make_immutable;
 1;
 
