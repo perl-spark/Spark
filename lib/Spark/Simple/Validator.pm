@@ -15,9 +15,8 @@ requires '_validate';
 sub validate {
     my ($self, $context) = @_;
     my $result = Spark::Result->new;
-    map {
-        $result->error($_, $context);
-    } $self->_validate($context);
+    $result->error($_, $context)
+	for $self->_validate($context);
     $result;
 }
 1;
