@@ -1,8 +1,11 @@
-use Test::More;
+#!perl
 
+use strict;
+use warnings;
+
+use Test::More;
 use Spark::Hashray;
 
-# Cock. Can't we just steal the tests from Data::Couplet?
 my $ray = new_ok("Spark::Hashray");
 is_deeply [$ray->get("foo")], [];
 is_deeply [$ray->get_one("foo")], [undef];
