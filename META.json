@@ -46,17 +46,16 @@
             "List::MoreUtils" : 0,
             "List::Util" : 0,
             "Module::Pluggable::Object" : 0,
-            "Moose" : "0.90",
+            "Moose" : 0,
             "Moose::Role" : "0.90",
             "MooseX::Clone" : 0,
             "MooseX::LazyRequire" : "0.04",
-            "MooseX::Role::Parameterized" : 0,
             "MooseX::Types" : "0.20",
             "MooseX::Types::Combine" : 0,
             "MooseX::Types::Moose" : 0,
             "MooseX::Types::Perl" : 0,
             "Scalar::Util" : 0,
-            "Spark::Util" : 0,
+            "Spark::Form::Role::PluginLoader" : 0,
             "namespace::autoclean" : 0,
             "parent" : 0,
             "perl" : "5.010001",
@@ -68,6 +67,7 @@
          "requires" : {
             "File::Find" : 0,
             "File::Temp" : 0,
+            "Spark::Form::Field" : 0,
             "Test::Fatal" : 0,
             "Test::More" : "0.88"
          }
@@ -92,90 +92,6 @@
       },
       "Spark::Form" : {
          "file" : "lib/Spark/Form.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::FAQ" : {
-         "file" : "lib/Spark/Form/FAQ.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Field" : {
-         "file" : "lib/Spark/Form/Field.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Field::Result" : {
-         "file" : "lib/Spark/Form/Field/Result.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Field::Role::NewValidator" : {
-         "file" : "lib/Spark/Form/Field/Role/NewValidator.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Field::Role::Printable" : {
-         "file" : "lib/Spark/Form/Field/Role/Printable.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Field::Role::Printable::HTML" : {
-         "file" : "lib/Spark/Form/Field/Role/Printable/HTML.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Field::Role::Printable::XHTML" : {
-         "file" : "lib/Spark/Form/Field/Role/Printable/XHTML.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Field::Validator" : {
-         "file" : "lib/Spark/Form/Field/Validator.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Field::Validator::Result" : {
-         "file" : "lib/Spark/Form/Field/Validator/Result.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Loader" : {
-         "file" : "lib/Spark/Form/Loader.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::PluginLoader" : {
-         "file" : "lib/Spark/Form/PluginLoader.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Printer" : {
-         "file" : "lib/Spark/Form/Printer.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Printer::HTML" : {
-         "file" : "lib/Spark/Form/Printer/HTML.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Printer::XHTML" : {
-         "file" : "lib/Spark/Form/Printer/XHTML.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Result" : {
-         "file" : "lib/Spark/Form/Result.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Role::ErrorStore" : {
-         "file" : "lib/Spark/Form/Role/ErrorStore.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Role::PluginLoader" : {
-         "file" : "lib/Spark/Form/Role/PluginLoader.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Role::Validity" : {
-         "file" : "lib/Spark/Form/Role/Validity.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Source" : {
-         "file" : "lib/Spark/Form/Source.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Validator" : {
-         "file" : "lib/Spark/Form/Validator.pm",
-         "version" : "v0.1.0"
-      },
-      "Spark::Form::Validator::Result" : {
-         "file" : "lib/Spark/Form/Validator/Result.pm",
          "version" : "v0.1.0"
       },
       "Spark::Hashray" : {
@@ -433,13 +349,13 @@
          "Moose::Role" : "2.0007",
          "MooseX::Clone" : "0.05",
          "MooseX::LazyRequire" : "0.06",
-         "MooseX::Role::Parameterized" : "0.25",
          "MooseX::Types" : "0.25",
          "MooseX::Types::Combine" : "0.25",
          "MooseX::Types::Moose" : "0.25",
          "MooseX::Types::Perl" : "0.101340",
          "Scalar::Util" : "1.22",
-         "Spark::Util" : "NA(possibly not installed)",
+         "Spark::Form::Field" : "NA(possibly not installed)",
+         "Spark::Form::Role::PluginLoader" : "NA(possibly not installed)",
          "Test::Fatal" : "0.003",
          "Test::More" : "0.98",
          "namespace::autoclean" : "0.12",
