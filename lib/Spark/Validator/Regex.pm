@@ -26,6 +26,13 @@ has against => (
     default => sub { [] },
 );
 
+has message => (
+    isa => 'Str',
+    is => 'rw',
+    lazy => 1, # So you can pass a sub in and get it lazily evaluated
+    default => 'Regex match failed',
+);
+
 sub validate {
     my ($self, $context) = @_;
     my @against = self->get_against($self->against, $context->node->listens);
@@ -34,10 +41,9 @@ sub validate {
         my $result = $context->node_data =~ $self->regex;
         $result = !$result if $self->negate;
         if (!$result) {
-            return;
+            return $self->message;
         }
     }
-    return 1;
 }
 
 __PACKAGE__->meta->make_immutable;
