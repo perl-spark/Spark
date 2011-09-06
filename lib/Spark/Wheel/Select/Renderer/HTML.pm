@@ -11,7 +11,7 @@ sub render {
     my ($self, $node, $data) = @_;
 
     require HTML::Tiny;
-    return HTML::Tiny->new->button({name => $node->name});
+    return HTML::Tiny->new->select({name => $node->name});
 }
 
 __PACKAGE__->meta->make_immutable;
