@@ -1,6 +1,9 @@
 use strict;
 
 package Spark::Form;
+{
+  $Spark::Form::VERSION = '0.1.0';
+}
 
 # ABSTRACT: A simple yet powerful forms validation system that promotes reuse.
 
@@ -126,7 +129,19 @@ sub add {
 
 1;
 
-__END__
+
+
+=pod
+
+=encoding utf-8
+
+=head1 NAME
+
+Spark::Form - A simple yet powerful forms validation system that promotes reuse.
+
+=head1 VERSION
+
+version 0.1.0
 
 =head1 SYNOPSIS
 
@@ -327,4 +342,37 @@ Thanks to the Django Project, whose forms module gave some inspiration.
 The FAQ: L<Spark::Form::FAQ>
 L<Data::Couplet> used to hold the fields (see C<field_couplet>)
 
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+James Laver L<http://jameslaver.com>
+
+=item *
+
+Kent Fredric <kentnl@cpan.org>
+
+=item *
+
+Paweł Murias <pawelmurias@gmail.com>
+
+=item *
+
+David Dorward <david@dorward.me.uk>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
+
+
+__END__
+

@@ -2,6 +2,9 @@ use strict;
 use warnings;
 
 package Spark::Types::Roles;
+{
+  $Spark::Types::Roles::VERSION = '0.1.0';
+}
 
 # ABSTRACT: MooseX::Types for all Spark Roles
 
@@ -42,15 +45,6 @@ use MooseX::Types -declare => [qw(
       )];
 use namespace::autoclean;
 
-=head1 TYPES
-
-
-
-=head2 SparkContainer
-
-  does => 'Spark::Container'
-
-=cut
 
 role_type SparkContainer, {
     role    => 'Spark::Container',
@@ -59,11 +53,6 @@ role_type SparkContainer, {
     },
 };
 
-=head2 SparkField
-
-  does => 'Spark::Field'
-
-=cut
 
 role_type SparkField, {
     role    => 'Spark::Field',
@@ -72,11 +61,6 @@ role_type SparkField, {
     },
 };
 
-=head2 SparkFieldNamed
-
-  does => 'Spark::Field::Named'
-
-=cut
 
 role_type SparkFieldNamed, {
     role    => 'Spark::Field::Named',
@@ -85,11 +69,6 @@ role_type SparkFieldNamed, {
     },
 };
 
-=head2 SparkFieldValidates
-
-  does => 'Spark::Field::Validates'
-
-=cut
 
 role_type SparkFieldValidates, {
     role    => 'Spark::Field::Validates',
@@ -98,11 +77,6 @@ role_type SparkFieldValidates, {
     },
 };
 
-=head2 SparkForm
-
-  does => 'Spark::Form'
-
-=cut
 
 role_type SparkForm, {
     role    => 'Spark::Form',
@@ -111,11 +85,6 @@ role_type SparkForm, {
     },
 };
 
-=head2 SparkFormFieldRoleNewValidator
-
-  does => 'Spark::Form::Field::Role::NewValidator'
-
-=cut
 
 role_type SparkFormFieldRoleNewValidator, {
     role    => 'Spark::Form::Field::Role::NewValidator',
@@ -124,11 +93,6 @@ role_type SparkFormFieldRoleNewValidator, {
     },
 };
 
-=head2 SparkFormFieldRolePrintable
-
-  does => 'Spark::Form::Field::Role::Printable'
-
-=cut
 
 role_type SparkFormFieldRolePrintable, {
     role    => 'Spark::Form::Field::Role::Printable',
@@ -137,11 +101,6 @@ role_type SparkFormFieldRolePrintable, {
     },
 };
 
-=head2 SparkFormFieldRolePrintableHTML
-
-  does => 'Spark::Form::Field::Role::Printable::HTML'
-
-=cut
 
 role_type SparkFormFieldRolePrintableHTML, {
     role    => 'Spark::Form::Field::Role::Printable::HTML',
@@ -150,11 +109,6 @@ role_type SparkFormFieldRolePrintableHTML, {
     },
 };
 
-=head2 SparkFormFieldRolePrintableXHTML
-
-  does => 'Spark::Form::Field::Role::Printable::XHTML'
-
-=cut
 
 role_type SparkFormFieldRolePrintableXHTML, {
     role    => 'Spark::Form::Field::Role::Printable::XHTML',
@@ -163,11 +117,6 @@ role_type SparkFormFieldRolePrintableXHTML, {
     },
 };
 
-=head2 SparkFormFieldValidator
-
-  does => 'Spark::Form::Field::Validator'
-
-=cut
 
 role_type SparkFormFieldValidator, {
     role    => 'Spark::Form::Field::Validator',
@@ -176,11 +125,6 @@ role_type SparkFormFieldValidator, {
     },
 };
 
-=head2 SparkFormPrinter
-
-  does => 'Spark::Form::Printer'
-
-=cut
 
 role_type SparkFormPrinter, {
     role    => 'Spark::Form::Printer',
@@ -189,11 +133,6 @@ role_type SparkFormPrinter, {
     },
 };
 
-=head2 SparkFormPrinterHTML
-
-  does => 'Spark::Form::Printer::HTML'
-
-=cut
 
 role_type SparkFormPrinterHTML, {
     role    => 'Spark::Form::Printer::HTML',
@@ -202,11 +141,6 @@ role_type SparkFormPrinterHTML, {
     },
 };
 
-=head2 SparkFormPrinterXHTML
-
-  does => 'Spark::Form::Printer::XHTML'
-
-=cut
 
 role_type SparkFormPrinterXHTML, {
     role    => 'Spark::Form::Printer::XHTML',
@@ -215,11 +149,6 @@ role_type SparkFormPrinterXHTML, {
     },
 };
 
-=head2 SparkFormRoleErrorStore
-
-  does => 'Spark::Form::Role::ErrorStore'
-
-=cut
 
 role_type SparkFormRoleErrorStore, {
     role    => 'Spark::Form::Role::ErrorStore',
@@ -228,11 +157,6 @@ role_type SparkFormRoleErrorStore, {
     },
 };
 
-=head2 SparkFormRoleValidity
-
-  does => 'Spark::Form::Role::Validity'
-
-=cut
 
 role_type SparkFormRoleValidity, {
     role    => 'Spark::Form::Role::Validity',
@@ -241,11 +165,6 @@ role_type SparkFormRoleValidity, {
     },
 };
 
-=head2 SparkFormSource
-
-  does => 'Spark::Form::Source'
-
-=cut
 
 role_type SparkFormSource, {
     role    => 'Spark::Form::Source',
@@ -254,11 +173,6 @@ role_type SparkFormSource, {
     },
 };
 
-=head2 SparkLabelled
-
-  does => 'Spark::Labelled'
-
-=cut
 
 role_type SparkLabelled, {
     role    => 'Spark::Labelled',
@@ -267,11 +181,6 @@ role_type SparkLabelled, {
     },
 };
 
-=head2 SparkNamed
-
-  does => 'Spark::Named'
-
-=cut
 
 role_type SparkNamed, {
     role    => 'Spark::Named',
@@ -280,11 +189,6 @@ role_type SparkNamed, {
     },
 };
 
-=head2 SparkNode
-
-  does => 'Spark::Node'
-
-=cut
 
 role_type SparkNode, {
     role    => 'Spark::Node',
@@ -293,11 +197,6 @@ role_type SparkNode, {
     },
 };
 
-=head2 SparkObject
-
-  does => 'Spark::Object'
-
-=cut
 
 role_type SparkObject, {
     role    => 'Spark::Object',
@@ -306,11 +205,6 @@ role_type SparkObject, {
     },
 };
 
-=head2 SparkParent
-
-  does => 'Spark::Parent'
-
-=cut
 
 role_type SparkParent, {
     role    => 'Spark::Parent',
@@ -319,11 +213,6 @@ role_type SparkParent, {
     },
 };
 
-=head2 SparkRenderer
-
-  does => 'Spark::Renderer'
-
-=cut
 
 role_type SparkRenderer, {
     role    => 'Spark::Renderer',
@@ -332,11 +221,6 @@ role_type SparkRenderer, {
     },
 };
 
-=head2 SparkRendererContainer
-
-  does => 'Spark::Renderer::Container'
-
-=cut
 
 role_type SparkRendererContainer, {
     role    => 'Spark::Renderer::Container',
@@ -345,11 +229,6 @@ role_type SparkRendererContainer, {
     },
 };
 
-=head2 SparkRenders
-
-  does => 'Spark::Renders'
-
-=cut
 
 role_type SparkRenders, {
     role    => 'Spark::Renders',
@@ -358,11 +237,6 @@ role_type SparkRenders, {
     },
 };
 
-=head2 SparkSimpleField
-
-  does => 'Spark::Simple::Field'
-
-=cut
 
 role_type SparkSimpleField, {
     role    => 'Spark::Simple::Field',
@@ -371,11 +245,6 @@ role_type SparkSimpleField, {
     },
 };
 
-=head2 SparkSimpleForm
-
-  does => 'Spark::Simple::Form'
-
-=cut
 
 role_type SparkSimpleForm, {
     role    => 'Spark::Simple::Form',
@@ -384,11 +253,6 @@ role_type SparkSimpleForm, {
     },
 };
 
-=head2 SparkSimpleNode
-
-  does => 'Spark::Simple::Node'
-
-=cut
 
 role_type SparkSimpleNode, {
     role    => 'Spark::Simple::Node',
@@ -397,11 +261,6 @@ role_type SparkSimpleNode, {
     },
 };
 
-=head2 SparkValidates
-
-  does => 'Spark::Validates'
-
-=cut
 
 role_type SparkValidates, {
     role    => 'Spark::Validates',
@@ -410,11 +269,6 @@ role_type SparkValidates, {
     },
 };
 
-=head2 SparkValidator
-
-  does => 'Spark::Validator'
-
-=cut
 
 role_type SparkValidator, {
     role    => 'Spark::Validator',
@@ -424,4 +278,168 @@ role_type SparkValidator, {
 };
 
 1;
+
+
+=pod
+
+=encoding utf-8
+
+=head1 NAME
+
+Spark::Types::Roles - MooseX::Types for all Spark Roles
+
+=head1 VERSION
+
+version 0.1.0
+
+=head1 TYPES
+
+=head2 SparkContainer
+
+  does => 'Spark::Container'
+
+=head2 SparkField
+
+  does => 'Spark::Field'
+
+=head2 SparkFieldNamed
+
+  does => 'Spark::Field::Named'
+
+=head2 SparkFieldValidates
+
+  does => 'Spark::Field::Validates'
+
+=head2 SparkForm
+
+  does => 'Spark::Form'
+
+=head2 SparkFormFieldRoleNewValidator
+
+  does => 'Spark::Form::Field::Role::NewValidator'
+
+=head2 SparkFormFieldRolePrintable
+
+  does => 'Spark::Form::Field::Role::Printable'
+
+=head2 SparkFormFieldRolePrintableHTML
+
+  does => 'Spark::Form::Field::Role::Printable::HTML'
+
+=head2 SparkFormFieldRolePrintableXHTML
+
+  does => 'Spark::Form::Field::Role::Printable::XHTML'
+
+=head2 SparkFormFieldValidator
+
+  does => 'Spark::Form::Field::Validator'
+
+=head2 SparkFormPrinter
+
+  does => 'Spark::Form::Printer'
+
+=head2 SparkFormPrinterHTML
+
+  does => 'Spark::Form::Printer::HTML'
+
+=head2 SparkFormPrinterXHTML
+
+  does => 'Spark::Form::Printer::XHTML'
+
+=head2 SparkFormRoleErrorStore
+
+  does => 'Spark::Form::Role::ErrorStore'
+
+=head2 SparkFormRoleValidity
+
+  does => 'Spark::Form::Role::Validity'
+
+=head2 SparkFormSource
+
+  does => 'Spark::Form::Source'
+
+=head2 SparkLabelled
+
+  does => 'Spark::Labelled'
+
+=head2 SparkNamed
+
+  does => 'Spark::Named'
+
+=head2 SparkNode
+
+  does => 'Spark::Node'
+
+=head2 SparkObject
+
+  does => 'Spark::Object'
+
+=head2 SparkParent
+
+  does => 'Spark::Parent'
+
+=head2 SparkRenderer
+
+  does => 'Spark::Renderer'
+
+=head2 SparkRendererContainer
+
+  does => 'Spark::Renderer::Container'
+
+=head2 SparkRenders
+
+  does => 'Spark::Renders'
+
+=head2 SparkSimpleField
+
+  does => 'Spark::Simple::Field'
+
+=head2 SparkSimpleForm
+
+  does => 'Spark::Simple::Form'
+
+=head2 SparkSimpleNode
+
+  does => 'Spark::Simple::Node'
+
+=head2 SparkValidates
+
+  does => 'Spark::Validates'
+
+=head2 SparkValidator
+
+  does => 'Spark::Validator'
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+James Laver L<http://jameslaver.com>
+
+=item *
+
+Kent Fredric <kentnl@cpan.org>
+
+=item *
+
+Paweł Murias <pawelmurias@gmail.com>
+
+=item *
+
+David Dorward <david@dorward.me.uk>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
+
 __END__

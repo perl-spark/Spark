@@ -2,6 +2,9 @@ use strict;
 use warnings;
 
 package Spark::Types::Classes;
+{
+  $Spark::Types::Classes::VERSION = '0.1.0';
+}
 
 # ABSTRACT: MooseX::Types for all Spark Classes
 
@@ -61,15 +64,6 @@ use MooseX::Types -declare => [qw(
       )];
 use namespace::autoclean;
 
-=head1 TYPES
-
-
-
-=head2 Spark
-
-  isa => 'Spark'
-
-=cut
 
 class_type Spark, {
     class   => 'Spark',
@@ -78,11 +72,6 @@ class_type Spark, {
     },
 };
 
-=head2 SparkCollection
-
-  isa => 'Spark::Collection'
-
-=cut
 
 class_type SparkCollection, {
     class   => 'Spark::Collection',
@@ -91,11 +80,6 @@ class_type SparkCollection, {
     },
 };
 
-=head2 SparkFormField
-
-  isa => 'Spark::Form::Field'
-
-=cut
 
 class_type SparkFormField, {
     class   => 'Spark::Form::Field',
@@ -104,11 +88,6 @@ class_type SparkFormField, {
     },
 };
 
-=head2 SparkFormFieldResult
-
-  isa => 'Spark::Form::Field::Result'
-
-=cut
 
 class_type SparkFormFieldResult, {
     class   => 'Spark::Form::Field::Result',
@@ -117,11 +96,6 @@ class_type SparkFormFieldResult, {
     },
 };
 
-=head2 SparkFormFieldValidatorResult
-
-  isa => 'Spark::Form::Field::Validator::Result'
-
-=cut
 
 class_type SparkFormFieldValidatorResult, {
     class   => 'Spark::Form::Field::Validator::Result',
@@ -130,11 +104,6 @@ class_type SparkFormFieldValidatorResult, {
     },
 };
 
-=head2 SparkFormLoader
-
-  isa => 'Spark::Form::Loader'
-
-=cut
 
 class_type SparkFormLoader, {
     class   => 'Spark::Form::Loader',
@@ -143,11 +112,6 @@ class_type SparkFormLoader, {
     },
 };
 
-=head2 SparkFormPluginLoader
-
-  isa => 'Spark::Form::PluginLoader'
-
-=cut
 
 class_type SparkFormPluginLoader, {
     class   => 'Spark::Form::PluginLoader',
@@ -156,11 +120,6 @@ class_type SparkFormPluginLoader, {
     },
 };
 
-=head2 SparkFormResult
-
-  isa => 'Spark::Form::Result'
-
-=cut
 
 class_type SparkFormResult, {
     class   => 'Spark::Form::Result',
@@ -169,11 +128,6 @@ class_type SparkFormResult, {
     },
 };
 
-=head2 SparkFormValidator
-
-  isa => 'Spark::Form::Validator'
-
-=cut
 
 class_type SparkFormValidator, {
     class   => 'Spark::Form::Validator',
@@ -182,11 +136,6 @@ class_type SparkFormValidator, {
     },
 };
 
-=head2 SparkFormValidatorResult
-
-  isa => 'Spark::Form::Validator::Result'
-
-=cut
 
 class_type SparkFormValidatorResult, {
     class   => 'Spark::Form::Validator::Result',
@@ -195,11 +144,6 @@ class_type SparkFormValidatorResult, {
     },
 };
 
-=head2 SparkHashray
-
-  isa => 'Spark::Hashray'
-
-=cut
 
 class_type SparkHashray, {
     class   => 'Spark::Hashray',
@@ -208,11 +152,6 @@ class_type SparkHashray, {
     },
 };
 
-=head2 SparkLoad
-
-  isa => 'Spark::Load'
-
-=cut
 
 class_type SparkLoad, {
     class   => 'Spark::Load',
@@ -221,11 +160,6 @@ class_type SparkLoad, {
     },
 };
 
-=head2 SparkRendererContainerForm
-
-  isa => 'Spark::Renderer::Container::Form'
-
-=cut
 
 class_type SparkRendererContainerForm, {
     class   => 'Spark::Renderer::Container::Form',
@@ -234,11 +168,6 @@ class_type SparkRendererContainerForm, {
     },
 };
 
-=head2 SparkResult
-
-  isa => 'Spark::Result'
-
-=cut
 
 class_type SparkResult, {
     class   => 'Spark::Result',
@@ -247,11 +176,6 @@ class_type SparkResult, {
     },
 };
 
-=head2 SparkResultItem
-
-  isa => 'Spark::Result::Item'
-
-=cut
 
 class_type SparkResultItem, {
     class   => 'Spark::Result::Item',
@@ -260,11 +184,6 @@ class_type SparkResultItem, {
     },
 };
 
-=head2 SparkValidatesWithValidators
-
-  isa => 'Spark::Validates::WithValidators'
-
-=cut
 
 class_type SparkValidatesWithValidators, {
     class   => 'Spark::Validates::WithValidators',
@@ -273,11 +192,6 @@ class_type SparkValidatesWithValidators, {
     },
 };
 
-=head2 SparkValidatorNode
-
-  isa => 'Spark::Validator::Node'
-
-=cut
 
 class_type SparkValidatorNode, {
     class   => 'Spark::Validator::Node',
@@ -286,11 +200,6 @@ class_type SparkValidatorNode, {
     },
 };
 
-=head2 SparkValidatorRegex
-
-  isa => 'Spark::Validator::Regex'
-
-=cut
 
 class_type SparkValidatorRegex, {
     class   => 'Spark::Validator::Regex',
@@ -299,11 +208,6 @@ class_type SparkValidatorRegex, {
     },
 };
 
-=head2 SparkWheelButton
-
-  isa => 'Spark::Wheel::Button'
-
-=cut
 
 class_type SparkWheelButton, {
     class   => 'Spark::Wheel::Button',
@@ -312,11 +216,6 @@ class_type SparkWheelButton, {
     },
 };
 
-=head2 SparkWheelButtonRendererHTML
-
-  isa => 'Spark::Wheel::Button::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelButtonRendererHTML, {
     class   => 'Spark::Wheel::Button::Renderer::HTML',
@@ -325,11 +224,6 @@ class_type SparkWheelButtonRendererHTML, {
     },
 };
 
-=head2 SparkWheelCheckbox
-
-  isa => 'Spark::Wheel::Checkbox'
-
-=cut
 
 class_type SparkWheelCheckbox, {
     class   => 'Spark::Wheel::Checkbox',
@@ -338,11 +232,6 @@ class_type SparkWheelCheckbox, {
     },
 };
 
-=head2 SparkWheelCheckboxRendererHTML
-
-  isa => 'Spark::Wheel::Checkbox::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelCheckboxRendererHTML, {
     class   => 'Spark::Wheel::Checkbox::Renderer::HTML',
@@ -351,11 +240,6 @@ class_type SparkWheelCheckboxRendererHTML, {
     },
 };
 
-=head2 SparkWheelDummy
-
-  isa => 'Spark::Wheel::Dummy'
-
-=cut
 
 class_type SparkWheelDummy, {
     class   => 'Spark::Wheel::Dummy',
@@ -364,11 +248,6 @@ class_type SparkWheelDummy, {
     },
 };
 
-=head2 SparkWheelDummyRendererHTML
-
-  isa => 'Spark::Wheel::Dummy::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelDummyRendererHTML, {
     class   => 'Spark::Wheel::Dummy::Renderer::HTML',
@@ -377,11 +256,6 @@ class_type SparkWheelDummyRendererHTML, {
     },
 };
 
-=head2 SparkWheelFile
-
-  isa => 'Spark::Wheel::File'
-
-=cut
 
 class_type SparkWheelFile, {
     class   => 'Spark::Wheel::File',
@@ -390,11 +264,6 @@ class_type SparkWheelFile, {
     },
 };
 
-=head2 SparkWheelFileRendererHTML
-
-  isa => 'Spark::Wheel::File::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelFileRendererHTML, {
     class   => 'Spark::Wheel::File::Renderer::HTML',
@@ -403,11 +272,6 @@ class_type SparkWheelFileRendererHTML, {
     },
 };
 
-=head2 SparkWheelHidden
-
-  isa => 'Spark::Wheel::Hidden'
-
-=cut
 
 class_type SparkWheelHidden, {
     class   => 'Spark::Wheel::Hidden',
@@ -416,11 +280,6 @@ class_type SparkWheelHidden, {
     },
 };
 
-=head2 SparkWheelHiddenRendererHTML
-
-  isa => 'Spark::Wheel::Hidden::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelHiddenRendererHTML, {
     class   => 'Spark::Wheel::Hidden::Renderer::HTML',
@@ -429,11 +288,6 @@ class_type SparkWheelHiddenRendererHTML, {
     },
 };
 
-=head2 SparkWheelImage
-
-  isa => 'Spark::Wheel::Image'
-
-=cut
 
 class_type SparkWheelImage, {
     class   => 'Spark::Wheel::Image',
@@ -442,11 +296,6 @@ class_type SparkWheelImage, {
     },
 };
 
-=head2 SparkWheelImageRendererHTML
-
-  isa => 'Spark::Wheel::Image::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelImageRendererHTML, {
     class   => 'Spark::Wheel::Image::Renderer::HTML',
@@ -455,11 +304,6 @@ class_type SparkWheelImageRendererHTML, {
     },
 };
 
-=head2 SparkWheelMultiSelect
-
-  isa => 'Spark::Wheel::MultiSelect'
-
-=cut
 
 class_type SparkWheelMultiSelect, {
     class   => 'Spark::Wheel::MultiSelect',
@@ -468,11 +312,6 @@ class_type SparkWheelMultiSelect, {
     },
 };
 
-=head2 SparkWheelMultiSelectRendererHTML
-
-  isa => 'Spark::Wheel::MultiSelect::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelMultiSelectRendererHTML, {
     class   => 'Spark::Wheel::MultiSelect::Renderer::HTML',
@@ -481,11 +320,6 @@ class_type SparkWheelMultiSelectRendererHTML, {
     },
 };
 
-=head2 SparkWheelPassword
-
-  isa => 'Spark::Wheel::Password'
-
-=cut
 
 class_type SparkWheelPassword, {
     class   => 'Spark::Wheel::Password',
@@ -494,11 +328,6 @@ class_type SparkWheelPassword, {
     },
 };
 
-=head2 SparkWheelPasswordRendererHTML
-
-  isa => 'Spark::Wheel::Password::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelPasswordRendererHTML, {
     class   => 'Spark::Wheel::Password::Renderer::HTML',
@@ -507,11 +336,6 @@ class_type SparkWheelPasswordRendererHTML, {
     },
 };
 
-=head2 SparkWheelRadio
-
-  isa => 'Spark::Wheel::Radio'
-
-=cut
 
 class_type SparkWheelRadio, {
     class   => 'Spark::Wheel::Radio',
@@ -520,11 +344,6 @@ class_type SparkWheelRadio, {
     },
 };
 
-=head2 SparkWheelRadioGroup
-
-  isa => 'Spark::Wheel::RadioGroup'
-
-=cut
 
 class_type SparkWheelRadioGroup, {
     class   => 'Spark::Wheel::RadioGroup',
@@ -533,11 +352,6 @@ class_type SparkWheelRadioGroup, {
     },
 };
 
-=head2 SparkWheelRadioGroupRendererHTML
-
-  isa => 'Spark::Wheel::RadioGroup::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelRadioGroupRendererHTML, {
     class   => 'Spark::Wheel::RadioGroup::Renderer::HTML',
@@ -546,11 +360,6 @@ class_type SparkWheelRadioGroupRendererHTML, {
     },
 };
 
-=head2 SparkWheelRadioRendererHTML
-
-  isa => 'Spark::Wheel::Radio::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelRadioRendererHTML, {
     class   => 'Spark::Wheel::Radio::Renderer::HTML',
@@ -559,11 +368,6 @@ class_type SparkWheelRadioRendererHTML, {
     },
 };
 
-=head2 SparkWheelReset
-
-  isa => 'Spark::Wheel::Reset'
-
-=cut
 
 class_type SparkWheelReset, {
     class   => 'Spark::Wheel::Reset',
@@ -572,11 +376,6 @@ class_type SparkWheelReset, {
     },
 };
 
-=head2 SparkWheelResetRendererHTML
-
-  isa => 'Spark::Wheel::Reset::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelResetRendererHTML, {
     class   => 'Spark::Wheel::Reset::Renderer::HTML',
@@ -585,11 +384,6 @@ class_type SparkWheelResetRendererHTML, {
     },
 };
 
-=head2 SparkWheelSelect
-
-  isa => 'Spark::Wheel::Select'
-
-=cut
 
 class_type SparkWheelSelect, {
     class   => 'Spark::Wheel::Select',
@@ -598,11 +392,6 @@ class_type SparkWheelSelect, {
     },
 };
 
-=head2 SparkWheelSelectRendererHTML
-
-  isa => 'Spark::Wheel::Select::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelSelectRendererHTML, {
     class   => 'Spark::Wheel::Select::Renderer::HTML',
@@ -611,11 +400,6 @@ class_type SparkWheelSelectRendererHTML, {
     },
 };
 
-=head2 SparkWheelSubmit
-
-  isa => 'Spark::Wheel::Submit'
-
-=cut
 
 class_type SparkWheelSubmit, {
     class   => 'Spark::Wheel::Submit',
@@ -624,11 +408,6 @@ class_type SparkWheelSubmit, {
     },
 };
 
-=head2 SparkWheelSubmitRendererHTML
-
-  isa => 'Spark::Wheel::Submit::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelSubmitRendererHTML, {
     class   => 'Spark::Wheel::Submit::Renderer::HTML',
@@ -637,11 +416,6 @@ class_type SparkWheelSubmitRendererHTML, {
     },
 };
 
-=head2 SparkWheelText
-
-  isa => 'Spark::Wheel::Text'
-
-=cut
 
 class_type SparkWheelText, {
     class   => 'Spark::Wheel::Text',
@@ -650,11 +424,6 @@ class_type SparkWheelText, {
     },
 };
 
-=head2 SparkWheelTextRendererHTML
-
-  isa => 'Spark::Wheel::Text::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelTextRendererHTML, {
     class   => 'Spark::Wheel::Text::Renderer::HTML',
@@ -663,11 +432,6 @@ class_type SparkWheelTextRendererHTML, {
     },
 };
 
-=head2 SparkWheelTextarea
-
-  isa => 'Spark::Wheel::Textarea'
-
-=cut
 
 class_type SparkWheelTextarea, {
     class   => 'Spark::Wheel::Textarea',
@@ -676,11 +440,6 @@ class_type SparkWheelTextarea, {
     },
 };
 
-=head2 SparkWheelTextareaRendererHTML
-
-  isa => 'Spark::Wheel::Textarea::Renderer::HTML'
-
-=cut
 
 class_type SparkWheelTextareaRendererHTML, {
     class   => 'Spark::Wheel::Textarea::Renderer::HTML',
@@ -690,4 +449,244 @@ class_type SparkWheelTextareaRendererHTML, {
 };
 
 1;
+
+
+=pod
+
+=encoding utf-8
+
+=head1 NAME
+
+Spark::Types::Classes - MooseX::Types for all Spark Classes
+
+=head1 VERSION
+
+version 0.1.0
+
+=head1 TYPES
+
+=head2 Spark
+
+  isa => 'Spark'
+
+=head2 SparkCollection
+
+  isa => 'Spark::Collection'
+
+=head2 SparkFormField
+
+  isa => 'Spark::Form::Field'
+
+=head2 SparkFormFieldResult
+
+  isa => 'Spark::Form::Field::Result'
+
+=head2 SparkFormFieldValidatorResult
+
+  isa => 'Spark::Form::Field::Validator::Result'
+
+=head2 SparkFormLoader
+
+  isa => 'Spark::Form::Loader'
+
+=head2 SparkFormPluginLoader
+
+  isa => 'Spark::Form::PluginLoader'
+
+=head2 SparkFormResult
+
+  isa => 'Spark::Form::Result'
+
+=head2 SparkFormValidator
+
+  isa => 'Spark::Form::Validator'
+
+=head2 SparkFormValidatorResult
+
+  isa => 'Spark::Form::Validator::Result'
+
+=head2 SparkHashray
+
+  isa => 'Spark::Hashray'
+
+=head2 SparkLoad
+
+  isa => 'Spark::Load'
+
+=head2 SparkRendererContainerForm
+
+  isa => 'Spark::Renderer::Container::Form'
+
+=head2 SparkResult
+
+  isa => 'Spark::Result'
+
+=head2 SparkResultItem
+
+  isa => 'Spark::Result::Item'
+
+=head2 SparkValidatesWithValidators
+
+  isa => 'Spark::Validates::WithValidators'
+
+=head2 SparkValidatorNode
+
+  isa => 'Spark::Validator::Node'
+
+=head2 SparkValidatorRegex
+
+  isa => 'Spark::Validator::Regex'
+
+=head2 SparkWheelButton
+
+  isa => 'Spark::Wheel::Button'
+
+=head2 SparkWheelButtonRendererHTML
+
+  isa => 'Spark::Wheel::Button::Renderer::HTML'
+
+=head2 SparkWheelCheckbox
+
+  isa => 'Spark::Wheel::Checkbox'
+
+=head2 SparkWheelCheckboxRendererHTML
+
+  isa => 'Spark::Wheel::Checkbox::Renderer::HTML'
+
+=head2 SparkWheelDummy
+
+  isa => 'Spark::Wheel::Dummy'
+
+=head2 SparkWheelDummyRendererHTML
+
+  isa => 'Spark::Wheel::Dummy::Renderer::HTML'
+
+=head2 SparkWheelFile
+
+  isa => 'Spark::Wheel::File'
+
+=head2 SparkWheelFileRendererHTML
+
+  isa => 'Spark::Wheel::File::Renderer::HTML'
+
+=head2 SparkWheelHidden
+
+  isa => 'Spark::Wheel::Hidden'
+
+=head2 SparkWheelHiddenRendererHTML
+
+  isa => 'Spark::Wheel::Hidden::Renderer::HTML'
+
+=head2 SparkWheelImage
+
+  isa => 'Spark::Wheel::Image'
+
+=head2 SparkWheelImageRendererHTML
+
+  isa => 'Spark::Wheel::Image::Renderer::HTML'
+
+=head2 SparkWheelMultiSelect
+
+  isa => 'Spark::Wheel::MultiSelect'
+
+=head2 SparkWheelMultiSelectRendererHTML
+
+  isa => 'Spark::Wheel::MultiSelect::Renderer::HTML'
+
+=head2 SparkWheelPassword
+
+  isa => 'Spark::Wheel::Password'
+
+=head2 SparkWheelPasswordRendererHTML
+
+  isa => 'Spark::Wheel::Password::Renderer::HTML'
+
+=head2 SparkWheelRadio
+
+  isa => 'Spark::Wheel::Radio'
+
+=head2 SparkWheelRadioGroup
+
+  isa => 'Spark::Wheel::RadioGroup'
+
+=head2 SparkWheelRadioGroupRendererHTML
+
+  isa => 'Spark::Wheel::RadioGroup::Renderer::HTML'
+
+=head2 SparkWheelRadioRendererHTML
+
+  isa => 'Spark::Wheel::Radio::Renderer::HTML'
+
+=head2 SparkWheelReset
+
+  isa => 'Spark::Wheel::Reset'
+
+=head2 SparkWheelResetRendererHTML
+
+  isa => 'Spark::Wheel::Reset::Renderer::HTML'
+
+=head2 SparkWheelSelect
+
+  isa => 'Spark::Wheel::Select'
+
+=head2 SparkWheelSelectRendererHTML
+
+  isa => 'Spark::Wheel::Select::Renderer::HTML'
+
+=head2 SparkWheelSubmit
+
+  isa => 'Spark::Wheel::Submit'
+
+=head2 SparkWheelSubmitRendererHTML
+
+  isa => 'Spark::Wheel::Submit::Renderer::HTML'
+
+=head2 SparkWheelText
+
+  isa => 'Spark::Wheel::Text'
+
+=head2 SparkWheelTextRendererHTML
+
+  isa => 'Spark::Wheel::Text::Renderer::HTML'
+
+=head2 SparkWheelTextarea
+
+  isa => 'Spark::Wheel::Textarea'
+
+=head2 SparkWheelTextareaRendererHTML
+
+  isa => 'Spark::Wheel::Textarea::Renderer::HTML'
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+James Laver L<http://jameslaver.com>
+
+=item *
+
+Kent Fredric <kentnl@cpan.org>
+
+=item *
+
+Paweł Murias <pawelmurias@gmail.com>
+
+=item *
+
+David Dorward <david@dorward.me.uk>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by James Laver C<< <sprintf qw(%s@%s.%s cpan jameslaver com)> >>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
+
 __END__

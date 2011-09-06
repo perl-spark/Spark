@@ -1,0 +1,27 @@
+NAME
+    Spark - A simple yet powerful forms validation system that promotes
+    reuse.
+
+VERSION
+    version 0.1.0
+
+DESCRIPTION
+    At this time, most of the documentation for this module is in
+    Spark::Form, and this module ( Spark ) is merely a placeholder.
+
+AUTHORS
+    *   James Laver <http://jameslaver.com>
+
+    *   Kent Fredric <kentnl@cpan.org>
+
+    *   Paweł Murias <pawelmurias@gmail.com>
+
+    *   David Dorward <david@dorward.me.uk>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by James Laver "<sprintf qw(%s@%s.%s
+    cpan jameslaver com)>".
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
