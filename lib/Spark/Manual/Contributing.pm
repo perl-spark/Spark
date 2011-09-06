@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 package Spark::Manual::Contributing;
 
 # FILENAME: Contributing.pm
@@ -31,8 +32,15 @@ I'll just say C<cpanm>, but any other C<cpan> client should work too , albeit wi
 
 Presently, the primary work repository is at:
 
-  readonly:  git://github.com/perl-spark/Spark.git
-  readwrite: git@github.com:perl-spark/Spark.git
+=over 4
+
+=item * web:       https://github.com/perl-spark/Spark
+
+=item * read-only:  git://github.com/perl-spark/Spark.git
+
+=item * read-write: git@github.com:perl-spark/Spark.git
+
+=back
 
 Its advised you make yourself a fork of that repository on github, and then clone that locally.
 

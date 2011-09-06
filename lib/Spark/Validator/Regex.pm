@@ -27,9 +27,9 @@ has against => (
 );
 
 has message => (
-    isa => 'Str',
-    is => 'rw',
-    lazy => 1, # So you can pass a sub in and get it lazily evaluated
+    isa     => 'Str',
+    is      => 'rw',
+    lazy    => 1,                      # So you can pass a sub in and get it lazily evaluated
     default => 'Regex match failed',
 );
 
@@ -44,6 +44,7 @@ sub validate {
             return $self->message;
         }
     }
+    return;
 }
 
 __PACKAGE__->meta->make_immutable;
