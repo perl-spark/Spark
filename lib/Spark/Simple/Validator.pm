@@ -10,10 +10,11 @@ use Spark::Result;
 
 with 'Spark::Validator';
 
+requires '_validate';
+
 sub validate {
     my ($self, $context) = @_;
     my $result = Spark::Result->new;
-    die('Must implement _validate') unless $self->can('_validate');
     map {
         $result->error($_, $context);
     } $self->_validate($context);
