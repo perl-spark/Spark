@@ -17,11 +17,6 @@ use Scalar::Util qw( blessed );
 use namespace::autoclean;
 with 'MooseX::Clone';
 
-with 'Spark::Form::Role::PluginLoader' => {
-    namespaces => ['SparkX::Form::Field', 'Spark::Form::Field'],
-    construct_method_name => '_construct_plugin',
-};
-
 with 'Spark::Node';
 with 'Spark::Parent';
 

@@ -221,7 +221,6 @@ requires:
   MooseX::Types::Moose: 0
   MooseX::Types::Perl: 0
   Scalar::Util: 0
-  Spark::Form::Role::PluginLoader: 0
   namespace::autoclean: 0
   parent: 0
   perl: 5.010001
@@ -255,7 +254,6 @@ x_BuiltWith:
     MooseX::Types::Perl: 0.101340
     Scalar::Util: 1.22
     Spark::Form::Field: 'NA(possibly not installed)'
-    Spark::Form::Role::PluginLoader: 'NA(possibly not installed)'
     Test::Fatal: 0.003
     Test::More: 0.98
     namespace::autoclean: 0.12

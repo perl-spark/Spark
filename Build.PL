@@ -46,7 +46,6 @@ my %module_build_args = (
     "MooseX::Types::Moose" => 0,
     "MooseX::Types::Perl" => 0,
     "Scalar::Util" => 0,
-    "Spark::Form::Role::PluginLoader" => 0,
     "namespace::autoclean" => 0,
     "parent" => 0,
     "perl" => "5.010001",

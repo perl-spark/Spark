@@ -69,7 +69,6 @@ eval { $v .= pmver('MooseX::Types::Moose','any version') };
 eval { $v .= pmver('MooseX::Types::Perl','any version') };
 eval { $v .= pmver('Scalar::Util','any version') };
 eval { $v .= pmver('Spark::Form::Field','any version') };
-eval { $v .= pmver('Spark::Form::Role::PluginLoader','any version') };
 eval { $v .= pmver('Test::Fatal','any version') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('namespace::autoclean','any version') };
