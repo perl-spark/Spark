@@ -5,10 +5,11 @@ package Spark::Validates::WithValidators;
 {
   $Spark::Validates::WithValidators::VERSION = '0.1.0';
 }
-use Moose;
+use Moose::Role;
 use MooseX::Types::Moose qw( :all );
 use Spark::Types qw( :all );
 use namespace::autoclean;
+
 with 'Spark::Validates', 'Spark::Node';
 
 has _validators => (
