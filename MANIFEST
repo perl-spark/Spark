@@ -19,6 +19,7 @@ lib/Spark/Form/.DS_Store
 lib/Spark/Hashray.pm
 lib/Spark/Labelled.pm
 lib/Spark/Load.pm
+lib/Spark/Manual/Contributing.pm
 lib/Spark/Named.pm
 lib/Spark/Node.pm
 lib/Spark/Parent.pm
@@ -81,6 +82,18 @@ t/01-classes/loader.t
 t/02-core/.keep
 t/03-custom/.keep
 t/04-wheels/button.t
+t/04-wheels/checkbox.t
+t/04-wheels/dummy.t
+t/04-wheels/file.t
+t/04-wheels/hidden.t
+t/04-wheels/image.t
+t/04-wheels/multiselect.t
+t/04-wheels/password.t
+t/04-wheels/radio.t
+t/04-wheels/radiogroup.t
+t/04-wheels/reset.t
+t/04-wheels/select.t
+t/04-wheels/submit.t
 t/04-wheels/text.t
 t/04-wheels/textarea.t
 t/lib/Spark/Wheel/0beec7b5ea3f0fdbc95d0dd47f3c5bc275da8a33.pm

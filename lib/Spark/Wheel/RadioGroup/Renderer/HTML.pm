@@ -13,7 +13,8 @@ use namespace::autoclean;
 sub render {
     my ($self, $node, $data) = @_;
     require HTML::Tiny;
-    return HTML::Tiny->new->button({name => $node->name});
+    my $ht = HTML::Tiny->new;
+    return $ht->button({name => $node->name});
 }
 
 __PACKAGE__->meta->make_immutable;

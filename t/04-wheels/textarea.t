@@ -1,5 +1,8 @@
 #!perl
 
+use strict;
+use warnings;
+
 use Test::More;
 use Spark::Wheel::Textarea;
 use Spark::Hashray;

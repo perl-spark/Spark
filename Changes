@@ -1,6 +1,6 @@
 Revision history for Spark
 
-0.1.0 2011-09-06T20:38:34Z
+0.1.0 2011-09-06T21:50:09Z
  [Dependencies::Runtime::New]
  - Class::Load
  - Exporter

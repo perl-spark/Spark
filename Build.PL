@@ -11,6 +11,7 @@ my %module_build_args = (
     "File::Temp" => 0,
     "Module::Build" => "0.3601",
     "Spark::Form::Field" => 0,
+    "Test::Exception" => 0,
     "Test::Fatal" => 0,
     "Test::More" => "0.88"
   },

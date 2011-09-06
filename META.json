@@ -67,6 +67,7 @@
             "File::Find" : 0,
             "File::Temp" : 0,
             "Spark::Form::Field" : 0,
+            "Test::Exception" : 0,
             "Test::Fatal" : 0,
             "Test::More" : "0.88"
          }
@@ -103,6 +104,10 @@
       },
       "Spark::Load" : {
          "file" : "lib/Spark/Load.pm",
+         "version" : "v0.1.0"
+      },
+      "Spark::Manual::Contributing" : {
+         "file" : "lib/Spark/Manual/Contributing.pm",
          "version" : "v0.1.0"
       },
       "Spark::Named" : {
@@ -354,6 +359,7 @@
          "MooseX::Types::Perl" : "0.101340",
          "Scalar::Util" : "1.22",
          "Spark::Form::Field" : "NA(possibly not installed)",
+         "Test::Exception" : "0.31",
          "Test::Fatal" : "0.003",
          "Test::More" : "0.98",
          "namespace::autoclean" : "0.12",
