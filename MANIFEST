@@ -11,12 +11,11 @@ dist.ini
 lib/.DS_Store
 lib/Spark.pm
 lib/Spark/.DS_Store
-lib/Spark/Collection.pm
 lib/Spark/Container.pm
 lib/Spark/Field.pm
 lib/Spark/Field/Named.pm
-lib/Spark/Field/Validates.pm
 lib/Spark/Form.pm
+lib/Spark/Form/.DS_Store
 lib/Spark/Form/FAQ.pm
 lib/Spark/Form/Field.pm
 lib/Spark/Form/Field/Result.pm
@@ -43,7 +42,6 @@ lib/Spark/Labelled.pm
 lib/Spark/Load.pm
 lib/Spark/Named.pm
 lib/Spark/Node.pm
-lib/Spark/Object.pm
 lib/Spark/Parent.pm
 lib/Spark/Renderer.pm
 lib/Spark/Renderer/Container.pm
@@ -59,7 +57,6 @@ lib/Spark/Types.pm
 lib/Spark/Types/Classes.pm
 lib/Spark/Types/Misc.pm
 lib/Spark/Types/Roles.pm
-lib/Spark/Util.pm
 lib/Spark/Validates.pm
 lib/Spark/Validates/WithValidators.pm
 lib/Spark/Validator.pm

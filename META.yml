@@ -24,9 +24,6 @@ provides:
   Spark:
     file: lib/Spark.pm
     version: v0.1.0
-  Spark::Collection:
-    file: lib/Spark/Collection.pm
-    version: v0.1.0
   Spark::Container:
     file: lib/Spark/Container.pm
     version: v0.1.0
@@ -35,9 +32,6 @@ provides:
     version: v0.1.0
   Spark::Field::Named:
     file: lib/Spark/Field/Named.pm
-    version: v0.1.0
-  Spark::Field::Validates:
-    file: lib/Spark/Field/Validates.pm
     version: v0.1.0
   Spark::Form:
     file: lib/Spark/Form.pm
@@ -120,9 +114,6 @@ provides:
   Spark::Node:
     file: lib/Spark/Node.pm
     version: v0.1.0
-  Spark::Object:
-    file: lib/Spark/Object.pm
-    version: v0.1.0
   Spark::Parent:
     file: lib/Spark/Parent.pm
     version: v0.1.0
@@ -167,9 +158,6 @@ provides:
     version: v0.1.0
   Spark::Types::Roles:
     file: lib/Spark/Types/Roles.pm
-    version: v0.1.0
-  Spark::Util:
-    file: lib/Spark/Util.pm
     version: v0.1.0
   Spark::Validates:
     file: lib/Spark/Validates.pm
@@ -282,7 +270,6 @@ provides:
 requires:
   Carp: 0
   Class::Load: 0
-  Exporter: 0
   HTML::Tiny: 0
   List::MoreUtils: 0
   List::Util: 0
@@ -297,6 +284,7 @@ requires:
   MooseX::Types::Moose: 0
   MooseX::Types::Perl: 0
   Scalar::Util: 0
+  Spark::Util: 0
   namespace::autoclean: 0
   parent: 0
   perl: 5.010001
@@ -313,7 +301,6 @@ x_BuiltWith:
     Class::Load: 0.06
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.0.19
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
-    Exporter: 5.64_01
     File::Find: 1.15
     File::Temp: 0.22
     HTML::Tiny: 1.05
@@ -331,6 +318,7 @@ x_BuiltWith:
     MooseX::Types::Moose: 0.25
     MooseX::Types::Perl: 0.101340
     Scalar::Util: 1.22
+    Spark::Util: 'NA(possibly not installed)'
     Test::Fatal: 0.003
     Test::More: 0.98
     namespace::autoclean: 0.12

@@ -23,6 +23,7 @@ with 'Spark::Form::Role::PluginLoader' => {
     construct_method_name => '_construct_plugin',
 };
 
+with 'Spark::Node';
 with 'Spark::Parent';
 
 sub add {
