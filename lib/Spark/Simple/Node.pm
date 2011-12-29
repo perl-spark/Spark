@@ -5,7 +5,7 @@ package Spark::Simple::Node;
 
 use Moose::Role;
 use namespace::autoclean;
-with 'Spark::Node', 'Spark::Validates';
+with 'Spark::Node', 'Spark::Role::Validates';
 
 use Spark::Types qw(:all);
 

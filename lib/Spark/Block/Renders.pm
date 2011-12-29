@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-package Spark::Renders;
+package Spark::Block::Renders;
 
 use Moose::Role;
 use Spark::Types qw(:all);
