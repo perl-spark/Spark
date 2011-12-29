@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-package Spark::Named;
+package Spark::Block::Named;
 
 use Moose::Role;
 use namespace::autoclean;

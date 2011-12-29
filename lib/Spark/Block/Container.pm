@@ -1,10 +1,10 @@
 use strict;
 use warnings;
 
-package Spark::Container;
+package Spark::Block::Container;
 
 use Moose::Role;
-use Spark::Types qw(SparkHashray);
+use Spark::Types qw(SparkList);
 use namespace::autoclean;
 
 =attr children
@@ -14,12 +14,11 @@ use namespace::autoclean;
 =cut
 
 has children => (
-    isa     => SparkHashray,
-    is      => 'ro',
+    isa     => SparkList,
     handles => {
+        _add_child => 'push',
     },
 );
 
 1;
 __END__
-
