@@ -1,21 +1,56 @@
-Revision history for {{$dist->name}}
+﻿Revision history for {{$dist->name}}
 
 {{$NEXT}}
+ [00 IMPORTANT]
+ - This code base has been overhauled from scratch.
+ - Now "Spark", not "Spark-Form".
+
+ [Dependencies::Build::Changed]
+ - requires Module::Build 0.3601 -> 0.4003
+
+ [Dependencies::Configure::Changed]
+ - requires Module::Build 0.3601 -> 0.4003
+
+ [Dependencies::Develop::Changed]
+ - recommends Dist::Zilla::PluginBundle::Author::KENTNL::Lite
+   0.01009803 -> v1.3.0
+ - suggests Dist::Zilla::PluginBundle::Author::KENTNL v1.0.0 -> v1.6.0
+
+ [Dependencies::Develop::New]
+ - requires Pod::Coverage::TrustPod
+ - requires Test::CPAN::Meta
+ - requires Test::Pod 1.41
+ - requires Test::Pod::Coverage 1.08
+ - requires version 0.9901
+
+ [Dependencies::Runtime::Changed]
+ - requires Moose 0.90 -> 0
+
  [Dependencies::Runtime::New]
  - Class::Load
- - Exporter
- - MooseX::Role::Parameterized
+ - MooseX::Types::Combine
  - MooseX::Types::Perl
  - parent
  - perl 5.10.1
- - strict # added by new dzil's
- - warnings # added by new dzil's
+ - strict
+ - warnings
 
  [Dependencies::Runtime::Removed]
  - Data::Couplet
 
- [Dependencies::Build::Removed]
+ [Dependencies::Test::Changed]
+ - requires Test::More 0.88 -> 0.98
+
+ [Dependencies::Test::New]
+ - Test::Fatal
+
+ [Dependencies::Test::Removed]
  - Data::Dumper
+ - English
+
+ [Documentation]
+ - Copyright year updated.
+ - LICENSE updated ( Indentation )
 
  [Internals]
  - Versions no longer declared in BEGIN # Dzil
@@ -25,36 +60,41 @@ Revision history for {{$dist->name}}
 
  [Modules::New]
  - Spark
- - Spark::Collection
- - Spark::Container
+ - Spark::Block::Container
+ - Spark::Block::Labelled
+ - Spark::Block::Named
+ - Spark::Block::Renders
+ - Spark::Block::Validates
+ - Spark::Block::Validates::WithValidators
  - Spark::Field
- - Spark::Form::Field::Result
- - Spark::Form::Field::Role::NewValidator
- - Spark::Form::Field::Validator
- - Spark::Form::Field::Validator::Result
- - Spark::Form::Loader
- - Spark::Form::PluginLoader
- - Spark::Form::Result
- - Spark::Form::Role::PluginLoader
- - Spark::Form::Validator
- - Spark::Form::Validator::Result
+ - Spark::Field::Named
  - Spark::Hashray
- - Spark::Labelled
- - Spark::Named
+ - Spark::List
+ - Spark::Load
+ - Spark::Manual::Contributing
  - Spark::Node
- - Spark::Object
  - Spark::Parent
  - Spark::Renderer
  - Spark::Renderer::Container
  - Spark::Renderer::Container::Form
- - Spark::Renderers
+ - Spark::Result
+ - Spark::Result::Item
+ - Spark::Role::Container
+ - Spark::Role::Labelled
+ - Spark::Role::Named
+ - Spark::Role::Renders
+ - Spark::Role::Validates
  - Spark::Simple::Field
  - Spark::Simple::Form
  - Spark::Simple::Node
+ - Spark::Simple::Validator
  - Spark::Types
- - Spark::Util
- - Spark::Validates
+ - Spark::Types::Classes
+ - Spark::Types::Misc
+ - Spark::Types::Roles
  - Spark::Validator
+ - Spark::Validator::FieldMethod
+ - Spark::Validator::Node
  - Spark::Validator::Regex
  - Spark::Wheel::Button
  - Spark::Wheel::Button::Renderer::HTML
@@ -88,6 +128,18 @@ Revision history for {{$dist->name}}
  - Spark::Wheel::Textarea::Renderer::HTML
 
  [Modules::Removed]
+ - Spark::Form::FAQ
+ - Spark::Form::Field
+ - Spark::Form::Field::Role::Printable
+ - Spark::Form::Field::Role::Printable::HTML
+ - Spark::Form::Field::Role::Printable::XHTML
+ - Spark::Form::Printer
+ - Spark::Form::Printer::HTML
+ - Spark::Form::Printer::XHTML
+ - Spark::Form::Role::ErrorStore
+ - Spark::Form::Role::Validity
+ - Spark::Form::Source
+ - Spark::Form::Types
  - SparkX::Form::BasicFields
  - SparkX::Form::BasicPrinters
  - SparkX::Form::BasicValidators
@@ -120,9 +172,30 @@ Revision history for {{$dist->name}}
 
  [Tests::New]
  - t/01-classes/hashray.t
+ - t/01-classes/loader.t
  - t/04-wheels/button.t
+ - t/04-wheels/checkbox.t
+ - t/04-wheels/dummy.t
+ - t/04-wheels/file.t
+ - t/04-wheels/hidden.t
+ - t/04-wheels/image.t
+ - t/04-wheels/multiselect.t
+ - t/04-wheels/password.t
+ - t/04-wheels/radio.t
+ - t/04-wheels/radiogroup.t
+ - t/04-wheels/reset.t
+ - t/04-wheels/select.t
+ - t/04-wheels/submit.t
  - t/04-wheels/text.t
  - t/04-wheels/textarea.t
+ - xt/author/critic.t
+ - xt/release/cpan-changes.t
+ - xt/release/distmeta.t
+ - xt/release/eol.t
+ - xt/release/kwalitee.t
+ - xt/release/minimum-version.t
+ - xt/release/pod-coverage.t
+ - xt/release/pod-syntax.t
 
  [Tests::Removed]
  - t/00-load.t
@@ -154,6 +227,13 @@ Revision history for {{$dist->name}}
  - t/27-partial_clone.t
  - t/28-compose.t
  - t/29-partial-fill.t
+ - t/author-critic.t
+ - t/release-cpan-changes.t
+ - t/release-distmeta.t
+ - t/release-eol.t
+ - t/release-kwalitee.t
+ - t/release-pod-coverage.t
+ - t/release-pod-syntax.t
 
 0.2103 2011-06-12T22:29:43Z
  - A Trial release to show that this project is still alive.
