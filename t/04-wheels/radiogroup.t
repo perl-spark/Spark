@@ -13,14 +13,14 @@ pass('');
 
 TODO: {
     local $TODO = 'Needs more fleshing out';
-{
-    my $b = Spark::Wheel::RadioGroup->new;
-    is($b->render($b, $data), 'FAIL', 'Test html representation without name');
+    {
+        my $b = Spark::Wheel::RadioGroup->new;
+        is($b->render($b, $data), 'FAIL', 'Test html representation without name');
+    }
+    {
+        my $b = Spark::Wheel::RadioGroup->new(name => 'test');
+        is($b->name, 'test', "Name stored correctly");
+        is($b->render($b, $data), 'FAIL', 'Test html representation with name');
+    }
 }
-{
-    my $b = Spark::Wheel::RadioGroup->new(name => 'test');
-    is($b->name, 'test', "Name stored correctly");
-    is($b->render($b, $data), 'FAIL', 'Test html representation with name');
-}
-};
 done_testing;

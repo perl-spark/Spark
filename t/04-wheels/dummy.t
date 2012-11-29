@@ -11,7 +11,7 @@ use Spark::Hashray;
 my $data = Spark::Hashray->new;
 {
     my $b = Spark::Wheel::Dummy->new;
-    ok( exception {$b->render($b, $data)} );
+    ok(exception { $b->render($b, $data) });
 }
 
 done_testing;

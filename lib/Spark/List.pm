@@ -15,28 +15,31 @@ has items => (
     isa     => ArrayRef,
     traits  => ['Array'],
     handles => {
-        push => 'push',
+        push     => 'push',
         elements => 'elements',
-		grep => 'grep',
-		get => 'get',
+        grep     => 'grep',
+        get      => 'get',
     },
 );
 
 sub tree_grep {
-	my ($self, $subref) = @_;
-	
-	for my $i ($list->elements) {
-		if ($subref->($i)) {
-			return ($i,$self)
-		}
-	}
-	for my $i ($list->elements) {
-		if ($i->meta->does('Spark::Role::Container')) {
-			
-		}
-	}
+    my ($self, $subref) = @_;
+
+    for my $i ($list->elements) {
+        if ($subref->($i)) {
+            return ($i, $self)
+        }
+    }
+    for my $i ($list->elements) {
+        if ($i->meta->does('Spark::Role::Container')) {
+
+        }
+    }
 }
 
 no Moose;
 __PACKAGE__->meta->make_immutable;
+
+1;
+
 __END__
