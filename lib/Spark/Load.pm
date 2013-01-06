@@ -3,6 +3,29 @@ use warnings;
 
 package Spark::Load;
 
+# ABSTRACT: Module Loader for Spark
+
+=head1 DESCRIPTION
+
+	my $loader = Spark::Load->new();
+
+	[ $loader->default_namespaces ] # [ 'Spark::Wheel' ]
+
+	[ $loader->user_namespaces ] # []
+
+	$loader->add_namespace('MyProject::Form');
+
+	[ $loader->user_namespaces ] # ['MyProject::Form']
+
+	[ $loader->namespaces ] # [ 'MyProject::Form', 'Spark::Wheel' ]
+
+	my $instance = $loader->create_plugin( 'TextArea' => { ... });
+
+
+=cut
+
+use Carp qw();
+use Module::Runtime qw();
 use Moose;
 use MooseX::Types::Perl qw(:all);
 use MooseX::Types::Moose qw(:all);
@@ -30,92 +53,68 @@ has _user_namespaces => (
     },
 );
 
+=method namespaces
+
+Returns a list of package namespaces in search order.
+
+=cut
+
 sub namespaces {
-    my ($self)       = @_;
-    my (@namespaces) = (
-        $self->default_namespaces,
-        $self->user_namespaces,
-    );
+    my ($self) = @_;
+    my (@namespaces) = ( $self->default_namespaces, $self->user_namespaces, );
     return reverse @namespaces;
 }
 
-sub _make_mpo {
-    my ($self) = @_;
-    require Module::Pluggable::Object;
-    return Module::Pluggable::Object->new(
-        search_path => [$self->namespaces],
-        required    => 1,
+=method expand_plugin_name
+
+	my $module = $loader->expand_plugin_name( 'Foo' );
+
+Walks L</namespaces> until it finds a loadable package at ${namespace}::Foo
+or even just "Foo", and returns the name of the item it found.
+
+If C<$plugin_name> cannot be resolved, a fatal error occurs.
+
+=cut
+
+sub expand_plugin_name {
+    my ( $self, $plugin_name ) = @_;
+    my (@tried);
+    for my $namespace ( $self->namespaces ) {
+        my $module_name =
+          Module::Runtime::compose_module_name( $namespace, $plugin_name );
+        if ( eval { Module::Runtime::require_module($module_name) } ) {
+            return $module_name;
+        }
+        push @tried, $module_name;
+    }
+    if ( eval { Module::Runtime::require_module($plugin_name) } ) {
+        return $plugin_name;
+    }
+    push @tried, $plugin_name;
+    Carp::croak(
+"No such module/plugin exists in the plugin-stash/environment matching \"$plugin_name\", \n"
+          . " tried : @tried \n",
+        " INC : @INC \n"
     );
 }
 
-sub package {
-    my ($self, $partial) = @_;
-    return $self->_load_package($partial);
-}
+=method create_plugin
 
-sub make {
-    my ($self, $class, @options) = @_;
-    my $p = $self->package($class);
-    return $p->new(@options) if $p;
+	my $instance = $loader->create_plugin( Foo => @args );
+
+The above is equivalent to
+
+	require Some::Namespace::Foo;
+	$instance = Some::Namespace::Foo->new( @args );
+
+
+=cut
+
+sub create_plugin {
+    my ( $self, $plugin_name, @options ) = @_;
+    my $module_name = $self->expand_plugin_name($plugin_name);
+    return $module_name->new(@options) if $module_name;
     return;
-}
-
-sub _normalize_module_name {
-    my ($self, $module_name) = @_;
-
-    foreach my $ns ($self->namespaces) {
-
-        # if the module name is detected as being
-        # under one of our namespaces,
-        # then strip the namespace prefix from it.
-        # ie:
-        #
-        # Spark::Form::Field ->
-        #     Field
-        #
-        # if 'Spark::Form' is one of our namespaces.
-        #
-        # this seems a bit backwards really, its unexpanding fully qualified
-        # plugin names and hoping that it wont later
-        # re-expand to some different full qualification.
-        last if $module_name =~ s/^${ns}:://;
-    }
-
-    # replace remaining :: with -
-    #
-    #  Foo::Bar::Baz ->  foo-bar-baz
-    #  Spark::Form::Baz -> baz
-    #
-    $module_name =~ s/::/-/g;
-    $module_name = lc $module_name;
-    return $module_name;
-}
-
-sub _load_package {
-    my ($self, $type) = @_;
-    my $mod = $self->_find_matching_mod($type)
-      or do {
-        require Carp;
-        Carp::croak("No such module/plugin exists in the plugin-stash/environment matching \"$type\"");
-      };
-    require Class::Load;
-    Class::Load::load_class(q{} . $mod);
-    return $mod;
-}
-
-sub _find_matching_mod {
-    my ($self, $wanted) = @_;
-
-    # iterate through all available plugins,
-    # and return the first one that when normalized, matches the 'wanted' value.
-    foreach my $mod ($self->_make_mpo->plugins) {
-
-        #        print "Done: " . $self->_normalize_module_name($mod). "\n";
-        return $mod if $self->_normalize_module_name($mod) eq $wanted;
-    }
-
-    # None present
-    return 0;
 }
 
 no Moose;
